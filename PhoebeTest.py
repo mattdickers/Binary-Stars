@@ -16,3 +16,4 @@ b.run_compute(irrad_method='none')
 
 print(b['mesh01@model'].components)
 afig, mplfig = b['mesh01@model'].plot(x='ws', save="PhoebeTest.png")
+afig, mplfig = b['mesh01@model'].plot(x='ws', save="PhoebeTest.pdf")
