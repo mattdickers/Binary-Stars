@@ -8,7 +8,9 @@ from __future__ import print_function
 from astropy.coordinates import match_coordinates_sky , SkyCoord
 from astropy import stats
 from astropy import units as u
-from astropy.stats import LombScargle
+from astropy.utils.data import clear_download_cache; clear_download_cache()
+#from astropy.stats import LombScargle
+from  astropy.timeseries import LombScargle
 from matplotlib.font_manager import FontProperties
 from operator import itemgetter
 from scipy.cluster.hierarchy import linkage, fcluster
@@ -177,17 +179,17 @@ def index_stars(coords, radius, dec, connection):
 
 #function to determine the exposure time equivalent for all of HC
 def exp_equ(device=''):
-	#sort out defaults
+    #sort out defaults
     if device=='': device=2
 	
     class ServerTalkException(Exception):
         pass
     class NoStarsException(Exception):
         pass
-	#setting user and passwd
+    #setting user and passwd
     USER = 'sps_student'
     PASSWORD = 'sps_student'
-	# Connect to the database
+    # Connect to the database
     try:
         print('Attempting to speak to server...')
         connection = pymysql.connect(host='129.12.24.29',
@@ -201,7 +203,7 @@ def exp_equ(device=''):
     print('...Connection established!')
     print('Retriving data from server...')
     with connection.cursor() as cursor:
-		# Get all stars within radius
+        # Get all stars within radius
         sql = "SELECT o.id, o.fits_id, o.device_id, o.exptime, i.scale, i.mirror_diameter FROM observations as o, imaging_devices as i WHERE o.device_id = i.id;"
         cursor.execute(sql, ())
         image = cursor.fetchall()
@@ -227,7 +229,7 @@ def exp_equ(device=''):
     print('Number of all Images: ',len(image))
     print('Number of ID=',device,' Images: ',beacon_count, ' (',100.0*beacon_count/len(image),'% )')
 
-	#make a graph of uploaded image numbers or exposure time per time
+    #make a graph of uploaded image numbers or exposure time per time
     try:
         print('Attempting to speak to server...')
         connection = pymysql.connect(host='129.12.24.29',
@@ -241,7 +243,7 @@ def exp_equ(device=''):
     print('...Connection established!')
     print('Retriving data from server...')
     with connection.cursor() as cursor:
-		# select all images and get their fits file upload time
+        # select all images and get their fits file upload time
 		#sql = "SELECT o.id, o.fits_id, o.date, f.upload_time FROM observations as o, fits_files as f WHERE o.fits_id = f.id;"
                 #get all images, their exposure time, their fits upload time and the device diameter
                 sql = "SELECT o.id, o.fits_id, o.date, o.exptime, f.upload_time, i.mirror_diameter FROM observations as o, fits_files as f, imaging_devices as i WHERE (o.fits_id = f.id) and (o.device_id = i.id) and (o.device_id >= 0);"
@@ -280,24 +282,24 @@ def exp_equ(device=''):
         if (i >= 1):
             im_counter[i] = im_counter[i-1] + im_count[i]
             area_array[i] = area_array[i-1] + exptime_array[i] * mirror_array[i] * mirror_array[i] * numpy.pi / 4.0
-	#normalise the time to days from seconds and use first day as start
+    #normalise the time to days from seconds and use first day as start
     time_array = (time_array - numpy.min(time_array)) / (3600.0 * 24.0)
     print("Average image submission rate: " ,numpy.max(im_counter) / (numpy.max(time_array) / 365.25),"images per year")
     print("Average image submission rate: " ,numpy.max(im_counter) / (numpy.max(time_array) / 365.25 * 12.0),"images per month")
     print("Average image submission rate: " ,numpy.max(im_counter) / (numpy.max(time_array)),"images per day")
 
-	#######################################
+    #######################################
 	#plot the submission date distributions
     rectangle1 = [0.15,0.1, 0.8,0.8]
     ax1 = plt.axes(rectangle1)
     plt.plot(time_array, im_counter, linestyle="solid", marker=".", markersize=0.01)
-	#overplot average slope line
+    #overplot average slope line
     ax1.plot([0,numpy.max(time_array)],[0,numpy.max(im_counter)], c="k", linestyle="--", alpha=0.75)
 	#overplot time range for V1490cyg campaign
     rect = plt.Rectangle((342,0), 45, numpy.max(im_counter), angle=0.0, color="r", alpha=0.5)
     plt.text( numpy.max(364) , 0.95*numpy.max(im_counter) ,'V1490Cyg Campaign', horizontalalignment='center', verticalalignment='top', rotation=90.0,bbox=dict(boxstyle='round', facecolor='lightgray', alpha=0.75))
     ax1.add_patch(rect)
-	#overplot time range for V1491cyg campaign
+    #overplot time range for V1491cyg campaign
     rect = plt.Rectangle((799,0), 30, numpy.max(im_counter), angle=0.0, color="r", alpha=0.5)
     plt.text( numpy.max(814) , 0.05*numpy.max(im_counter) ,'V1491Cyg Campaign', horizontalalignment='center', verticalalignment='bottom',rotation=90.0,bbox=dict(boxstyle='round', facecolor='lightgray', alpha=0.75))
     ax1.add_patch(rect)
@@ -305,7 +307,7 @@ def exp_equ(device=''):
     plt.ylabel("Number of Images")
     ax1.set_ylim((0,numpy.max(im_counter)))
     ax1.set_xlim((0,numpy.max(time_array)))
-	#plt.show()
+    #plt.show()
     plt.savefig('data_submission_rate.pdf', format='pdf', bbox_inches='tight', dpi=600)
     plt.savefig('data_submission_rate.png', format='png', bbox_inches='tight', dpi=600)
     plt.clf()
@@ -337,7 +339,7 @@ def exp_equ(device=''):
     allyearsnames = ['2019','2018','2017','2016','2015','2014']
     allyears = ['2019-07-01T00:00:00.1','2018-07-01T00:00:00.1','2017-07-01T00:00:00.1','2016-07-01T00:00:00.1','2015-07-01T00:00:00.1','2014-07-01T00:00:00.1']
     allyearstime = Time(allyears, format='isot', scale='utc')
-	#######################################
+    #######################################
 	#plot the observation date distributions
         #only for data with sensible MJD 
     goodtimes = numpy.where(obstime_array >= 2000000.0)
@@ -349,29 +351,29 @@ def exp_equ(device=''):
     rectangle1 = [0.10,0.1, 0.85,0.85]
     ax1 = plt.axes(rectangle1)
     plt.plot(obstime_array[goodtimes[0]] - 2400000.5, im_counter[goodtimes[0]], linestyle="solid", marker=".", markersize=0.01)
-	#overplot average slope line
+    #overplot average slope line
     ax1.plot([numpy.min(obstime_array[goodtimes[0]] - 2400000.5),numpy.max(obstime_array[goodtimes[0]] - 2400000.5)],[0,numpy.max(im_counter[goodtimes[0]])], c="k", linestyle="--", alpha=0.75)
 	#overplot time range for V1490cyg campaign
     rect = plt.Rectangle((58332.,0), 45, numpy.max(im_counter[goodtimes[0]]), angle=0.0, color="r", alpha=0.5)
     plt.text( numpy.max(58332.+45./2.) , 0.05*numpy.max(im_counter[goodtimes[0]]) ,'V1490Cyg Campaign', horizontalalignment='center', verticalalignment='bottom', rotation=90.0,bbox=dict(boxstyle='round', facecolor='lightgray', alpha=0.75))
     ax1.add_patch(rect)
-	#overplot time range for IC1396A campaign
+    #overplot time range for IC1396A campaign
     rect = plt.Rectangle((58655,0), 50, numpy.max(im_counter[goodtimes[0]]), angle=0.0, color="r", alpha=0.5)
     plt.text( numpy.max(58655+25) , 0.05*numpy.max(im_counter[goodtimes[0]]) ,'IC139A Campaign', horizontalalignment='center', verticalalignment='bottom',rotation=90.0,bbox=dict(boxstyle='round', facecolor='lightgray', alpha=0.75))
     ax1.add_patch(rect)
-	#overplot time range for V1491cyg campaign
+    #overplot time range for V1491cyg campaign
     rect = plt.Rectangle((58789,0), 30, numpy.max(im_counter[goodtimes[0]]), angle=0.0, color="r", alpha=0.5)
     plt.text( numpy.max(58789+15) , 0.05*numpy.max(im_counter[goodtimes[0]]) ,'V1491Cyg Campaign', horizontalalignment='center', verticalalignment='bottom',rotation=90.0,bbox=dict(boxstyle='round', facecolor='lightgray', alpha=0.75))
     ax1.add_patch(rect)
-	#overplot time of start of database
+    #overplot time of start of database
     rect = plt.Rectangle((57988,0), 2, numpy.max(im_counter[goodtimes[0]]), angle=0.0, color="r", alpha=0.5)
     plt.text( numpy.max(57988+1) , 0.95*numpy.max(im_counter[goodtimes[0]]) ,'HOYS Database opens', horizontalalignment='center', verticalalignment='top',rotation=90.0,bbox=dict(boxstyle='round', facecolor='lightgray', alpha=0.75))
     ax1.add_patch(rect)
-	#overplot time of start of beacon observations
+    #overplot time of start of beacon observations
     rect = plt.Rectangle((57266,0), 2, numpy.max(im_counter[goodtimes[0]]), angle=0.0, color="r", alpha=0.5)
     plt.text( numpy.max(57266+1) , 0.95*numpy.max(im_counter[goodtimes[0]]) ,'Beacon Observatory opens', horizontalalignment='center', verticalalignment='top',rotation=90.0,bbox=dict(boxstyle='round', facecolor='lightgray', alpha=0.75))
     ax1.add_patch(rect)
-	#overplot time of start of HOYS project
+    #overplot time of start of HOYS project
     rect = plt.Rectangle((56956,0), 2, numpy.max(im_counter[goodtimes[0]]), angle=0.0, color="r", alpha=0.5)
     plt.text( numpy.max(56956+1) , 0.95*numpy.max(im_counter[goodtimes[0]]) ,'HOYS project starts', horizontalalignment='center', verticalalignment='top',rotation=90.0,bbox=dict(boxstyle='round', facecolor='lightgray', alpha=0.75))
     ax1.add_patch(rect)
@@ -381,22 +383,22 @@ def exp_equ(device=''):
         #overplot the HOYS paper publication dates
     for i in range(0,len(allpaperstime)):
         plt.plot([allpaperstime[i].mjd,allpaperstime[i].mjd],[0.97*numpy.max(im_counter[goodtimes[0]]),numpy.max(im_counter[goodtimes[0]])],color='green',linewidth=2,alpha=1)
-	#overplot start of each calender year
+    #overplot start of each calender year
     for i in range(0,len(allfirsttime)):
         plt.plot([allfirsttime[i].mjd,allfirsttime[i].mjd],[0,numpy.max(im_counter[goodtimes[0]])],color='blue',linewidth=1,linestyle='dashed',alpha=0.25)
-	#overplot all the years on top of the plot
+    #overplot all the years on top of the plot
     for i in range(0,len(allyearstime)):
         plt.text( allyearstime[i].mjd, numpy.max(im_counter[goodtimes[0]]), allyearsnames[i], horizontalalignment='center', verticalalignment='bottom')
     plt.xlabel("MJD [days] of Observation")
     plt.ylabel("Number of Images [x 10$^3$]")
     ax1.set_ylim((0,numpy.max(im_counter[goodtimes[0]])))
     ax1.set_xlim((numpy.min(obstime_array[goodtimes[0]] - 2400000.5),numpy.max(obstime_array[goodtimes[0]] - 2400000.5)))
-	#plt.show()
+    #plt.show()
     plt.savefig('data_observation_rate.pdf', format='pdf', bbox_inches='tight', dpi=600)
     plt.savefig('data_observation_rate.png', format='png', bbox_inches='tight', dpi=600)
     plt.clf()
 
-	#######################################
+    #######################################
 	#plot the observation date distributions for observing area times exptime
         #only for data with sensible MJD 
     goodtimes = numpy.where(obstime_array >= 2000000.0)
@@ -408,54 +410,54 @@ def exp_equ(device=''):
     rectangle1 = [0.10,0.1, 0.85,0.85]
     ax1 = plt.axes(rectangle1)
     plt.plot(obstime_array[goodtimes[0]] - 2400000.5, area_array[goodtimes[0]], linestyle="solid", marker=".", markersize=0.01)
-	#overplot average slope line
+    #overplot average slope line
     ax1.plot([numpy.min(obstime_array[goodtimes[0]] - 2400000.5),numpy.max(obstime_array[goodtimes[0]] - 2400000.5)],[0,numpy.max(area_array[goodtimes[0]])], c="k", linestyle="--", alpha=0.75)
 	#overplot time range for V1490cyg campaign
     rect = plt.Rectangle((58332.,0), 45, numpy.max(area_array[goodtimes[0]]), angle=0.0, color="r", alpha=0.5)
     plt.text( numpy.max(58332.+45./2.) , 0.05*numpy.max(area_array[goodtimes[0]]) ,'V1490Cyg Campaign', horizontalalignment='center', verticalalignment='bottom', rotation=90.0,bbox=dict(boxstyle='round', facecolor='lightgray', alpha=0.75))
     ax1.add_patch(rect)
-	#overplot time range for IC1396A campaign
+    #overplot time range for IC1396A campaign
     rect = plt.Rectangle((58655,0), 50, numpy.max(area_array[goodtimes[0]]), angle=0.0, color="r", alpha=0.5)
     plt.text( numpy.max(58655+25) , 0.05*numpy.max(area_array[goodtimes[0]]) ,'IC139A Campaign', horizontalalignment='center', verticalalignment='bottom',rotation=90.0,bbox=dict(boxstyle='round', facecolor='lightgray', alpha=0.75))
     ax1.add_patch(rect)
-	#overplot time range for V1491cyg campaign
+    #overplot time range for V1491cyg campaign
     rect = plt.Rectangle((58789,0), 30, numpy.max(area_array[goodtimes[0]]), angle=0.0, color="r", alpha=0.5)
     plt.text( numpy.max(58789+15) , 0.05*numpy.max(area_array[goodtimes[0]]) ,'V1491Cyg Campaign', horizontalalignment='center', verticalalignment='bottom',rotation=90.0,bbox=dict(boxstyle='round', facecolor='lightgray', alpha=0.75))
     ax1.add_patch(rect)
-	#overplot time of start of database
+    #overplot time of start of database
     rect = plt.Rectangle((57988,0), 2, numpy.max(area_array[goodtimes[0]]), angle=0.0, color="r", alpha=0.5)
     plt.text( numpy.max(57988+1) , 0.95*numpy.max(area_array[goodtimes[0]]) ,'HOYS Database opens', horizontalalignment='center', verticalalignment='top',rotation=90.0,bbox=dict(boxstyle='round', facecolor='lightgray', alpha=0.75))
     ax1.add_patch(rect)
-	#overplot time of start of beacon observations
+    #overplot time of start of beacon observations
     rect = plt.Rectangle((57266,0), 2, numpy.max(area_array[goodtimes[0]]), angle=0.0, color="r", alpha=0.5)
     plt.text( numpy.max(57266+1) , 0.95*numpy.max(area_array[goodtimes[0]]) ,'Beacon Observatory opens', horizontalalignment='center', verticalalignment='top',rotation=90.0,bbox=dict(boxstyle='round', facecolor='lightgray', alpha=0.75))
     ax1.add_patch(rect)
-	#overplot time of start of HOYS project
+    #overplot time of start of HOYS project
     rect = plt.Rectangle((56956,0), 2, numpy.max(area_array[goodtimes[0]]), angle=0.0, color="r", alpha=0.5)
     plt.text( numpy.max(56956+1) , 0.95*numpy.max(area_array[goodtimes[0]]) ,'HOYS project starts', horizontalalignment='center', verticalalignment='top',rotation=90.0,bbox=dict(boxstyle='round', facecolor='lightgray', alpha=0.75))
     ax1.add_patch(rect)
         #overplot the HOYS talk dates
     for i in range(0,len(alltalkstime)):
-        	plt.plot([alltalkstime[i].mjd,alltalkstime[i].mjd],[0,0.03*numpy.max(area_array[goodtimes[0]])],color='blue',linewidth=1)
+        plt.plot([alltalkstime[i].mjd,alltalkstime[i].mjd],[0,0.03*numpy.max(area_array[goodtimes[0]])],color='blue',linewidth=1)
         #overplot the HOYS paper publication dates
     for i in range(0,len(allpaperstime)):
-        	plt.plot([allpaperstime[i].mjd,allpaperstime[i].mjd],[0.97*numpy.max(area_array[goodtimes[0]]),numpy.max(area_array[goodtimes[0]])],color='green',linewidth=2,alpha=1)
+        plt.plot([allpaperstime[i].mjd,allpaperstime[i].mjd],[0.97*numpy.max(area_array[goodtimes[0]]),numpy.max(area_array[goodtimes[0]])],color='green',linewidth=2,alpha=1)
 	#overplot start of each calender year
     for i in range(0,len(allfirsttime)):
-        	plt.plot([allfirsttime[i].mjd,allfirsttime[i].mjd],[0,numpy.max(area_array[goodtimes[0]])],color='blue',linewidth=1,linestyle='dashed',alpha=0.25)
+        plt.plot([allfirsttime[i].mjd,allfirsttime[i].mjd],[0,numpy.max(area_array[goodtimes[0]])],color='blue',linewidth=1,linestyle='dashed',alpha=0.25)
 	#overplot all the years on top of the plot
     for i in range(0,len(allyearstime)):
-        	plt.text( allyearstime[i].mjd, numpy.max(area_array[goodtimes[0]]), allyearsnames[i], horizontalalignment='center', verticalalignment='bottom')
+        plt.text( allyearstime[i].mjd, numpy.max(area_array[goodtimes[0]]), allyearsnames[i], horizontalalignment='center', verticalalignment='bottom')
     plt.xlabel("MJD [days] of Observation")
     plt.ylabel("Total Exposure Time x Area [x 10$^2$ hr m$^2$]")
     ax1.set_ylim((0,numpy.max(area_array[goodtimes[0]])))
     ax1.set_xlim((numpy.min(obstime_array[goodtimes[0]] - 2400000.5),numpy.max(obstime_array[goodtimes[0]] - 2400000.5)))
-	#plt.show()
+    #plt.show()
     plt.savefig('data_area_rate.pdf', format='pdf', bbox_inches='tight', dpi=600)
     plt.savefig('data_area_rate.png', format='png', bbox_inches='tight', dpi=600)
     plt.clf()
         
-	#exit()
+    #exit()
 
 	##############################################################################
 	#also count the number of 'reliable' entries in the photometry table
@@ -472,7 +474,7 @@ def exp_equ(device=''):
     print('...Connection established!')
     print('Retriving data from server...')
     with connection.cursor() as cursor:
-		# Get all stars within radius
+        # Get all stars within radius
         sql = "SELECT COUNT(*) FROM photometry WHERE flags<5 and calibrated_error > 0.0 and calibrated_error < 0.3 and calibrated_magnitude > 0.0 and calibrated_magnitude < 30.0"
         cursor.execute(sql, ())
         image = cursor.fetchall()
@@ -486,7 +488,7 @@ def exp_equ(device=''):
 
 #function to simply plot a lightcurve
 def make_plot_lightcurve(lightcurve_data,name='',err='',median='',dips='',filt_list='',symbols='',colours=''):
-	#make some default symbol and colour definitions based on the filter
+    #make some default symbol and colour definitions based on the filter
         #order of filters is Blue, Visual, Red, I-Band, H-alpha
     if err=='': err=0	#error bars on/off
     if median=='': median=0		#median filtered curve on/off
@@ -494,7 +496,7 @@ def make_plot_lightcurve(lightcurve_data,name='',err='',median='',dips='',filt_l
     if filt_list=='': filt_list=['B','V','R','I','HA']
     if symbols=='': symbols=['s','v','D','o','h']
     if colours=='': colours=['Blue','Green','Red','Black','Magenta']
-    if name=='': name=lightcurve_data['name'][0]
+    if name=='': name=lightcurve_data['name'][0].astype(str)
     filt_list=numpy.array(filt_list)
     print('starting lightcurve plot...')
     rectangle1 = [0.1,0.1, 0.8,0.8]
@@ -503,18 +505,18 @@ def make_plot_lightcurve(lightcurve_data,name='',err='',median='',dips='',filt_l
     maximum=0.0
     i=0
     for fil in filt_list:
-        check = numpy.where( (lightcurve_data['filter'] == fil) & (lightcurve_data['calibrated_magnitude'] >= 0) & (lightcurve_data['calibrated_magnitude'] <= 30) & (lightcurve_data['flags'] <= 4) & (lightcurve_data['calibrated_error'] > 0.0) & (lightcurve_data['calibrated_error'] < 0.3) )
+        check = numpy.where( (lightcurve_data['filter'].astype(str) == fil) & (lightcurve_data['calibrated_magnitude'] >= 0) & (lightcurve_data['calibrated_magnitude'] <= 30) & (lightcurve_data['flags'] <= 4) & (lightcurve_data['calibrated_error'] > 0.0) & (lightcurve_data['calibrated_error'] < 0.3) )
         if (len(check[0] > 0)):
             plt.scatter(lightcurve_data[check[0]]['date'] - 2400000.5, lightcurve_data[check[0]]['calibrated_magnitude'], s=10.,c=colours[i], marker=symbols[i], edgecolor='black', alpha=1.0, lw=0.2)
             if (median == 1):
                 plt.plot(lightcurve_data[check[0]]['date'] - 2400000.5, lightcurve_data[check[0]]['med_mag'], c=colours[i], marker=symbols[i], alpha=1.0, lw=0.2,linestyle='-', markersize=0)
             if (dips ==1):
-                check_dip = numpy.where( (lightcurve_data['dips'] == -1) & (lightcurve_data['filter'] == fil) & (lightcurve_data['calibrated_magnitude'] >= 0) & (lightcurve_data['calibrated_magnitude'] <= 30) & (lightcurve_data['flags'] <= 4) & (lightcurve_data['calibrated_error'] > 0.0) & (lightcurve_data['calibrated_error'] < 0.3) )
+                check_dip = numpy.where( (lightcurve_data['dips'] == -1) & (lightcurve_data['filter'].astype(str) == fil) & (lightcurve_data['calibrated_magnitude'] >= 0) & (lightcurve_data['calibrated_magnitude'] <= 30) & (lightcurve_data['flags'] <= 4) & (lightcurve_data['calibrated_error'] > 0.0) & (lightcurve_data['calibrated_error'] < 0.3) )
                 plt.scatter(lightcurve_data[check_dip[0]]['date'] - 2400000.5, lightcurve_data[check_dip[0]]['calibrated_magnitude'], s=20.,c=colours[i], marker=symbols[i], edgecolor='red', alpha=1.0, lw=1)
-                check_burst = numpy.where( (lightcurve_data['dips'] == 1) & (lightcurve_data['filter'] == fil) & (lightcurve_data['calibrated_magnitude'] >= 0) & (lightcurve_data['calibrated_magnitude'] <= 30) & (lightcurve_data['flags'] <= 4) & (lightcurve_data['calibrated_error'] > 0.0) & (lightcurve_data['calibrated_error'] < 0.3) )
+                check_burst = numpy.where( (lightcurve_data['dips'] == 1) & (lightcurve_data['filter'].astype(str) == fil) & (lightcurve_data['calibrated_magnitude'] >= 0) & (lightcurve_data['calibrated_magnitude'] <= 30) & (lightcurve_data['flags'] <= 4) & (lightcurve_data['calibrated_error'] > 0.0) & (lightcurve_data['calibrated_error'] < 0.3) )
                 plt.scatter(lightcurve_data[check_burst[0]]['date'] - 2400000.5, lightcurve_data[check_burst[0]]['calibrated_magnitude'], s=20.,c=colours[i], marker=symbols[i], edgecolor='green', alpha=1.0, lw=1)
             if (err == 1):
-				#plt.errorbar(lightcurve_data[check[0]]['date'], lightcurve_data[check[0]]['calibrated_magnitude'], yerr=lightcurve_data[check[0]]['calibrated_error'], c=colours[i], marker='', alpha=1.0, lw=0.2, linestyle='')
+                #plt.errorbar(lightcurve_data[check[0]]['date'], lightcurve_data[check[0]]['calibrated_magnitude'], yerr=lightcurve_data[check[0]]['calibrated_error'], c=colours[i], marker='', alpha=1.0, lw=0.2, linestyle='')
                 plt.errorbar(lightcurve_data[check[0]]['date'] - 2400000.5, lightcurve_data[check[0]]['calibrated_magnitude'], yerr=lightcurve_data[check[0]]['org_cal_err'], c=colours[i], marker='', alpha=1.0, lw=0.2, linestyle='')
             maximum2 = numpy.max(lightcurve_data[check[0]]['calibrated_magnitude'])
             minimum2 = numpy.min(lightcurve_data[check[0]]['calibrated_magnitude'])
@@ -524,8 +526,8 @@ def make_plot_lightcurve(lightcurve_data,name='',err='',median='',dips='',filt_l
     ax1.set_ylabel('Magnitudes')
     ax1.set_xlabel('Modified Julian Date')
     ax1.set_ylim((maximum+0.3,minimum-0.5))
-	#ax1.set_xlim((2458335.0,2458380.0))
-    plt.text( numpy.min(lightcurve_data['date'] - 2400000.5) , minimum-0.2 ,lightcurve_data[0]['name'], horizontalalignment='left',bbox=dict(boxstyle='round', facecolor='lightgray', alpha=0.5))
+    #ax1.set_xlim((2458335.0,2458380.0))
+    plt.text( numpy.min(lightcurve_data['date'] - 2400000.5) , minimum-0.2 ,lightcurve_data[0]['name'].astype(str), horizontalalignment='left',bbox=dict(boxstyle='round', facecolor='lightgray', alpha=0.5))
         #plt.text( 2458379.0 , minimum-0.2,lightcurve_data[0]['name'], horizontalalignment='right',bbox=dict(boxstyle='round', facecolor='lightgray', alpha=0.5))
 	#plt.show()
     plt.savefig('lightcurves/lightcurve_'+name+'.pdf', format='pdf', bbox_inches='tight', dpi=600)
@@ -535,7 +537,7 @@ def make_plot_lightcurve(lightcurve_data,name='',err='',median='',dips='',filt_l
 
 #function to simply plot a colour curve
 def make_plot_colourcurve(lightcurve,name='',m1='',m2='',err='',color='',size='',marker=''):
-	#make some default symbol and colour definitions based on the filter
+    #make some default symbol and colour definitions based on the filter
         #order of filters is Blue, Visual, Red, I-Band, H-alpha
     if err=='': err=0	#error bars on/off
     if m1=='': m1='V'	#default the first mag in the colour
@@ -543,7 +545,7 @@ def make_plot_colourcurve(lightcurve,name='',m1='',m2='',err='',color='',size=''
     if color=='': color='green'
     if size=='': size=5
     if marker=='': marker='o'
-    if name=='': name=lightcurve_data['name'][0]
+    if name=='': name=lightcurve['name'][0].astype(str)
     print('starting colourcurve plot...')
     rectangle1 = [0.1,0.1, 0.8,0.8]
     ax1 = plt.axes(rectangle1)
@@ -561,7 +563,7 @@ def make_plot_colourcurve(lightcurve,name='',m1='',m2='',err='',color='',size=''
     ax1.set_ylabel('Colour ('+m1+'-'+m2+') [mag]')
     ax1.set_xlabel('Julian Date')
     ax1.set_ylim((minimum-0.05,maximum+0.05))
-	#plt.show()
+    #plt.show()
     plt.savefig('lightcurves/colorcurve_'+name+'.pdf', format='pdf', bbox_inches='tight', dpi=600)
     plt.savefig('lightcurves/colorcurve_'+name+'.png', format='png', bbox_inches='tight', dpi=600)
     plt.clf()
@@ -569,7 +571,7 @@ def make_plot_colourcurve(lightcurve,name='',m1='',m2='',err='',color='',size=''
 
 #function to simply plot a colour magnitude curve
 def make_plot_cmd(lightcurve,name,m1='',c1='',c2='',err='',color='',size='',marker=''):
-	#make some default symbol and colour definitions based on the filter
+    #make some default symbol and colour definitions based on the filter
         #order of filters is Blue, Visual, Red, I-Band, H-alpha
     if err=='': err=0	#error bars on/off
     if m1=='': m1='V'	#default the mag
@@ -602,16 +604,16 @@ def make_plot_cmd(lightcurve,name,m1='',c1='',c2='',err='',color='',size='',mark
     ax1.set_ylabel('Magnitude ('+m1+') [mag]')
     ax1.set_ylim((maximumy+0.30,minimumy-0.30))
     ax1.set_xlim((minimumx-0.05,maximumx+0.05))
-	#plt.show()
+    #plt.show()
     plt.savefig('lightcurves/cmd_'+name+'.pdf', format='pdf', bbox_inches='tight', dpi=600)
     plt.savefig('lightcurves/cmd_'+name+'.png', format='png', bbox_inches='tight', dpi=600)
     plt.clf()
 
 
 def dip_detection_probability(sourcename,plot=''):
-	#sort out the defaults
+    #sort out the defaults
     if (plot==''): plot = 0		#do not make the plot as default
-	#read in a particular lightcurve
+    #read in a particular lightcurve
     lightcurve1=numpy.load('lc_data/'+sourcename)
     color=['green','red','black']
     filt = ['V','R','I']
@@ -620,35 +622,34 @@ def dip_detection_probability(sourcename,plot=''):
     if (plot==1):
         rectangle1 = [0.1,0.1, 0.8,0.8]
         ax1 = plt.axes(rectangle1)
-	#make an array of durations in days
+    #make an array of durations in days
     durations = numpy.arange(0,100,1) #[1,2,4,8,16,32]
-	#then make a probability array of same length
+    #then make a probability array of same length
     prob_array=numpy.zeros((len(filt),len(durations)))
 	
-	#loop over al three filters
+    #loop over al three filters
     for f in range(0,len(filt)):
 	
 		#get the I-band data - to test the procedure
-        lightcurve=lightcurve1[numpy.where(lightcurve1['filter']==filt[f])]
+        lightcurve=lightcurve1[numpy.where(lightcurve1['filter'].astype(str)==filt[f])]
         if (len(lightcurve) > 10):
-	        
-			#make a time array that is as long as the lightcurve but with much smaller, and equal sized steps
+            #make a time array that is as long as the lightcurve but with much smaller, and equal sized steps
             time_array = numpy.arange(numpy.min(lightcurve['date']),numpy.max(lightcurve['date']),)
             obs_dates=lightcurve['date']
 		
-			#now loop over the durations
+            #now loop over the durations
             for i in range(0,len(durations)):
                 dur=durations[i]
-			        #make a cover array
+                #make a cover array
                 cover_array = numpy.zeros(len(time_array))
-			        #find all the times in time_array where the date points are more than 0.5 away from an actual datapoint and ID them in cover array
+                #find all the times in time_array where the date points are more than 0.5 away from an actual datapoint and ID them in cover array
                 for j in range(0,len(obs_dates)):
                     check=numpy.where( numpy.abs(time_array - obs_dates[j]) < dur/2. )
-			                #print(check[0])
+                    #print(check[0])
                     cover_array[check[0]]=1
-				#find al the remaining zeros in cover_array (thats the bits where the dip can 'hide')
+                #find al the remaining zeros in cover_array (thats the bits where the dip can 'hide')
                 check=numpy.where(cover_array==0)
-			        #fill in probability array
+                #fill in probability array
                 prob_array[f,i]=100.0*(1.0-float(len(check[0]))/float(len(time_array)))
 	
         if (plot==1):
@@ -660,7 +661,7 @@ def dip_detection_probability(sourcename,plot=''):
         ax1.set_xlim((0,numpy.max(durations)))
         ax1.set_ylim((0,100))
         plt.text( numpy.max(durations)*0.98 , 4 ,'Target: '+sourcename+'\nRegion: '+str(lightcurve1['target'][0]), horizontalalignment='right',bbox=dict(boxstyle='round', facecolor='lightgray', alpha=0.5))
-		#plt.show()
+        #plt.show()
         plt.savefig('dip_detection_prob.pdf', format='pdf', bbox_inches='tight', dpi=600)
         plt.savefig('dip_detection_prob.png', format='png', bbox_inches='tight', dpi=600)
         plt.clf()
@@ -672,17 +673,17 @@ def dip_detection_probability(sourcename,plot=''):
 #function, but for all filters to allow the colours to be determined and the 
 #default filter size is only one day.
 def medmag_time(lightcurve,filt_list='',filt_time=''):
-	#sort out the defaults
+    #sort out the defaults
     if filt_time=='': filt_time=[1,1,1,1,1,1]
     if filt_list=='': filt_list=['U','B','V','R','I','HA']
-	#loop over all datapoints
+    #loop over all datapoints
     for i in range(0,len(lightcurve)):
-		#loop over all the filters
+        #loop over all the filters
         for f in range(0,len(filt_list)):
-                	#find all the datapoints in the filter on the same day/in relevant time range
-                    check = numpy.where( (lightcurve['filter'] == filt_list[f]) &  (numpy.abs(lightcurve[i]['date'] - lightcurve['date']) < filt_time[f]) & (lightcurve['calibrated_magnitude'] >= 0) & (lightcurve['calibrated_magnitude'] <= 30) & (lightcurve['flags'] <= 4) & (lightcurve['calibrated_error'] > 0.0) & (lightcurve['calibrated_error'] < 0.3) )
+            #find all the datapoints in the filter on the same day/in relevant time range
+            # check = numpy.where( (lightcurve['filter'].astrpe(str) == filt_list[f]) &  (numpy.abs(lightcurve[i]['date'] - lightcurve['date']) < filt_time[f]) & (lightcurve['calibrated_magnitude'] >= 0) & (lightcurve['calibrated_magnitude'] <= 30) & (lightcurve['flags'] <= 4) & (lightcurve['calibrated_error'] > 0.0) & (lightcurve['calibrated_error'] < 0.3) )
                     if len(check[0] > 0):
-                        	#and determine the median value
+                            #and determine the median value
                             lightcurve[i][filt_list[f]] = numpy.median(lightcurve[check[0]]['calibrated_magnitude'])
                                 #and determine the uncertainties
                             lightcurve[i][filt_list[f]+'e'] = numpy.sqrt(numpy.sum(numpy.square(lightcurve[check[0]]['calibrated_error']))/len(check[0]))
@@ -691,21 +692,21 @@ def medmag_time(lightcurve,filt_list='',filt_time=''):
 
 #function that median filters lightcurves over a given time interval
 def medfilter_time_org(lightcurve,filt_list='',filt_time=''):
-	#sort out the defaults
+    #sort out the defaults
     if filt_list=='': filt_list=['U','B','V','R','I','HA']
     if filt_time=='': filt_time=[150,150,150,150,150,300]
         #loop over all the filters
     counter = 0
     for j in range(0,len(filt_list)):
-		#extract only the single filter
+        #extract only the single filter
         single_lightcurve = extract_filter(lightcurve,filt_list[j])
         if (len(single_lightcurve) > 0):
-        		#loop over all the datapoints
+                #loop over all the datapoints
                 for i in range(0,len(single_lightcurve)):
                     check = numpy.where( (numpy.abs(single_lightcurve[i]['date'] - single_lightcurve['date'])  < filt_time[j])   & (single_lightcurve['calibrated_magnitude'] >= 0) & (single_lightcurve['calibrated_magnitude'] <= 30) & (single_lightcurve['flags'] <= 4) & (single_lightcurve['calibrated_error'] > 0.0) & (single_lightcurve['calibrated_error'] < 0.3) )
                     if len(check[0] > 0):
                         single_lightcurve[i]['med_mag'] = numpy.median(single_lightcurve[check[0]]['calibrated_magnitude'])
-			#merge the individual filtered lightcurves back together
+            #merge the individual filtered lightcurves back together
                 if (counter == 0):
                     end_lightcurve = single_lightcurve
                 if (counter > 0):
@@ -718,15 +719,15 @@ def medfilter_time_org(lightcurve,filt_list='',filt_time=''):
         return(lightcurve)
 
 def medfilter_time(lightcurve,filt_list='',filt_time=''):
-	#sort out the defaults
+    #sort out the defaults
     if filt_list=='': filt_list=['U','B','V','R','I','HA']
     if filt_time=='': filt_time=[150,150,150,150,150,300]
     #loop over all the filters
     counter = 0
     for j in range(0,len(filt_list)):
-		#extract only the single filter
+        #extract only the single filter
         single_lightcurve = extract_filter(lightcurve,filt_list[j])
-        #make a homogeneously sampled 'median' array for the time
+#make a homogeneously sampled 'median' array for the time
         med_time_array = numpy.arange(numpy.min(single_lightcurve['date']),numpy.max(single_lightcurve['date']),1)
         #and an corresponding one for the magnitudes
         med_mag_array = numpy.array(med_time_array*0.0)
@@ -741,13 +742,13 @@ def medfilter_time(lightcurve,filt_list='',filt_time=''):
                 check = numpy.where( numpy.abs(med_time_array[i] -  med_time_array) < filt_time[j])
                 med_mag_array_filtered[i] = numpy.nanmedian(med_mag_array[check[0]])
         if (len(single_lightcurve) > 0):
-        		#loop over all the datapoints and fill in the nearest filtered magnitude
+                #loop over all the datapoints and fill in the nearest filtered magnitude
                 for i in range(0,len(single_lightcurve)):
 				#determine time differences to all med_time_array dates
-                                diff = numpy.abs(single_lightcurve[i]['date']-med_time_array)
-                                sort = numpy.argsort(diff)
-                                single_lightcurve[i]['med_mag'] = med_mag_array_filtered[sort[0]]
-			#merge the individual filtered lightcurves back together
+                    diff = numpy.abs(single_lightcurve[i]['date']-med_time_array)
+                    sort = numpy.argsort(diff)
+                    single_lightcurve[i]['med_mag'] = med_mag_array_filtered[sort[0]]
+            #merge the individual filtered lightcurves back together
                 if (counter == 0):
                     end_lightcurve = single_lightcurve
                 if (counter > 0):
@@ -762,32 +763,32 @@ def medfilter_time(lightcurve,filt_list='',filt_time=''):
 #function that identifies dips and outbursts for a lightcurve
 #the 'dip' parameter in the datastructure is set to -1 if the curve is in a dip, +1 if it is in an outburst and 0 otherwise
 def find_dips_org(lightcurve,filt_list='',filt_time='',sigma='',maxit=''):
-	#start by sorting out the defaults
+    #start by sorting out the defaults
     if filt_list=='': filt_list=['U','B','V','R','I','HA']
     if filt_time=='': filt_time=[150,150,150,150,150,300]
     if sigma=='': sigma=3.0
     if maxit=='': maxit=10
         #reset all the 'dips' values to zero in case they have been processed before
     lightcurve['dips'] = 0.0
-	#extract and median filter only the single filter
+    #extract and median filter only the single filter
     median_lightcurve = medfilter_time(lightcurve,filt_list,filt_time)
         #loop over all the filters
     counter=0
     for i in range(0,len(filt_list)):
-		#extract and median filter only the single filter
+        #extract and median filter only the single filter
         single_lightcurve = extract_filter(median_lightcurve,filt_list[i])
-                #only proceed if there are more than 10 datapoints in the lightcurve
+            #only proceed if there are more than 10 datapoints in the lightcurve
         if (len(single_lightcurve) > 10):
                         #make a copy of the single filter lightcurve
                         medrem_lc = numpy.array(single_lightcurve)
                         #remove the median from the lightcurve
                         medrem_lc['calibrated_magnitude']=medrem_lc['calibrated_magnitude']-medrem_lc['med_mag']
-			#now iteratively remove 'sigma' sigma outliers above and below the median subtracted lightcurve
+            #now iteratively remove 'sigma' sigma outliers above and below the median subtracted lightcurve
                         #until either no further points are removed or NN iterations have been done
                         iteration=0
                         new_dips=1000
                         while( (iteration<=maxit) and (new_dips!=0)):
-				#identify the datapoints which are not in dips or outbursts
+                #identify the datapoints which are not in dips or outbursts
                                 check = numpy.where( (medrem_lc['dips']==0))
                                 #determine how many points are in dips+bursts
                                 num_dips = len(medrem_lc)-len(check[0])
@@ -802,7 +803,7 @@ def find_dips_org(lightcurve,filt_list='',filt_time='',sigma='',maxit=''):
                                 medrem_lc['dips'][check_burst[0]] = +1.0
                                 #determine how many new dips+burst have been identified
                                 new_dips=len(check_dip[0])+len(check_burst[0])-num_dips
-				#count up the iteration count
+                #count up the iteration count
                                 iteration=iteration+1
                         print('Found dips in ',filt_list[i],' after ',iteration,' iterations')
                         #write the dip variable back into the original non-altered lightcurve
@@ -814,7 +815,7 @@ def find_dips_org(lightcurve,filt_list='',filt_time='',sigma='',maxit=''):
                             end_lightcurve = numpy.concatenate((end_lightcurve,single_lightcurve))
                         counter = counter+1
                         
-	#if there are no dips/bursts fount then nothing has changed, hence
+    #if there are no dips/bursts fount then nothing has changed, hence
     if (counter == 0):
         end_lightcurve = lightcurve
         end_lightcurve = sort_time(end_lightcurve)
@@ -824,7 +825,7 @@ def find_dips_org(lightcurve,filt_list='',filt_time='',sigma='',maxit=''):
     return(end_lightcurve)
 
 def find_dips(lightcurve,filt_list='',filt_time='',sigma='',maxit=''):
-	#start by sorting out the defaults
+    #start by sorting out the defaults
     if filt_list=='': filt_list=['U','B','V','R','I','HA']
     if filt_time=='': filt_time=[150,150,150,150,150,300]
     if sigma=='': sigma=3.0
@@ -834,11 +835,11 @@ def find_dips(lightcurve,filt_list='',filt_time='',sigma='',maxit=''):
         #loop over all the filters
     counter=0
     for i in range(0,len(filt_list)):
-		#extract and median filter only the single filter
+        #extract and median filter only the single filter
         single_lightcurve = extract_filter(lightcurve,[filt_list[i]])
-                #only proceed if there are more than 10 datapoints in the lightcurve
+        #only proceed if there are more than 10 datapoints in the lightcurve
         if (len(single_lightcurve) > 10):
-			#now iteratively remove 'sigma' sigma outliers above and below the median subtracted lightcurve
+            #now iteratively remove 'sigma' sigma outliers above and below the median subtracted lightcurve
                         #until either no further points are removed or NN iterations have been done
                         iteration=0
                         new_dips=1000
@@ -976,7 +977,7 @@ def determine_dip_properties(lightcurve,filt_list=''):
 	                #get all the datapoints for this particular dip/burst
                         check_dip = numpy.where(end_lightcurve['dips_num'] == i+1)
 	        	#fill in the name of the source
-                        dip_array['name'][i]=end_lightcurve[check_dip[0][0]]['name']
+                        dip_array['name'][i]=end_lightcurve[check_dip[0][0]]['name'].astype(str)
 	        	#fill in the name of the target
                         dip_array['target'][i]=end_lightcurve[check_dip[0][0]]['target']
 	                #fill in the dip filter
@@ -1006,7 +1007,7 @@ def determine_dip_properties(lightcurve,filt_list=''):
                         dip_array['max_duration'][i] = max_jd-min_jd
                         dip_array['jd_mid_max_duration'][i] = (max_jd+min_jd)/2.0
 	
-		#print out the dip properties to the screen 
+        #print out the dip properties to the screen
                 #print('Original Dip Array')
                 #print(dip_array)
             dip_array=extract_real_dips(dip_array,len_dip=1)
@@ -1026,19 +1027,19 @@ def determine_dip_properties(lightcurve,filt_list=''):
                         end_lightcurve['dips_num'][check_overwrite[0]]=0
                         end_lightcurve['dips'][check_overwrite[0]]=0
 
-        print('There are ',len(dip_array[numpy.where((dip_array['dip_burst'] == -1) & (dip_array['filter']=='V'))]),' real Dips in V.')
-        print('There are ',len(dip_array[numpy.where((dip_array['dip_burst'] == -1) & (dip_array['filter']=='R'))]),' real Dips in R.')
-        print('There are ',len(dip_array[numpy.where((dip_array['dip_burst'] == -1) & (dip_array['filter']=='I'))]),' real Dips in I.')
-        print('There are ',len(dip_array[numpy.where((dip_array['dip_burst'] == +1) & (dip_array['filter']=='V'))]),' real Bursts in V.')
-        print('There are ',len(dip_array[numpy.where((dip_array['dip_burst'] == +1) & (dip_array['filter']=='R'))]),' real Bursts in R.')
-        print('There are ',len(dip_array[numpy.where((dip_array['dip_burst'] == +1) & (dip_array['filter']=='I'))]),' real Bursts in I.')
+        print('There are ',len(dip_array[numpy.where((dip_array['dip_burst'] == -1) & (dip_array['filter'].astype(str)=='V'))]),' real Dips in V.')
+        print('There are ',len(dip_array[numpy.where((dip_array['dip_burst'] == -1) & (dip_array['filter'].astype(str)=='R'))]),' real Dips in R.')
+        print('There are ',len(dip_array[numpy.where((dip_array['dip_burst'] == -1) & (dip_array['filter'].astype(str)=='I'))]),' real Dips in I.')
+        print('There are ',len(dip_array[numpy.where((dip_array['dip_burst'] == +1) & (dip_array['filter'].astype(str)=='V'))]),' real Bursts in V.')
+        print('There are ',len(dip_array[numpy.where((dip_array['dip_burst'] == +1) & (dip_array['filter'].astype(str)=='R'))]),' real Bursts in R.')
+        print('There are ',len(dip_array[numpy.where((dip_array['dip_burst'] == +1) & (dip_array['filter'].astype(str)=='I'))]),' real Bursts in I.')
         return(end_lightcurve, dip_array)
     return(lightcurve,0)
 
 #have a function that returns only dips cosidered to be 'real' i.e. longer than a given time or having a counterpart dip/burst at different filter
 #within a day +- duration of the dip
 def extract_real_dips(dips,len_dip=''):
-	#sort out the defaults
+    #sort out the defaults
     if (len_dip==''): lendip=1
         #check which dip is real in the list and remove all the other ones
         #make arrary of length dips
@@ -1050,7 +1051,7 @@ def extract_real_dips(dips,len_dip=''):
     check=numpy.where(dips['num_points'] <= len_dip)
         #loop over all those dips
     for i in range(0,len(check[0])):
-        	#get the dip number for ID reasons
+        #get the dip number for ID reasons
             num=dips[check[0][i]]['number']
                 #extract all other dips in the other filters which are also a dip/burst and within one day
             check2=numpy.where( (dips['filter'] != dips[num-1]['filter']) & (dips['dip_burst'] == dips[num-1]['dip_burst']) & ( numpy.abs(dips[num-1]['jd_mid_min_duration']-dips['jd_mid_min_duration']) < 1.0+dips[num-1]['min_duration'] ) )
@@ -1058,7 +1059,7 @@ def extract_real_dips(dips,len_dip=''):
             if (len(check2[0])>0):
                         #label the dip as real
                     real[num-1]=1
-	#now remove all the entries in dips which are not real
+    #now remove all the entries in dips which are not real
     check=numpy.where(real==1)
     if (len(check[0]) > 0):
         dips=dips[check[0]]
@@ -1082,7 +1083,10 @@ def extract_data(lightcurve,prop_name='',id_list='',invert=''):
     if prop_name=='': prop_name='user_id' #defaulted to work on user_id
     if id_list=='': id_list=[7] #defaulted to only extract user 7
     if invert=='': invert=0 #0 being true, 1 being false, i.e. extract turns into remove
-    return(lightcurve[numpy.isin(lightcurve[prop_name],id_list,invert=invert)])
+    if type(lightcurve[prop_name][0]) is numpy.bytes_:
+        return(lightcurve[numpy.isin(lightcurve[prop_name].astype(str),id_list,invert=invert)])
+    else:
+        return (lightcurve[numpy.isin(lightcurve[prop_name], id_list, invert=invert)])
 
 
 ###########################################
@@ -1091,12 +1095,12 @@ def extract_data(lightcurve,prop_name='',id_list='',invert=''):
 #now fit a sin-function with the period to the lightcurve
 def fitfunc_sin(time, p0, p1, p2, p3):
     z = p0 + p1 * numpy.sin( p2 + 2.0*math.pi*time/p3 )
-        #alternatively we know that sin(a+b)=sin(a)cos(b)+cos(a)sin(b)
+        #alternatively we know that sin(a+model)=sin(a)cos(model)+cos(a)sin(model)
         #hence maybe use this to do the fit as might help with removing issues with initial guess for phase
         #actually seems to work even less well than the straight fit!
         #a=p2
-        #b=2.0*math.pi*time/p3
-        #z = p0 + p1*numpy.sin(a)*numpy.cos(b) + p1*numpy.cos(a)*numpy.sin(b)
+        #model=2.0*math.pi*time/p3
+        #z = p0 + p1*numpy.sin(a)*numpy.cos(model) + p1*numpy.cos(a)*numpy.sin(model)
     return z
 
 def fitfunc_sinother(time, p):
@@ -1150,16 +1154,17 @@ def periodogram(lightcurve_in, filt_list="", col_list="", name="",retparam="",fi
     for i in range(0,len(filt_list)):
         filt = filt_list[i]
         if (talk == 1):
-        	print('working on filter ',filt)
+            print('working on filter ',filt)
         col = col_list[i]
         lightcurve = extract_data(lightcurve_in,prop_name='filter',id_list=filt,invert='')
-
+    print(lightcurve)
+    # TODO Check if the length of lightcurve is equal to zero, if is, pass
     f = numpy.linspace(0.01, 10, 1000000) #checks 10 to 100 days
-	#f = numpy.linspace(0.01, 100, 1000000) #checks 0.01 to 100 days
+    #f = numpy.linspace(0.01, 100, 1000000) #checks 0.01 to 100 days
     lightcurve=sort_time(lightcurve)
-	#pgram = signal.lombscargle(time, mag, f)
+    #pgram = signal.lombscargle(time, mag, f)
     pgram = LombScargle(lightcurve['date'], lightcurve['calibrated_magnitude']).power(f)
-	#f,pgram = LombScargle(lightcurve['date'], lightcurve['calibrated_magnitude']).autopower()
+    #f,pgram = LombScargle(lightcurve['date'], lightcurve['calibrated_magnitude']).autopower()
 	
 	#find the maximum in periodogram at periods above minperiod
     maxper = numpy.argmax(pgram[numpy.where( 1.0/f > minperiod)])
@@ -1184,7 +1189,7 @@ def periodogram(lightcurve_in, filt_list="", col_list="", name="",retparam="",fi
         #period = period/(1.0/2.42)
     if (talk == 1):
         print("period: ", period)
-	#print("time zero: ", numpy.min(lightcurve['date']))
+    #print("time zero: ", numpy.min(lightcurve['date']))
 
 	#plot the periodogram
     plt.clf()
@@ -1194,17 +1199,17 @@ def periodogram(lightcurve_in, filt_list="", col_list="", name="",retparam="",fi
     ax = plt.axes(rectangle)
     plt.plot(1/f, pgram, 'k-', label='  P='+numpy.str(period)[:10]+'days')
     plt.xlim(0,2.0*period)
-	#plt.xlim(0,6.0)
+    #plt.xlim(0,6.0)
     plt.xlabel('Time [d]')
     plt.ylabel('frequency')
     plt.legend(loc='upper center', handletextpad=0.01)
 	
-	#plot the lightcurve
+    #plot the lightcurve
     rectangle = [0.55,0.55,0.35,0.35]
     ax = plt.axes(rectangle)
     plt.plot(lightcurve['date']-2400000.5, lightcurve['calibrated_magnitude'], color='0.7', marker='.', linestyle='solid', markersize=0.1)
     plt.plot(lightcurve['date']-2400000.5, lightcurve['calibrated_magnitude'], color=col,  marker='o', linestyle='none', markersize=1)
-	#plt.ylim(numpy.max(lightcurve['calibrated_magnitude']) + 0.05,numpy.min(lightcurve['calibrated_magnitude'])-0.05)
+    #plt.ylim(numpy.max(lightcurve['calibrated_magnitude']) + 0.05,numpy.min(lightcurve['calibrated_magnitude'])-0.05)
     plt.ylim(numpy.median(lightcurve['calibrated_magnitude'])+5.0*numpy.std(lightcurve['calibrated_magnitude']),numpy.median(lightcurve['calibrated_magnitude'])-5.0*numpy.std(lightcurve['calibrated_magnitude']))
     pyplot.locator_params(axis='x', nbins=4)
     pyplot.locator_params(axis='y', nbins=5)
@@ -1252,14 +1257,14 @@ def periodogram(lightcurve_in, filt_list="", col_list="", name="",retparam="",fi
                 numiter = 11
                 param_tries = numpy.zeros((4,numiter),dtype=float)
                 for j in range(0,numiter):
-                	#set the initial guess for the phase
+                    #set the initial guess for the phase
                     parameters[2] = numpy.float(j) / numiter * 2.0 * math.pi
                         #then run the fit fith that
                     param_cal_res, success = curve_fit(fitfunc_sin, lightcurve['date'][check[0]], mag[check[0]], sigma=magerr[check[0]], p0=parameters,maxfev=100000000)
-	                #set the amplitude to positive if negative
+                    #set the amplitude to positive if negative
                     if (param_cal_res[1] < 0):
                         param_cal_res[1] = -param_cal_res[1]
-		                #and hence the phase needs adding pi and renorming to 2pi max
+                        #and hence the phase needs adding pi and renorming to 2pi max
                         if (talk == 1):
                             print(param_cal_res[2])
                         param_cal_res[2] = numpy.mod((param_cal_res[2] + math.pi), 2.0*math.pi)
@@ -1268,14 +1273,14 @@ def periodogram(lightcurve_in, filt_list="", col_list="", name="",retparam="",fi
                         #store all the results
                         for k in range(0,4):
                                 param_tries[k,j] = param_cal_res[k]
-		#determine the median parameters
+        #determine the median parameters
                 #print(param_tries)
                 param_cal = numpy.zeros((4),dtype=float)
                 rms_array = numpy.zeros((numiter),dtype=float)
                 ###############################
                 #select only the top ?? of the fits in terms of rms
                 for j in range(0,numiter):
-	                rms_array[j] = numpy.std( mag[check[0]] -  fitfunc_sin(lightcurve['date'][check[0]],param_tries[0,j],param_tries[1,j],param_tries[2,j],param_tries[3,j]))
+                    rms_array[j] = numpy.std( mag[check[0]] -  fitfunc_sin(lightcurve['date'][check[0]],param_tries[0,j],param_tries[1,j],param_tries[2,j],param_tries[3,j]))
                 ####################################################
                 #as the best parameters pick the median of all the values
                 #median all the offset, amplitudes and periods 
@@ -1292,7 +1297,7 @@ def periodogram(lightcurve_in, filt_list="", col_list="", name="",retparam="",fi
                 #alternatively pick the fit with the lowest rms instead of the median
                 sorted = numpy.argsort(rms_array)
                 for k in (0,1,2,3):
-                	param_cal[k] = param_tries[k,sorted[0]]
+                    param_cal[k] = param_tries[k,sorted[0]]
                 #print('Final parameters: ',param_cal)
                 #determine the rms of the best fit
                 rms = numpy.std( lightcurve['calibrated_magnitude'][check[0]] - fitfunc_sin(lightcurve['date'][check[0]],param_cal[0],param_cal[1],param_cal[2],param_cal[3]))
@@ -1302,12 +1307,12 @@ def periodogram(lightcurve_in, filt_list="", col_list="", name="",retparam="",fi
                 check = numpy.where( numpy.abs(lightcurve['calibrated_magnitude'] - fitfunc_sin(lightcurve['date'],param_cal[0],param_cal[1],param_cal[2],param_cal[3])) <= clip_sig * rms) 
                 new_num = len(check[0])
                 if (new_num == old_num):	#check if additional points have been removed
-                	exit = 1
+                    exit = 1
                 old_num = new_num
                 parameters = param_cal #use output as new initial guess for next fit
                 iteration = iteration + 1
 
-	#print('fitted phase: ',param_cal[2])
+    #print('fitted phase: ',param_cal[2])
 	#print('%%%%%%%%%%%%%%%%%%%%%%%%%')
 	#print('difference in phase: ',numpy.mod(numpy.abs(initial_phase - param_cal[2]),2.0*math.pi)*180.0/math.pi,'deg')
 	#print('ratio of amplitudes: ',initial_amplitude / numpy.sqrt(param_linear[1]*param_linear[1]+param_linear[2]*param_linear[2]))
@@ -1328,13 +1333,13 @@ def periodogram(lightcurve_in, filt_list="", col_list="", name="",retparam="",fi
         
     phase = numpy.array(lightcurve['date']) * 0.0
     for i in range(0,len(lightcurve['date'])):
-		#phase[i] = (lightcurve['date'][i] - numpy.min(lightcurve['date']))/period - numpy.floor((lightcurve['date'][i] - numpy.min(lightcurve['date']))/period) #+ ps
+        #phase[i] = (lightcurve['date'][i] - numpy.min(lightcurve['date']))/period - numpy.floor((lightcurve['date'][i] - numpy.min(lightcurve['date']))/period) #+ ps
         phase[i] = numpy.mod( param_cal[2] + 2.0*math.pi*lightcurve['date'][i]/period, 2.0*math.pi) / (2.0*math.pi) #+ ps
         if (phase[i] >= 1):
             phase[i] = phase[i]-1.
         if (phase[i] <= 0):
             phase[i] = phase[i]+1.
-	#determine phase at test date
+    #determine phase at test date
     testdate=2458630.0
         #try new version of test date
         #testdate=0.5 * (numpy.max(lightcurve['date']) + numpy.min(lightcurve['date']))
@@ -1351,7 +1356,7 @@ def periodogram(lightcurve_in, filt_list="", col_list="", name="",retparam="",fi
     ps = phase[check0[0][0]] #the [0][0] makes sure it works even if there is more than one entry in the check list
     phase = phase + ps #phase shift for plot - to move maximum to phase=0,1
 
-	#plot the folded light curve
+    #plot the folded light curve
     rectangle = [0.1,0.1,0.8,0.35]
     ax = plt.axes(rectangle)
     plt.plot(phase[check[0]]-1, lightcurve['calibrated_magnitude'][check[0]], color=col,  marker='o', linestyle='none', markersize=1)
@@ -1367,7 +1372,7 @@ def periodogram(lightcurve_in, filt_list="", col_list="", name="",retparam="",fi
 
     plt.savefig(name+'_'+filt+'.pdf', format='pdf', bbox_inches='tight', dpi=600)
     plt.savefig(name+'_'+filt+'.png', format='png', bbox_inches='tight', dpi=600)
-	#plt.show()
+    #plt.show()
         
         #for testing - subtract the fit from the data, in case 2nd periodogram analysis is needed for 2nd frequency
         #lightcurve['calibrated_magnitude'] = lightcurve['calibrated_magnitude'] - fitfunc_sin2(param_cal,lightcurve['date']) + numpy.nanmedian(lightcurve['calibrated_magnitude'])
@@ -1398,98 +1403,100 @@ def probplot(lc, filt_list=""):
 
     for filt in filt_list:
         lc_temp = extract_data(lc,prop_name='filter',id_list=filt,invert='')
+        if len(lc_temp) > 0:
+            mag = lc_temp["calibrated_magnitude"]
+            error = lc_temp["calibrated_error"]
+            time = lc_temp["date"]
 
-        mag = lc_temp["calibrated_magnitude"]
-        error = lc_temp["calibrated_error"]
-        time = lc_temp["date"]
+            sort_t = numpy.argsort(time)
+            time = time[sort_t]
+            mag = mag[sort_t]
+            error = error[sort_t]
 
-        sort_t = numpy.argsort(time)
-        time = time[sort_t]
-        mag = mag[sort_t]
-        error = error[sort_t]
+            print("Length of mag array is:", len(mag))
 
-        print("Length of mag array is:", len(mag))
+            counter = 0
+            N = len(mag)
+            size = int((N * (N - 1)) / 2)
 
-        counter = 0
-        N = len(mag)
-        size = int((N * (N - 1)) / 2)
+            deltamag = numpy.zeros(size)
+            deltatime = numpy.zeros(size)
+            deltaerror = numpy.zeros(size)
 
-        deltamag = numpy.zeros(size)
-        deltatime = numpy.zeros(size)
-        deltaerror = numpy.zeros(size)
+            for i in range(0, N - 1):
+                for j in range(i + 1, len(mag)):
+                    deltamag[counter] = mag[j] - mag[i]
+                    deltatime[counter] = time[j] - time[i]
+                    deltaerror[counter] = numpy.sqrt((error[j])**2 + (error[i])**2)
+                    counter += 1
 
-        for i in range(0, N - 1):
-            for j in range(i + 1, len(mag)):
-                deltamag[counter] = mag[j] - mag[i]
-                deltatime[counter] = time[j] - time[i]
-                deltaerror[counter] = numpy.sqrt((error[j])**2 + (error[i])**2)
-                counter += 1
+            # Plots graphs of the change in magnitude vs change in time for each filter
+            plt.plot(deltatime, deltamag, linestyle="none", marker=".", markersize=2)
+            plt.xscale("log")
+            plt.xlabel("$\Delta t$ (days)")
+            plt.ylabel("$\Delta m_{}$ (mag)".format(filt))
+            plt.suptitle("Change in {} magnitude vs time of {}".format(filt, lc_temp["name"][0]))
+            plt.gca().invert_yaxis()
+            #plt.show()
+            # plt.savefig(os.getcwd() + "/corrections/images/magvtime_{}_{}.png".format(lc_temp["name"][0], filt), format="pdf", bbox_inches="tight", dpi=600)
+            plt.clf()
 
-        # Plots graphs of the change in magnitude vs change in time for each filter
-        plt.plot(deltatime, deltamag, linestyle="none", marker=".", markersize=2)
-        plt.xscale("log")
-        plt.xlabel("$\Delta t$ (days)")
-        plt.ylabel("$\Delta m_{}$ (mag)".format(filt))
-        plt.suptitle("Change in {} magnitude vs time of {}".format(filt, lc_temp["name"][0]))
-        plt.gca().invert_yaxis()
-        #plt.show()
-        # plt.savefig(os.getcwd() + "/corrections/images/magvtime_{}_{}.png".format(lc_temp["name"][0], filt), format="pdf", bbox_inches="tight", dpi=600)
-        plt.clf()
+            x_min = -1
+            x_max = math.log10(numpy.max(time) - numpy.min(time))
+            x_bin_num = 40  # 100  # 40
+            #xbins = numpy.arange(x_min, x_max, float(abs(x_min) + abs(x_max)) / x_bin_num)
+            xbins = numpy.linspace(x_min, x_max, x_bin_num)
 
-        x_min = -1
-        x_max = math.log10(numpy.max(time) - numpy.min(time))
-        x_bin_num = 40  # 100  # 40
-        #xbins = numpy.arange(x_min, x_max, float(abs(x_min) + abs(x_max)) / x_bin_num)
-        xbins = numpy.linspace(x_min, x_max, x_bin_num)
+            y_min = -1
+            y_max = 1
+            y_bin_num = 40
+            #ybins = numpy.arange(y_min, y_max, float(abs(y_min) + abs(y_max)) / y_bin_num)
+            ybins = numpy.linspace(y_min, y_max, y_bin_num)
 
-        y_min = -1
-        y_max = 1
-        y_bin_num = 40
-        #ybins = numpy.arange(y_min, y_max, float(abs(y_min) + abs(y_max)) / y_bin_num)
-        ybins = numpy.linspace(y_min, y_max, y_bin_num)
+            # Creating histogram from filtered data.
+            timeerror = numpy.where((deltatime > 0) & (deltaerror < .3))
+            H, xedges, yedges = numpy.histogram2d(numpy.log10(deltatime[timeerror[0]]), deltamag[timeerror[0]], bins=(xbins, ybins))
 
-        # Creating histogram from filtered data.
-        timeerror = numpy.where((deltatime > 0) & (deltaerror < .3))
-        H, xedges, yedges = numpy.histogram2d(numpy.log10(deltatime[timeerror[0]]), deltamag[timeerror[0]], bins=(xbins, ybins))
+            # Normalising each column to 1.
+            Hist_norm = numpy.zeros(H.shape)
+            for c1, i in enumerate(H):
+                for c2, j in enumerate(i):
+                    if numpy.sum(i):
+                        Hist_norm[c1][c2] = j / numpy.sum(i)
+                    else:
+                        Hist_norm[c1][c2] = 0  # numpy.nan
 
-        # Normalising each column to 1.
-        Hist_norm = numpy.zeros(H.shape)
-        for c1, i in enumerate(H):
-            for c2, j in enumerate(i):
-                if numpy.sum(i):
-                    Hist_norm[c1][c2] = j / numpy.sum(i)
-                else:
-                    Hist_norm[c1][c2] = 0  # numpy.nan
+            # Plotting colour diagram for normalised histogram
+            plt.pcolor(xedges, yedges, Hist_norm.T, cmap=plt.cm.viridis)
+            plt.colorbar()
+            plt.xlabel("$\Delta t$ $(log_{10}(days))$")
+            plt.ylabel("$\Delta m_{}$ (mag)".format(filt))
+            plt.suptitle("Intensity map showing change in {} magnitude vs time of {}".format(filt, lc_temp["name"][0]))
+            plt.gca().invert_yaxis()
+            plt.clim(0, .5)
+            # plt.savefig(os.getcwd() + "/corrections/images/fingerprint_rough_{}_{}.png".format(lc_temp["name"][0], filt), format="pdf", bbox_inches="tight", dpi=600)
+            #plt.show()
+            plt.clf()
 
-        # Plotting colour diagram for normalised histogram
-        plt.pcolor(xedges, yedges, Hist_norm.T, cmap=plt.cm.viridis)
-        plt.colorbar()
-        plt.xlabel("$\Delta t$ $(log_{10}(days))$")
-        plt.ylabel("$\Delta m_{}$ (mag)".format(filt))
-        plt.suptitle("Intensity map showing change in {} magnitude vs time of {}".format(filt, lc_temp["name"][0]))
-        plt.gca().invert_yaxis()
-        plt.clim(0, .5)
-        # plt.savefig(os.getcwd() + "/corrections/images/fingerprint_rough_{}_{}.png".format(lc_temp["name"][0], filt), format="pdf", bbox_inches="tight", dpi=600)
-        #plt.show()
-        plt.clf()
+            # Plotting colour diagram for smoothed normalised histogram
+            #plt.imshow(Hist_norm.T, interpolation="bicubic", cmap=plt.cm.viridis, extent=[x_min, x_max, y_max, y_min], aspect="auto")
+            #plt.imshow(Hist_norm.T, interpolation="bicubic", cmap=plt.cm.seismic, extent=[x_min, x_max, y_max, y_min], aspect="auto")
 
-        # Plotting colour diagram for smoothed normalised histogram
-        #plt.imshow(Hist_norm.T, interpolation="bicubic", cmap=plt.cm.viridis, extent=[x_min, x_max, y_max, y_min], aspect="auto")
-        #plt.imshow(Hist_norm.T, interpolation="bicubic", cmap=plt.cm.seismic, extent=[x_min, x_max, y_max, y_min], aspect="auto")
-
-        cmap_mod = truncate_colormap(cmapIn='viridis', minval=0.0, maxval=numpy.max(Hist_norm)/0.2, n=256)  # calls function to truncate colormap
-        plt.imshow(Hist_norm.T, interpolation="bicubic", cmap=cmap_mod, extent=[x_min, x_max, y_max, y_min], aspect="auto")
-        plt.xlabel("$\Delta t$ $(log_{10}(days))$")
-        plt.ylabel("$\Delta m_{}$ (mag)".format(filt))
-        plt.colorbar()
-        #plt.colorbar(extend='both')
-        #plt.clim(0, numpy.max(Hist_norm))
-        # plt.savefig(os.getcwd() + "/corrections/images/fingerprint_smooth_{}_{}.png".format(lc_temp["name"][0], filt), format="pdf", bbox_inches="tight", dpi=600)
-        plt.savefig('test_fingerprint.pdf', format='pdf', bbox_inches='tight', dpi=600)
-        plt.savefig('test_fingerprint.png', format='png', bbox_inches='tight', dpi=600)
-        #plt.show()
-        plt.clf()
-        plt.close()
+            cmap_mod = truncate_colormap(cmapIn='viridis', minval=0.0, maxval=numpy.max(Hist_norm)/0.2, n=256)  # calls function to truncate colormap
+            plt.imshow(Hist_norm.T, interpolation="bicubic", cmap=cmap_mod, extent=[x_min, x_max, y_max, y_min], aspect="auto")
+            plt.xlabel("$\Delta t$ $(log_{10}(days))$")
+            plt.ylabel("$\Delta m_{}$ (mag)".format(filt))
+            plt.colorbar()
+            #plt.colorbar(extend='both')
+            #plt.clim(0, numpy.max(Hist_norm))
+            # plt.savefig(os.getcwd() + "/corrections/images/fingerprint_smooth_{}_{}.png".format(lc_temp["name"][0], filt), format="pdf", bbox_inches="tight", dpi=600)
+            plt.savefig('test_fingerprint.pdf', format='pdf', bbox_inches='tight', dpi=600)
+            plt.savefig('test_fingerprint.png', format='png', bbox_inches='tight', dpi=600)
+            #plt.show()
+            plt.clf()
+            plt.close()
+        else:
+            print('No data for filter:',filt)
 
 
 #function to convert lightcurve into a python dta structure
@@ -1599,7 +1606,7 @@ def check_filter_single(lightcurve_data, filt_list=''):
 	filt_list=numpy.array(filt_list)
 	counter = numpy.zeros(len(filt_list))
 	for i in range(0,len(filt_list)):
-		check = numpy.where(lightcurve_data['filter'] == filt_list[i])
+		check = numpy.where(lightcurve_data['filter'].astype(str) == filt_list[i])
 		counter[i] = len(check[0])
 	print('There are ',counter,' datapoints in the filters', filt_list)
 	return(counter)
@@ -2106,10 +2113,10 @@ def correction(fits_id, star_coord, cat_coords, cat, star_lc):
         axa4.set_ylim((min_off,max_off))
 
         #plot the top left plot
-        axa1.scatter(x=c_cols, y=d_offs, s=5, c="b", alpha=0.75)
+        axa1.scatter(x=c_cols, y=d_offs, s=5, c="model", alpha=0.75)
         axa1.plot(y_fit, xav, c="k", linestyle="--", alpha=0.75)
         #plot the bottom left plot
-        axa2.scatter(x=d_mags, y=d_offs, s=5, c="b", alpha=0.75)
+        axa2.scatter(x=d_mags, y=d_offs, s=5, c="model", alpha=0.75)
         axa2.plot(x_fit, yav, c="k", linestyle="--", alpha=0.75)
         axa2.text(x=min_mag+0.5, y=min_off+0.05, s="RMS: {:.3f}".format(rms1), fontsize=5)
         #plot the bottom right plot
@@ -2156,10 +2163,10 @@ def correction(fits_id, star_coord, cat_coords, cat, star_lc):
         axb4.set_ylim((min_off,max_off))
 
         #plot the top left plot
-        axb1.scatter(x=c_cols, y=d_offs, s=5, c="b", alpha=0.75)  # Top Left plot 2
+        axb1.scatter(x=c_cols, y=d_offs, s=5, c="model", alpha=0.75)  # Top Left plot 2
         axb1.plot(y_fit, xav, c="k", linestyle="--", alpha=0.75)
         #plot the bottom left plot
-        axb2.scatter(x=d_mags, y=d_offs, s=5, c="b", alpha=0.75)
+        axb2.scatter(x=d_mags, y=d_offs, s=5, c="model", alpha=0.75)
         axb2.plot(x_fit, yav, c="k", linestyle="--", alpha=0.75)
         axb2.text(x=min_mag+0.5, y=min_off+0.05, s="RMS: {:.3f}".format(rms1), fontsize=5)
         #plot the bottom right plot
