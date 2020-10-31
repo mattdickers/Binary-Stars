@@ -13,23 +13,25 @@ start = time.time()
 model = pb.Bundle()
 model.add_star('primary', mass=1.5, requiv=1.2, teff=7000) #Create primary star
 model.add_star('secondary', mass=1.0, requiv=1.0, teff=6000) #Create secondary star
-model.add_orbit('binary', period=1.0, sma=8) #Create binary system orbit
+model.add_orbit('binary', period=1.0, sma=7) #Create binary system orbit
 model.set_value('q', (model['value@mass@secondary@component'] / model['value@mass@primary@component'])) #Define the mass ratio
-model.set_hierarchy(pb.hierarchy.binaryorbit(model['binary'], model['primary'], model['secondary'])) #Create hierachy of the system
+model.set_hierarchy(pb.hierarchy.binaryorbit(model['binary'], model['primary'],
+                                             model['secondary'])) #Create hierachy of the system
 #TODO look into better method of generating system using flip_constraint to define masses
 #TODO will either need to be defined after set_hierarchy, or use default bundle
 
 #Add lightcurve dataset
-times = pb.linspace(0, 10, 1005)
-model.add_dataset('lc', times = times, passband='Johnson:R', dataset='lc01')
+n=1005
+times = pb.linspace(0, 10, n)
+model.add_dataset('lc', times=times, passband='Johnson:R', dataset='lc01')
 
 #Forward Compute
 model.run_compute()
 
 #Add errors:
-C = 2/100 #Uncertainty as %
+C = 2 / 100 #Uncertainty as %
 fluxes = model.get_value('fluxes', context='model')
-sigmas = np.random.normal(0,C,size=times.shape)
+sigmas = np.random.normal(0, C, size=times.shape)
 newFluxes = fluxes * (1 + sigmas)
 
 #Run model compute
@@ -38,7 +40,6 @@ model.add_dataset('lc', times=times, fluxes=newFluxes, sigmas=np.full_like(newFl
 model.set_value('pblum_mode', 'dataset-scaled')
 model.plot(x='phase', legend=True, save='LigthcurveData.png', s=0.01, label='Data')
 print('Plotted Data')
-
 
 #Add EBAI Solver
 #model.add_solver('estimator.lc_geometry', solver='lcGeom_solver') #LC Geomtry Solver
@@ -69,7 +70,6 @@ model.run_compute()
 model.plot(x='phase', ls='-', legend=True, save='EBAI_Solution.png', s=0.01, label='EBAI')
 print('Plotted EBAI Solution')
 
-
 #Add LC Geometry Solver
 model.add_solver('estimator.lc_geometry', solver='lcGeom_solver') #LC Geomtry Solver
 
@@ -81,9 +81,17 @@ model.flip_constraint('ecc', solve_for='esinw')
 model.adopt_solution('lcGeom_solution')
 model.run_compute()
 model.plot(x='phase', ls='-', legend=True, save='Geometry_Solution.png', s=0.01, label='Geometry')
+print('Plotted LC Geometry Solution')
 
-
-
+# #Add LC Periodogram Solver
+# model.add_solver('estimator.lc_periodogram', solver='lcPeriod_solver') #LC Periodogram Solver
+#
+# model.run_solver('lcPeriod_solver', solution='lcPeriod_solution')
+#
+# model.adopt_solution('lcPeriod_solution')
+# model.run_compute()
+# model.plot(x='phase', ls='-', legend=True, save='Periodogram_Solution.png', s=0.01, label='Periodogram')
+# print('Plotted LC Periodogram Solution')
 
 end = time.time()
-print('\nCompute Time:',timeConvert(end-start))
+print('\nCompute Time:', timeConvert(end - start))
