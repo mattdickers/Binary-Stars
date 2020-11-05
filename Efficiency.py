@@ -113,10 +113,16 @@ def Run(n, failCount):
 global compTimes
 compTimes = []
 
-dataPoints = [100,500,1005,1500,2000,2500,3000,3500,4000,4500,5000,5500,6000,6500,7000,7500,8000,8500,9000,9500,10000]
-for i in dataPoints:
-    failCount = 0
-    Run(i, failCount)
+dataPoints = [100,500,1000,1500,2000,2500,3000,3500,4000,4500,5000,5500,6000,6500,7000,7500,8000,8500,9000,9500,10000]
+compTimes = [28.164461135864258, 116.04766273498535, 231.9618046283722, 367.631472826004, 452.8675866127014, 563.2299945354462,
+             679.0984132289886, 792.0920975208282, 898.6561760902405, 1009.424154996872, 1124.2753274440765, 1234.547101020813,
+             1346.411604642868, 1465.7015404701233, 1592.3056373596191, 1692.4058952331543, 1828.84628200531, 1981.7090103626251,
+             2024.419947385788, 2135.462520122528, 2262.5722608566284]
+
+# for i in dataPoints:
+#     failCount = 0
+#     Run(i, failCount)
+
 
 times_seconds = np.array(compTimes)
 
@@ -126,11 +132,10 @@ fit = np.polyfit(times_seconds, dataPoints, 1)
 fittedPoints = fit[0] * times_seconds + fit[1]
 
 plt.cla()
-plt.plot(times_seconds, dataPoints, 'k.')
-plt.plot(times_seconds, fittedPoints, 'r-')
-plt.xticks(np.array([0,  600, 1200, 1800, 2400]), (timeConvert(0), timeConvert(600), timeConvert(1200), timeConvert(1800), timeConvert(2400)))
-plt.xticks(rotation=35)
-plt.subplots_adjust(bottom=0.15)
-plt.xlabel('Execution Time (minutes)')
-plt.ylabel('Number of Datapoints')
+plt.plot(dataPoints, times_seconds, 'k.')
+plt.plot(fittedPoints, times_seconds, 'r-')
+plt.yticks(np.array([0,  600, 1200, 1800, 2400]), (timeConvert(0), timeConvert(600), timeConvert(1200), timeConvert(1800), timeConvert(2400)))
+plt.xlabel('Number of Datapoints')
+plt.ylabel('Execution Time (minutes)')
 plt.savefig('RunTimes.png')
+print('Saved')

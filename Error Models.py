@@ -10,11 +10,27 @@ def timeConvert(seconds):
 
 start = time.time()
 #Define bundle for the system
+# period = 3.549694
+# model = pb.Bundle()
+# model.add_star('primary', mass=23.1, requiv=13.1) #Create primary star
+# model.add_star('secondary', mass=15.0, requiv=11.3) #Create secondary star
+# model.add_orbit('binary', period=period, sma=33.0) #Create binary system orbit
+# model.set_value('q', 0.65) #Define the mass ratio
+
+# period = 1.68743059
+# model = pb.Bundle()
+# model.add_star('primary', mass=1.417, requiv=2.451, teff=6340.0) #Create primary star
+# model.add_star('secondary', mass=1.346, requiv=2.281, teff=6430.0) #Create secondary star
+# model.add_orbit('binary', period=period, sma=6.69957) #Create binary system orbit
+# model.set_value('q', 0.94989) #Define the mass ratio
+
+period = 1.0
 model = pb.Bundle()
-model.add_star('primary', mass=1.5, requiv=1.2, teff=7000) #Create primary star
-model.add_star('secondary', mass=1.0, requiv=1.0, teff=6000) #Create secondary star
-model.add_orbit('binary', period=1.0, sma=7) #Create binary system orbit
-model.set_value('q', (model['value@mass@secondary@component'] / model['value@mass@primary@component'])) #Define the mass ratio
+model.add_star('primary', mass=1.5, requiv=1.2) #Create primary star
+model.add_star('secondary', mass=1.0, requiv=1.0) #Create secondary star
+model.add_orbit('binary', period=period, sma=7) #Create binary system orbit
+model.set_value('q', 1/1.5) #Define the mass ratio
+
 model.set_hierarchy(pb.hierarchy.binaryorbit(model['binary'], model['primary'],
                                              model['secondary'])) #Create hierachy of the system
 #TODO look into better method of generating system using flip_constraint to define masses
@@ -23,10 +39,12 @@ model.set_hierarchy(pb.hierarchy.binaryorbit(model['binary'], model['primary'],
 #Add lightcurve dataset
 n=1005
 times = pb.linspace(0, 10, n)
-model.add_dataset('lc', times=times, passband='Johnson:R', dataset='lc01')
+model.add_dataset('lc', times=times, passband='Johnson:R', dataset='lc1')
 
 #Forward Compute
 model.run_compute()
+model.plot(x='phase', legend=True, save='Original.png', s=0.01, label='Data')
+print('Plotted Original')
 
 #Add errors:
 C = 2 / 100 #Uncertainty as %
@@ -36,14 +54,18 @@ newFluxes = fluxes * (1 + sigmas)
 
 #Run model compute
 model = pb.default_binary()
-model.add_dataset('lc', times=times, fluxes=newFluxes, sigmas=np.full_like(newFluxes, fill_value=C))
+model.set_value('period@binary', period)
+model.add_dataset('lc', times=times, fluxes=newFluxes, sigmas=np.full_like(newFluxes, fill_value=C), passband='Johnson:R', dataset='lc2')
 model.set_value('pblum_mode', 'dataset-scaled')
 model.plot(x='phase', legend=True, save='LigthcurveData.png', s=0.01, label='Data')
 print('Plotted Data')
 
 #Add EBAI Solver
-#model.add_solver('estimator.lc_geometry', solver='lcGeom_solver') #LC Geomtry Solver
-#model.add_solver('estimator.lc_periodogram', solver='lcPeriod_solver') #LC Periodogram Solver
+# _skip_filter_checks = {'check_default': False, 'check_visible': False}
+# orbit = kwargs.get('orbit')
+# global t0_supconj_param
+# orbit_ps = model.get_component(component=orbit, **_skip_filter_checks)
+# t0_supconj_param = orbit_ps.get_parameter(qualifier='t0_supconj', **_skip_filter_checks)  # Added line
 model.add_solver('estimator.ebai', solver='ebai_solver') #Neural Network Solver
 
 #Run Solver
@@ -69,29 +91,29 @@ model.adopt_solution('ebai_solution')
 model.run_compute()
 model.plot(x='phase', ls='-', legend=True, save='EBAI_Solution.png', s=0.01, label='EBAI')
 print('Plotted EBAI Solution')
-
-#Add LC Geometry Solver
-model.add_solver('estimator.lc_geometry', solver='lcGeom_solver') #LC Geomtry Solver
-
-model.run_solver('lcGeom_solver', solution='lcGeom_solution')
-
-model.flip_constraint('per0', solve_for='ecosw')
-model.flip_constraint('ecc', solve_for='esinw')
-
-model.adopt_solution('lcGeom_solution')
-model.run_compute()
-model.plot(x='phase', ls='-', legend=True, save='Geometry_Solution.png', s=0.01, label='Geometry')
-print('Plotted LC Geometry Solution')
-
-# #Add LC Periodogram Solver
-# model.add_solver('estimator.lc_periodogram', solver='lcPeriod_solver') #LC Periodogram Solver
 #
-# model.run_solver('lcPeriod_solver', solution='lcPeriod_solution')
+# #Add LC Geometry Solver
+# model.add_solver('estimator.lc_geometry', solver='lcGeom_solver') #LC Geomtry Solver
 #
-# model.adopt_solution('lcPeriod_solution')
+# model.run_solver('lcGeom_solver', solution='lcGeom_solution')
+#
+# model.flip_constraint('per0', solve_for='ecosw')
+# model.flip_constraint('ecc', solve_for='esinw')
+#
+# model.adopt_solution('lcGeom_solution')
 # model.run_compute()
-# model.plot(x='phase', ls='-', legend=True, save='Periodogram_Solution.png', s=0.01, label='Periodogram')
-# print('Plotted LC Periodogram Solution')
-
-end = time.time()
-print('\nCompute Time:', timeConvert(end - start))
+# model.plot(x='phase', ls='-', legend=True, save='Geometry_Solution.png', s=0.01, label='Geometry')
+# print('Plotted LC Geometry Solution')
+#
+# # #Add LC Periodogram Solver
+# # model.add_solver('estimator.lc_periodogram', solver='lcPeriod_solver') #LC Periodogram Solver
+# #
+# # model.run_solver('lcPeriod_solver', solution='lcPeriod_solution')
+# #
+# # model.adopt_solution('lcPeriod_solution')
+# # model.run_compute()
+# # model.plot(x='phase', ls='-', legend=True, save='Periodogram_Solution.png', s=0.01, label='Periodogram')
+# # print('Plotted LC Periodogram Solution')
+#
+# end = time.time()
+# print('\nCompute Time:', timeConvert(end - start))
