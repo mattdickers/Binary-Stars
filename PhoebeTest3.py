@@ -13,7 +13,7 @@ times = pb.linspace(0,1,101)
 b.add_dataset('lc', compute_phases=times)
 
 #compute the model
-b.run_compute(irrad_method='none')
+b.run_compute()
 
 b.plot(x='phase', legend=True, save='1', s=0.01)
 
