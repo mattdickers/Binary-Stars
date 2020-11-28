@@ -35,11 +35,11 @@ def Run(n, failCount):
 
         # Add errors:
         C = 2 / 100  # Uncertainty as %
-        fluxes = model.get_value('fluxes', context='model')
+        fluxes = model.get_value('fluxes', context='b')
         sigmas = np.random.normal(0, C, size=times.shape)
         newFluxes = fluxes * (1 + sigmas)
 
-        # Run model compute
+        # Run b compute
         model = pb.default_binary()
         model.add_dataset('lc', times=times, fluxes=newFluxes, sigmas=np.full_like(newFluxes, fill_value=C))
         model.set_value('pblum_mode', 'dataset-scaled')
@@ -47,15 +47,15 @@ def Run(n, failCount):
         print('Plotted Data')
 
         # Add EBAI Solver
-        # model.add_solver('estimator.lc_geometry', solver='lcGeom_solver') #LC Geomtry Solver
-        # model.add_solver('estimator.lc_periodogram', solver='lcPeriod_solver') #LC Periodogram Solver
+        # b.add_solver('estimator.lc_geometry', solver='lcGeom_solver') #LC Geomtry Solver
+        # b.add_solver('estimator.lc_periodogram', solver='lcPeriod_solver') #LC Periodogram Solver
         model.add_solver('estimator.ebai', solver='ebai_solver')  # Neural Network Solver
 
         # Run Solver
         model.run_solver(solver='ebai_solver', solution='ebai_solution')
-        # solution = model.plot(solution='lc_solution', save='Solution.png')
+        # solution = b.plot(solution='lc_solution', save='Solution.png')
         # print('Plotted Solution')
-        # print(model.adopt_solution(trial_run=True))
+        # print(b.adopt_solution(trial_run=True))
 
         model.flip_constraint('requivsumfrac', solve_for='requiv@primary')
         model.flip_constraint('teffratio', solve_for='teff@primary')
@@ -89,13 +89,13 @@ def Run(n, failCount):
         print('Plotted LC Geometry Solution')
 
         # #Add LC Periodogram Solver
-        # model.add_solver('estimator.lc_periodogram', solver='lcPeriod_solver') #LC Periodogram Solver
+        # b.add_solver('estimator.lc_periodogram', solver='lcPeriod_solver') #LC Periodogram Solver
         #
-        # model.run_solver('lcPeriod_solver', solution='lcPeriod_solution')
+        # b.run_solver('lcPeriod_solver', solution='lcPeriod_solution')
         #
-        # model.adopt_solution('lcPeriod_solution')
-        # model.run_compute()
-        # model.plot(x='phase', ls='-', legend=True, save='Periodogram_Solution.png', s=0.01, label='Periodogram')
+        # b.adopt_solution('lcPeriod_solution')
+        # b.run_compute()
+        # b.plot(x='phase', ls='-', legend=True, save='Periodogram_Solution.png', s=0.01, label='Periodogram')
         # print('Plotted LC Periodogram Solution')
 
         end = time.time()

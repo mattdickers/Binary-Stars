@@ -7,32 +7,32 @@ logger = pb.logger()
 #Generate Binary Model
 model = pb.default_binary()
 model.add_dataset('lc', times=np.linspace(0,1,201))
-#model.set_value(qualifier='period', component='binary', value=0.02)
+#b.set_value(qualifier='period', component='binary', value=0.02)
 
-#print(model['value@mass@primary@component'], model['value@mass@secondary@component'], model['value@period@orbit@component'])
+#print(b['value@mass@primary@component'], b['value@mass@secondary@component'], b['value@period@orbit@component'])
 
-#model.flip_constraint('mass@primary', solve_for='period')
-#model.flip_constraint('mass@secondary', solve_for='q')
+#b.flip_constraint('mass@primary', solve_for='period')
+#b.flip_constraint('mass@secondary', solve_for='q')
 
-#model['mass@primary@component'] = 0.3
-#model['mass@secondary@component'] = 0.3
+#b['mass@primary@component'] = 0.3
+#b['mass@secondary@component'] = 0.3
 
-#print(model['value@mass@primary@component'], model['value@mass@secondary@component'], model['value@period@orbit@component'])
+#print(b['value@mass@primary@component'], b['value@mass@secondary@component'], b['value@period@orbit@component'])
 
-#print(model['value@q@binary@component'])
+#print(b['value@q@binary@component'])
 
 model.run_compute()
 afig, mplfig = model.plot(x='phase', save='Input.pdf')
 
-#print('Primary Mass:',model.get_value('mass@primary@component')) #Primary Star Mass
-#print('Secondary Mass:',model.get_value('mass@secondary@component')) #Secondary Star Mass
+#print('Primary Mass:',b.get_value('mass@primary@component')) #Primary Star Mass
+#print('Secondary Mass:',b.get_value('mass@secondary@component')) #Secondary Star Mass
 
 model['passband'] = 'Johnson:R' #Set passband to be Johnson R
 print('Passband:',model.get_value('passband')) #Check which passband is used
 
-#Compute moel based off input data (in this case the original model)
-times = model.get_value('times', context='model')
-fluxes = model.get_value('fluxes', context='model') + np.random.normal(size=times.shape) * 0.01
+#Compute moel based off input data (in this case the original b)
+times = model.get_value('times', context='b')
+fluxes = model.get_value('fluxes', context='b') + np.random.normal(size=times.shape) * 0.01
 sigmas = np.ones_like(times) * 0.02
 
 inverse = pb.default_binary()

@@ -12,34 +12,34 @@ b.set_value('period', component='binary', value = 10.0)
 times = pb.linspace(0,1,101)
 b.add_dataset('lc', compute_phases=times)
 
-#compute the model
+#compute the b
 b.run_compute()
 
 b.plot(x='phase', legend=True, save='1', s=0.01)
 
 #Add errors:
 C = 2/100 #Uncertainty as %
-fluxes = b.get_value('fluxes', context='model')
+fluxes = b.get_value('fluxes', context='b')
 sigmas = np.random.normal(0,C,size=times.shape)
 newFluxes = fluxes * (1 + sigmas)
 
-#Run model compute
+#Run b compute
 b = pb.default_binary()
 b.add_dataset('lc', times=times, fluxes=newFluxes, sigmas=np.full_like(newFluxes, fill_value=C))
 b.set_value('pblum_mode', 'dataset-scaled')
 b.plot(x='phase', legend=True, save='2.png', s=0.01, label='Data')
 
-# # extract the arrays from the model that we'll use as observables in the next step
-# times = b.get_value('times', context='model', dataset='lc01')
+# # extract the arrays from the b that we'll use as observables in the next step
+# times = b.get_value('times', context='b', dataset='lc01')
 # # here we're adding noise to the fluxes as well to make the fake data more "realistic"
 # np.random.seed(0) # to ensure reproducibility with added noise
-# fluxes = b.get_value('fluxes', context='model', dataset='lc01') + np.random.normal(size=times.shape) * 0.02
+# fluxes = b.get_value('fluxes', context='b', dataset='lc01') + np.random.normal(size=times.shape) * 0.02
 # sigmas_lc = np.ones_like(times) * 0.04
 #
 # b = phoebe.default_binary()
 # b.add_dataset('lc', times=times, fluxes=fluxes, sigmas=sigmas_lc)
 # b.set_value('pblum_mode', 'dataset-scaled')
 #
-# b.run_compute(model='default')
+# b.run_compute(b='default')
 # b.plot(x='phase', legend=True, save='1', s=0.01)
 # print('Plotted 1')

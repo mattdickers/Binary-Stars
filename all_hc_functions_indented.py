@@ -1095,12 +1095,12 @@ def extract_data(lightcurve,prop_name='',id_list='',invert=''):
 #now fit a sin-function with the period to the lightcurve
 def fitfunc_sin(time, p0, p1, p2, p3):
     z = p0 + p1 * numpy.sin( p2 + 2.0*math.pi*time/p3 )
-        #alternatively we know that sin(a+model)=sin(a)cos(model)+cos(a)sin(model)
+        #alternatively we know that sin(a+b)=sin(a)cos(b)+cos(a)sin(b)
         #hence maybe use this to do the fit as might help with removing issues with initial guess for phase
         #actually seems to work even less well than the straight fit!
         #a=p2
-        #model=2.0*math.pi*time/p3
-        #z = p0 + p1*numpy.sin(a)*numpy.cos(model) + p1*numpy.cos(a)*numpy.sin(model)
+        #b=2.0*math.pi*time/p3
+        #z = p0 + p1*numpy.sin(a)*numpy.cos(b) + p1*numpy.cos(a)*numpy.sin(b)
     return z
 
 def fitfunc_sinother(time, p):
@@ -2113,10 +2113,10 @@ def correction(fits_id, star_coord, cat_coords, cat, star_lc):
         axa4.set_ylim((min_off,max_off))
 
         #plot the top left plot
-        axa1.scatter(x=c_cols, y=d_offs, s=5, c="model", alpha=0.75)
+        axa1.scatter(x=c_cols, y=d_offs, s=5, c="b", alpha=0.75)
         axa1.plot(y_fit, xav, c="k", linestyle="--", alpha=0.75)
         #plot the bottom left plot
-        axa2.scatter(x=d_mags, y=d_offs, s=5, c="model", alpha=0.75)
+        axa2.scatter(x=d_mags, y=d_offs, s=5, c="b", alpha=0.75)
         axa2.plot(x_fit, yav, c="k", linestyle="--", alpha=0.75)
         axa2.text(x=min_mag+0.5, y=min_off+0.05, s="RMS: {:.3f}".format(rms1), fontsize=5)
         #plot the bottom right plot
@@ -2163,10 +2163,10 @@ def correction(fits_id, star_coord, cat_coords, cat, star_lc):
         axb4.set_ylim((min_off,max_off))
 
         #plot the top left plot
-        axb1.scatter(x=c_cols, y=d_offs, s=5, c="model", alpha=0.75)  # Top Left plot 2
+        axb1.scatter(x=c_cols, y=d_offs, s=5, c="b", alpha=0.75)  # Top Left plot 2
         axb1.plot(y_fit, xav, c="k", linestyle="--", alpha=0.75)
         #plot the bottom left plot
-        axb2.scatter(x=d_mags, y=d_offs, s=5, c="model", alpha=0.75)
+        axb2.scatter(x=d_mags, y=d_offs, s=5, c="b", alpha=0.75)
         axb2.plot(x_fit, yav, c="k", linestyle="--", alpha=0.75)
         axb2.text(x=min_mag+0.5, y=min_off+0.05, s="RMS: {:.3f}".format(rms1), fontsize=5)
         #plot the bottom right plot

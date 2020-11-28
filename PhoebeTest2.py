@@ -13,14 +13,14 @@ b.set_hierarchy(pb.hierarchy.binaryorbit(b['binary'], b['primary'], b['secondary
 
 #Add datasets
 b.add_dataset('lc', times = pb.linspace(0,10,20), passband='Johnson:R', dataset='lc01') #Add lc dataset with Johnson R passband
-#model.add_dataset('orb', compute_times = pb.linspace(0,100,10), component=['primary', 'secondary'], dataset='orb01')
+#b.add_dataset('orb', compute_times = pb.linspace(0,100,10), component=['primary', 'secondary'], dataset='orb01')
 
 b.run_compute() #Forward compute properties
 
 afig, mplfig = b['lc01'].plot(x='phase', save='Ligthcurve.png')
 print('Plotted Lightcurve')
 
-# model.set_value('incl@orbit', 80)
-# model.run_compute(model='run_with_incl_80')
-# afig, mplfig = model['orb01@run_with_incl_80'].plot(time=1.0, save='Orbit.png')
+# b.set_value('incl@orbit', 80)
+# b.run_compute(b='run_with_incl_80')
+# afig, mplfig = b['orb01@run_with_incl_80'].plot(time=1.0, save='Orbit.png')
 # print('Plotted Orbit')
