@@ -98,7 +98,7 @@ b.set_value('period@binary', value=star['period'])
 b.set_value('pblum_mode', 'dataset-scaled')
 
 b.run_compute(model='Initial_Fit')
-b.plot(x='phase', legend=True, s=0.01, save='lightcurves/Initial_Fit.png')
+b.plot(x='phase', legend=True, s=0.01, save='lightcurves/SolverFitted/Initial_Fit.png')
 print('Initial Plotted\n')
 
 
@@ -126,7 +126,7 @@ b['adopt_parameters@EBAI_solution'] = adopt_params
 
 b.adopt_solution('EBAI_solution')
 b.run_compute(model='EBAI_Fit')
-b.plot(x='phase', ls='-', legend=True, s=0.01, save='lightcurves/EBAI_Fit.png')
+b.plot(x='phase', ls='-', legend=True, s=0.01, save='lightcurves/SolverFitted/EBAI_Fit.png')
 print('EBAI Plotted\n')
 
 
@@ -141,7 +141,7 @@ b.flip_constraint('ecc', solve_for='esinw')
 
 b.adopt_solution('lcGeom_solution')
 b.run_compute(model = 'LC_Geometry_Fit')
-b.plot(x='phase', ls='-', legend=True, s=0.01, save='lightcurves/LC_Geometry_Fit.png')
+b.plot(x='phase', ls='-', legend=True, s=0.01, save='lightcurves/SolverFitted/LC_Geometry_Fit.png')
 print('LC Geometry Plotted\n')
 
 b.add_compute('ellc')
@@ -150,7 +150,8 @@ b.add_solver('optimizer.nelder_mead',
 b.run_solver(kind='nelder_mead', maxiter=10000, solution='nm_sol')
 b.adopt_solution('nm_sol')
 b.run_compute(model='after_nm')
-b.plot(x='phase', ls='-', legend=True, s=0.01, save='lightcurves/WithOptimizer.png')
+b.plot(x='phase', ls='-', legend=True, s=0.01, save='lightcurves/SolverFitted/WithOptimizer.png')
+#TODO optimizer seems to run forever
 
 end = time.time()
 print('\nCompute Time:', timeConvert(end - start))

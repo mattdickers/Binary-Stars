@@ -8,8 +8,7 @@ def fitfunc_sin(time, p0, p1, p2, p3):
     z = p0 + p1 * np.sin( p2 + 2.0*np.pi*time/p3 )
     return z
 
-
-def periodogram(lightcurve_in, name="", retparam="", fixperiod="", talk=0, plot=0):
+def periodogram(lightcurve_in, name="", retparam="", fixperiod="", talk=0, plot=0, location=""):
     if name == "": name = 'test'
     if retparam == "": retparam = 'N'
     if talk == "": talk = 0
@@ -54,7 +53,7 @@ def periodogram(lightcurve_in, name="", retparam="", fixperiod="", talk=0, plot=
         plt.plot(1 / f, pgram, 'k-', label='  P=' + np.str(period)[:10] + 'days')
         #plt.xlim(0, 3.0 * period)
         # plt.xlim(0,6.0)
-        plt.xlabel('Time [d]')
+        plt.xlabel('Time (d)')
         plt.ylabel('frequency')
         plt.legend(loc='upper center', handletextpad=0.01)
 
@@ -69,11 +68,11 @@ def periodogram(lightcurve_in, name="", retparam="", fixperiod="", talk=0, plot=
                  np.median(lightcurve[1]) - 5.0 * np.std(lightcurve[1]))
         plt.locator_params(axis='x', nbins=4)
         plt.locator_params(axis='y', nbins=5)
-        plt.xlabel('Time, MJD [d]')
-        plt.ylabel('Magnitude {} [mag]'.format('R'))
+        plt.xlabel('Time, MJD (d)')
+        plt.ylabel('Magnitude {} (mag)'.format('R'))
 
-        plt.savefig(name+'.pdf', format='pdf', bbox_inches='tight', dpi=600)
-        plt.savefig(name+'.png', format='png', bbox_inches='tight', dpi=600)
+        plt.savefig(location+name+'_Periodogram.pdf', format='pdf', bbox_inches='tight', dpi=600)
+        plt.savefig(location+name+'_Periodogram.png', format='png', bbox_inches='tight', dpi=600)
         plt.show()
 
     return period
