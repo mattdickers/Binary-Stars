@@ -1,31 +1,49 @@
 import numpy as np
 import matplotlib.pyplot as plt
 #from astropy.stats import LombScargle
-from  astropy.timeseries import LombScargle
+from astropy.timeseries import LombScargle
+from PyAstronomy.pyTiming import pyPDM
 from scipy.optimize import curve_fit
+import os
+import time
 
 def fitfunc_sin(time, p0, p1, p2, p3):
     z = p0 + p1 * np.sin( p2 + 2.0*np.pi*time/p3 )
     return z
 
-def periodogram(lightcurve_in, name="", retparam="", fixperiod="", talk=0, plot=0, location=""):
+def periodogram(lightcurve_in, name="", retparam="", fixperiod="", pdm=0, double=0, talk=0, plot=0, location=""):
     if name == "": name = 'test'
     if retparam == "": retparam = 'N'
     if talk == "": talk = 0
     minperiod = 0.01  # minimum period to check
     maxperiod = 2.0  # maximum period to check
 
-    #f = np.linspace(0.01, 10, 1000000)  # checks 10 to 100 days
-    f = np.linspace(0.53, 0.54, 1000000)  # checks 10 to 100 days
+    f = np.linspace(0.01, 10, 1000000)  # checks 10 to 100 days
+    #f = np.linspace(0.26, 0.28, 1000000)  # checks 10 to 100 days
     lightcurve = []
     lightcurve.append(lightcurve_in[0][np.argsort(lightcurve_in[0])])
     lightcurve.append(lightcurve_in[1][np.argsort(lightcurve_in[0])])
     lightcurve.append(lightcurve_in[2][np.argsort(lightcurve_in[0])])
     lightcurve = np.array(lightcurve)
-    pgram = LombScargle(lightcurve[0], lightcurve[1]).power(f)
 
-    maxper = np.argmax(pgram[np.where(1.0 / f > minperiod)])
-    period = fixperiod
+    if pdm == 0:
+        pgram = LombScargle(lightcurve[0], lightcurve[1]).power(f)
+
+        maxper = np.argmax(pgram[np.where(1.0 / f > minperiod)])
+        period = fixperiod
+    else:
+        start = time.time()
+        s = pyPDM.Scanner(minVal=0.01, maxVal=10, dVal=1e-5, mode="frequency")
+        p = pyPDM.PyPDM(lightcurve[0], lightcurve[1])
+        #f, theta = p.pdmEquiBinCover(10, 3, s)
+        f, theta = p.pdmEquiBin(10, s)
+        minTheta = np.argmin(theta)
+        period = 1 / (f[minTheta])
+        pgram = 1-theta
+        fixperiod = 0
+        end = time.time()
+        print(end-start)
+
     if fixperiod == "":
         period = 1.0 * 1. / f[maxper]
     elif (float(fixperiod) < 0.0):
@@ -50,7 +68,9 @@ def periodogram(lightcurve_in, name="", retparam="", fixperiod="", talk=0, plot=
         plt.rcParams.update({'font.size': 8})
         rectangle = [0.1, 0.55, 0.35, 0.35]
         ax = plt.axes(rectangle)
-        plt.plot(1 / f, pgram, 'k-', label='  P=' + np.str(period)[:10] + 'days')
+        days = 1/f
+        plt.plot(days[np.where(days <= (period*2 if not double else period*4))], pgram[np.where(days <= (period*2 if not double else period*4))],
+                 'k-', label='  P=' + np.str(period)[:10] + 'days')
         #plt.xlim(0, 3.0 * period)
         # plt.xlim(0,6.0)
         plt.xlabel('Time (d)')
@@ -71,8 +91,14 @@ def periodogram(lightcurve_in, name="", retparam="", fixperiod="", talk=0, plot=
         plt.xlabel('Time, MJD (d)')
         plt.ylabel('Magnitude {} (mag)'.format('R'))
 
-        plt.savefig(location+name+'_Periodogram.pdf', format='pdf', bbox_inches='tight', dpi=600)
-        plt.savefig(location+name+'_Periodogram.png', format='png', bbox_inches='tight', dpi=600)
+        if not os.path.exists(location+name+'/'):
+            os.mkdir(location+name+'/')
+
+        plt.savefig(location+name+'/'+name+'_Periodogram.pdf', format='pdf', bbox_inches='tight', dpi=600)
+        plt.savefig(location+name+'/'+name+'_Periodogram.png', format='png', bbox_inches='tight', dpi=600)
         plt.show()
 
-    return period
+    if double:
+        return period*2
+    else:
+        return period

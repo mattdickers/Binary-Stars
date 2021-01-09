@@ -3,7 +3,7 @@ from phoebe import u # units
 import numpy as np
 import time
 
-logger = pb.logger(filename='PHOEBE.log')
+#logger = pb.logger(filename='PHOEBE.log')
 
 def timeConvert(seconds):
     m, s = divmod(seconds, 60)
@@ -99,6 +99,7 @@ b.set_value('pblum_mode', 'dataset-scaled')
 
 b.run_compute(model='Initial_Fit')
 b.plot(x='phase', legend=True, s=0.01, save='lightcurves/SolverFitted/Initial_Fit.png')
+b.plot(x='phase', legend=True, s=0.01, save='lightcurves/SolverFitted/Initial_Fit.pdf')
 print('Initial Plotted\n')
 
 
@@ -127,6 +128,7 @@ b['adopt_parameters@EBAI_solution'] = adopt_params
 b.adopt_solution('EBAI_solution')
 b.run_compute(model='EBAI_Fit')
 b.plot(x='phase', ls='-', legend=True, s=0.01, save='lightcurves/SolverFitted/EBAI_Fit.png')
+b.plot(x='phase', ls='-', legend=True, s=0.01, save='lightcurves/SolverFitted/EBAI_Fit.pdf')
 print('EBAI Plotted\n')
 
 
@@ -142,16 +144,46 @@ b.flip_constraint('ecc', solve_for='esinw')
 b.adopt_solution('lcGeom_solution')
 b.run_compute(model = 'LC_Geometry_Fit')
 b.plot(x='phase', ls='-', legend=True, s=0.01, save='lightcurves/SolverFitted/LC_Geometry_Fit.png')
+b.plot(x='phase', ls='-', legend=True, s=0.01, save='lightcurves/SolverFitted/LC_Geometry_Fit.pdf')
 print('LC Geometry Plotted\n')
 
-b.add_compute('ellc')
+
+#Optimizer
+b.set_value_all('ld_mode', 'lookup')
+b.add_compute('ellc', compute='fastcompute')
 b.add_solver('optimizer.nelder_mead',
-             fit_parameters=['teffratio', 'requivsumfrac', 'incl@binary', 'q', 'ecc', 'per0'])
-b.run_solver(kind='nelder_mead', maxiter=10000, solution='nm_sol')
-b.adopt_solution('nm_sol')
-b.run_compute(model='after_nm')
+             fit_parameters=['teffratio', 'requivsumfrac', 'incl@binary', 'q', 'ecc', 'per0'], compute='fastcompute')
+
+b.run_solver(kind='nelder_mead', solution='optimizer_solution')
+
+b.adopt_solution('optimizer_solution')
+b.run_compute(model='Optimizer_Fit', compute='fastcompute')
 b.plot(x='phase', ls='-', legend=True, s=0.01, save='lightcurves/SolverFitted/WithOptimizer.png')
-#TODO optimizer seems to run forever
+b.plot(x='phase', ls='-', legend=True, s=0.01, save='lightcurves/SolverFitted/WithOptimizer.pdf')
+print('Optimizer Fit Plotted\n')
+
+
+#Sampler
+b.add_solver('sampler.emcee', solver='emcee_solver')
+b.set_value('compute', solver='emcee_solver', value='fastcompute')
+
+b.set_value('pblum_mode', 'component-coupled') #Could also set to 'dataset-coupled'
+
+b.add_distribution({'sma@binary': pb.gaussian_around(0.1),
+                    'incl@binary': pb.gaussian_around(5),
+                    't0_supconj': pb.gaussian_around(0.001),
+                    'requiv@primary': pb.gaussian_around(0.2),
+                    'pblum@primary': pb.gaussian_around(0.2),
+                    'sigmas_lnf@lc01': pb.uniform(-1e9, -1e4),
+                   }, distribution='ball_around_guess')
+
+b.set_value('init_from', 'ball_around_guess')
+
+b.set_value('nwalkers', solver='emcee_solver', value=12) #Define number of walkers. Must be twice number of parameters
+b.set_value('niters', solver='emcee_solver', value=250) #Define number of iterations
+
+b.run_solver('emcee_solver', solution='emcee_sol')
+
 
 end = time.time()
 print('\nCompute Time:', timeConvert(end - start))
