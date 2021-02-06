@@ -16,7 +16,6 @@ def runningMedian(phase, mag):
     #rdelta = 0.005 / 2.0
     rdelta = 0.005 / 0.5 #Increased phase space
     rp = phase
-    #rp = np.arange(0, 1, 0.001) #Note if phase is changes, so will rp, use numpy array. Currently gives 1000 data point TODO causes crash as the m array is still of default length
     rm = np.empty(len(rp))
     re = np.empty(len(rp))
     for i in range(len(rp)):
@@ -43,7 +42,7 @@ realPeriods = {'lc_4987': 3.746684,
                'lc_25679': 0.97934}
 
 #name = 'lc_4987' #Default
-name = 'lc_4987'
+name = 'lc_3957'
 comparisons = [None, 'lc_4860', 'lc_5089', 'lc_5150']
 comparison = comparisons[0]
 
@@ -51,7 +50,7 @@ comparison = comparisons[0]
 t, m, me, f1, f2 = np.genfromtxt('Data/' + name + '.csv', delimiter=',', usecols=(0, 11, 12, 20, 21), unpack=True)
 
 lightcurve = np.array([t, m, me])
-period = Periodogram.periodogram(lightcurve, name, pdm=1, double=1, plot=1, location='lightcurves/Periodograms/')
+period = Periodogram.periodogram(lightcurve, name, pdm=0, double=1, plot=1, location='lightcurves/Periodograms/')
 print(period)
 
 
