@@ -203,7 +203,7 @@ print('Starting Optimizer Solver')
 b.set_value_all('ld_mode', 'lookup')
 b.add_compute('ellc', compute='fastcompute') #Add fastcompute option from ellc
 b.add_solver('optimizer.nelder_mead',
-             fit_parameters=['teffratio', 'requivsumfrac', 't0_supconj', 'ecc', 'per0'], compute='fastcompute')
+             fit_parameters=['teffratio@binary', 'requivsumfrac@binary', 'incl@binary', 'q', 'ecc', 'per0'], compute='fastcompute')
 
 b.run_solver(kind='nelder_mead', solution='optimizer_solution')
 

@@ -1402,7 +1402,8 @@ def probplot(lc, filt_list=""):
     if filt_list == "": filt_list = ["U", "B", "V", "R", "I", "HA"]
 
     for filt in filt_list:
-        lc_temp = extract_data(lc,prop_name='filter',id_list=filt,invert='')
+        if not dont_extract:
+            lc_temp = extract_data(lc,prop_name='filter',id_list=filt,invert='')
         if len(lc_temp) > 0:
             mag = lc_temp["calibrated_magnitude"]
             error = lc_temp["calibrated_error"]
