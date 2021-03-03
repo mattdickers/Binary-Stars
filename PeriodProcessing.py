@@ -42,32 +42,38 @@ def runningMedian(phase, mag):
     return rp, rm, re
 
 
-phase = True
-flux = False
 m0 = 4.93
 
-name = 'lc_4987'
+name = 'lc_17749'
 
 PDMperiods = {'lc_4987':3.74665143028274,
               'lc_15284':11.2227147747016,
               'lc_17749':2.47402276101259}
 
-limits = {'lc_4987':[0.425,0.55],
-          'lc_15284':[0.45,0.55],
-          'lc_17749':[0.45,0.55]}
+periodsMan = {'lc_4987':3.746690,
+              'lc_15284':11.2227147747016,
+              'lc_17749':2.47406}
+
+limits = {'lc_4987':[0.49, 0.51, 11.3, 11.1],
+          'lc_15284':[0.45, 0.55, 12.4, 12.0],
+          'lc_17749':[0.51, 0.57, 12.25, 12.15]}
 
 # Load Lightcurve:
 t, m, me, f1, f2 = np.genfromtxt('Data/' + name + '.csv', delimiter=',', usecols=(0, 11, 12, 20, 21), unpack=True)
 
 lightcurve = np.array([t, m, me])
 periodLS = Periodogram.periodogram(lightcurve, name, pdm=0, double=1, plot=1, location='lightcurves/Periodograms/', limits=(1.5,4))
-periods = [periodLS, PDMperiods[name], 3.74669]
+periods = [periodLS, PDMperiods[name], periodsMan[name]]
 
 errorLim = np.nanmedian(me)
 
-fig, (ax1, ax2, ax3) = plt.subplots(1, 3)
+fig, (ax1, ax2, ax3) = plt.subplots(1, 3, sharex=True, sharey=True, figsize=(7, 5))
 plots = [ax1, ax2, ax3]
+fig.add_subplot(111, frameon=False)
+plt.tick_params(labelcolor='none', top=False, bottom=False, left=False, right=False)
+
 titles = {ax1:'Lomb-Scargle', ax2:'PDM', ax3:'Manual'}
+labels = {ax1:dayConvert(periods[0]), ax2:dayConvert(periods[1]), ax3:dayConvert(periods[2])}
 
 plt.cla()
 plotValues = []
@@ -133,38 +139,36 @@ for i, period in enumerate(periods):
     rf = rf[sort]
     rfe = rfe[sort]
 
-    if plots[i] == ax2:
-        label1 = 'Running Median'
-        label2 = r'$1\sigma$'
-    else:
-        label1 = None
-        label2 = None
+    label = labels[plots[i]]
 
-    plots[i].scatter(ph, m, color='black', s=1)
-    plots[i].plot(rp, rm, color='blue', markersize=0.5, label=label1)
+    plots[i].scatter(ph, m, color='black', s=1, label=label)
+    plots[i].plot(rp, rm, color='blue', markersize=0.5)
     plots[i].fill_between(ph, rm-re, rm+re, color='cyan',
-                     alpha=0.5, label=label2)
+                     alpha=0.5)
 
     plots[i].invert_yaxis()
-    if plots[i] == ax1:
-        plots[i].set_ylabel('Magnitude (mag)')
-    else:
-        plots[i].get_yaxis().set_visible(False)
+    # if plots[i] == ax1:
+    #     plots[i].set_ylabel('Magnitude (mag)')
+    # else:
+    #     plots[i].get_yaxis().set_visible(False)
+    #
+    # if plots[i] == ax2:
+    #     plots[i].set_xlabel('Phase')
+    # else:
+    #     pass
 
-    if plots[i] == ax2:
-        plots[i].set_xlabel('Phase')
-    else:
-        pass
-
-    ax2.legend(loc='upper center')
     plots[i].set_title(titles[plots[i]])
+    plots[i].legend(loc='upper center')
 
-    #plots[i].set_xlim(limits[name][0], limits[name][1])
-    plots[i].set_xlim(0.49, 0.51)
-    plots[i].set_ylim(11.3,11.1)
+    plots[i].set_xlim(limits[name][0], limits[name][1])
+    plots[i].set_ylim(limits[name][2], limits[name][3])
+
+plt.xlabel('Phase')
+plt.ylabel('Magnitude (mag)', labelpad=22.0)
+plt.tight_layout(pad=0.8, w_pad=0.8, h_pad=1.0)
 
 if not os.path.exists('lightcurves/Data/Periods/'+name+'/'):
     os.mkdir('lightcurves/Data/Periods/'+name+'/')
 
-plt.savefig('lightcurves/Data/Periods/'+name+'/'+name+'Periods.png')
-plt.savefig('lightcurves/Data/Periods/'+name+'/'+name+'Periods.pdf')
+plt.savefig('lightcurves/Data/Periods/'+name+'/'+name+'Periods.png', bbox_inches='tight')
+plt.savefig('lightcurves/Data/Periods/'+name+'/'+name+'Periods.pdf', bbox_inches='tight')

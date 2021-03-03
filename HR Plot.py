@@ -33,5 +33,5 @@ for i, star in enumerate(stars):
 plt.axis('off')
 plt.legend(fontsize='x-small')
 
-plt.savefig('HRDiagram.png', bbox_inches='tight', pad_inches = 0, dpi=300)
-plt.savefig('HRDiagram.pdf', bbox_inches='tight', pad_inches = 0, dpi=300)
+plt.savefig('HRDiagram.png', bbox_inches='tight', pad_inches=0, dpi=300)
+plt.savefig('HRDiagram.pdf', bbox_inches='tight', pad_inches=0, dpi=300)
