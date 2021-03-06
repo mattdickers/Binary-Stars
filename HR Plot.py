@@ -18,7 +18,7 @@ def magToPix(mag,d):
 
 stars = [{'Name':'4987', 'Colour':0.446, 'Mag':11.3431, 'Distance':1790.36},
          {'Name':'14535', 'Colour':0.781, 'Mag':12.5173, 'Distance':714.01},
-         {'Name':'15384', 'Colour':1.065, 'Mag':13.5912, 'Distance':5549.87},
+         {'Name':'15284', 'Colour':1.065, 'Mag':13.5912, 'Distance':5549.87},
          {'Name':'17749', 'Colour':0.913, 'Mag':12.7905, 'Distance':1583.53}]
 plotColours = ['r','b','g','k']
 

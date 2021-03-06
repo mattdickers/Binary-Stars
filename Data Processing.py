@@ -25,8 +25,8 @@ def magToFlux(mag, mag0):
 
 def runningMedian(phase, mag):
     #rdelta = 0.005 / 2.0
-    rdelta = 0.005 / 0.5 #Increased phase space
-    #rdelta = 0.005 / 0.2 #For 15284
+    #rdelta = 0.005 / 0.5 #Increased phase space
+    rdelta = 0.005 / 0.2 #For 15284
     rp = phase
     rm = np.empty(len(rp))
     re = np.empty(len(rp))
@@ -49,7 +49,7 @@ m0 = 4.93
 
 manualPeriods = {'lc_4987':3.746690,
                  'lc_14535':0.435490993254457,
-                 'lc_15284':11.2227147747016,
+                 'lc_15284':11.2227147747016/2,
                  'lc_17749':2.47406}
 
 PDMperiods = {'lc_4987':3.74665143028274,
@@ -58,7 +58,7 @@ PDMperiods = {'lc_4987':3.74665143028274,
               'lc_17749':2.47402276101259}
 
 #name = 'lc_4987' #Default
-name = 'lc_4987'
+name = 'lc_15284'
 
 # Load Lightcurve:
 t, m, me, f1, f2 = np.genfromtxt('Data/' + name + '.csv', delimiter=',', usecols=(0, 11, 12, 20, 21), unpack=True)
@@ -75,9 +75,8 @@ print(period)
 print(dayConvert(period))
 
 
-#period = 11.2227148/2 #For 15284
-#errorLim = 2*np.nanmedian(me)  # Calculate error limit based on median of errors #For 15284
-errorLim = np.nanmedian(me)
+errorLim = 2*np.nanmedian(me)  # Calculate error limit based on median of errors #For 15284
+#errorLim = np.nanmedian(me)
 
 plt.cla()
 
@@ -90,11 +89,10 @@ me = me[np.where(
     (me < errorLim) & (f1 == 0) & (
                 f2 == 0))]  # Get mag errors only when flags are equal to zero and errors within limit
 
-if name == 'lc_4987':
-    badNights = np.where(((t < 2452980) | (t > 2453020))) #Select bad nights in centre
-    t = t[badNights]
-    m = m[badNights]
-    me = me[badNights]
+badNights = np.where(((t < 2452980) | (t > 2453020))) #Select bad nights in centre
+t = t[badNights]
+m = m[badNights]
+me = me[badNights]
 
 m -= 4.93  # Convert instrumental mag to apparent
 
@@ -178,9 +176,9 @@ else:
 #Save Running Median Fux Data:
 n = 1000 #The approx number of data points that the running median arrays are reduced to
 
-t = t[0:len(t):int(len(t)/n)] #Reduce time array
-rf = rf[0:len(rf):int(len(rf)/n)] #Reduce running median flux array
-rfe = rfe[0:len(rfe):int(len(rfe)/n)] #Reduce running median flux error array
-outRF = np.array([np.full(t.shape, period), t, rf, rfe]).transpose()
-np.savetxt('lightcurves/Data/Running Median/' + name + '.csv', outRF, delimiter=',')
-print('Saved Output')
+# t = t[0:len(t):int(len(t)/n)] #Reduce time array
+# rf = rf[0:len(rf):int(len(rf)/n)] #Reduce running median flux array
+# rfe = rfe[0:len(rfe):int(len(rfe)/n)] #Reduce running median flux error array
+# outRF = np.array([np.full(t.shape, period), t, rf, rfe]).transpose()
+# np.savetxt('lightcurves/Data/Running Median/' + name + '.csv', outRF, delimiter=',')
+# print('Saved Output')

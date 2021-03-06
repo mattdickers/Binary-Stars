@@ -1,9 +1,13 @@
 import phoebe as pb
 from phoebe import u # units
+import matplotlib.pyplot as plt
+plt.rc('mathtext', fontset="cm")
 import numpy as np
 import time
 
-logger = pb.logger('info', filename='PHOEBE.log')
+#logger = pb.logger('info', filename='PHOEBE.log')
+#logger = pb.logger(filename='PHOEBE.log')
+pb.multiprocessing_off()
 
 def timeConvert(seconds):
     m, s = divmod(seconds, 60)
@@ -26,7 +30,10 @@ def sma(P, m1, m2):
     aR = a / 6.957e+8  # Convert SMA to AU
     return [a, aAU, aR]
 
+fileName = 'IM_Persei'
 path = 'lightcurves/SolverFitted/IM_Persei/'
+file = open(path+fileName+'Outputs.txt', 'w')
+file.write('')
 
 start = time.time()
 
@@ -67,8 +74,9 @@ b.set_value('period@binary', value=period)
 b.set_value('pblum_mode', 'dataset-scaled')
 
 b.run_compute(model='Initial_Fit')
-b.plot(x='phase', legend=True, s=0.01, xlabel='Phase', ylabel='Flux', save=path+'Initial_Fit.png')
-b.plot(x='phase', legend=True, s=0.01, xlabel='Phase', ylabel='Flux', save=path+'Initial_Fit.pdf')
+b['lc01@dataset'].plot(x='phase', legend=True, s=0.01)
+#b.plot(x='phase', legend=True, s=0.01, save=path+'Initial_Fit.png')
+b['lc01@Initial_Fit'].plot(x='phase', legend=True, s=0.01, save=path+'Initial_Fit.pdf')
 print('Initial Plotted\n')
 
 
@@ -89,10 +97,13 @@ adopt_params = [b['value@adopt_parameters@EBAI_solution'][i] for i, param in enu
 b['adopt_parameters@EBAI_solution'] = adopt_params
 
 print(b.adopt_solution('EBAI_solution', trial_run=True))
+file.writelines('EBAI:\n'+str(b.adopt_solution('EBAI_solution', trial_run=True))+'\n\n')
 b.adopt_solution('EBAI_solution')
 b.run_compute(model='EBAI_Fit')
-b.plot(x='phase', ls='-', legend=True, s=0.01, xlabel='Phase', ylabel='Flux', save=path+'EBAI_Fit.png')
-b.plot(x='phase', ls='-', legend=True, s=0.01, xlabel='Phase', ylabel='Flux', save=path+'EBAI_Fit.pdf')
+b['lc01@dataset'].plot(x='phase', legend=True, s=0.01)
+b['lc01@Initial_Fit'].plot(x='phase', legend=True, s=0.01)
+#b.plot(x='phase', ls='-', legend=True, s=0.01, save=path+'EBAI_Fit.png')
+b['lc01@EBAI_Fit'].plot(x='phase', ls='-', legend=True, s=0.01, c='r', save=path+'EBAI_Fit.pdf')
 print('EBAI Plotted\n')
 
 
@@ -106,10 +117,14 @@ b.flip_constraint('per0', solve_for='ecosw')
 b.flip_constraint('ecc', solve_for='esinw')
 
 print(b.adopt_solution('lcGeom_solution', trial_run=True))
+file.writelines('LC Geometry:\n'+str(b.adopt_solution('lcGeom_solution', trial_run=True))+'\n\n')
 b.adopt_solution('lcGeom_solution')
 b.run_compute(model='LC_Geometry_Fit')
-b.plot(x='phase', ls='-', legend=True, s=0.01, xlabel='Phase', ylabel='Flux', save=path+'LC_Geometry_Fit.png')
-b.plot(x='phase', ls='-', legend=True, s=0.01, xlabel='Phase', ylabel='Flux', save=path+'LC_Geometry_Fit.pdf')
+b['lc01@dataset'].plot(x='phase', legend=True, s=0.01)
+b['lc01@Initial_Fit'].plot(x='phase', legend=True, s=0.01)
+b['lc01@EBAI_Fit'].plot(x='phase', ls='-', legend=True, s=0.01, c='r')
+#b.plot(x='phase', ls='-', legend=True, s=0.01, save=path+'LC_Geometry_Fit.png')
+b['lc01@LC_Geometry_Fit'].plot(x='phase', ls='-', legend=True, s=0.01, c='g', save=path+'LC_Geometry_Fit.pdf')
 print('LC Geometry Plotted\n')
 
 
@@ -118,18 +133,27 @@ print('Starting Optimizer Solver')
 b.set_value_all('ld_mode', 'lookup')
 b.add_compute('ellc', compute='fastcompute') #Add fastcompute option from ellc
 b.add_solver('optimizer.nelder_mead',
-             fit_parameters=['teffratio@binary', 'requivsumfrac@binary', 'incl@binary', 'q', 'ecc', 'per0'], compute='fastcompute')
+             fit_parameters=['teffratio@binary', 'requivsumfrac@binary', 't0_supconj', 'incl@binary', 'q', 'ecc', 'per0'],
+             compute='fastcompute')
 
 b.run_solver(kind='nelder_mead', solution='optimizer_solution')
 
 print(b.adopt_solution('optimizer_solution', trial_run=True))
+file.writelines('Optimiser:\n'+str(b.adopt_solution('optimizer_solution', trial_run=True))+'\n\n')
 b.adopt_solution('optimizer_solution')
 b.run_compute(model='Optimizer_Fit', compute='fastcompute')
-b.plot(x='phase', ls='-', legend=True, s=0.01, xlabel='Phase', ylabel='Flux', save=path+'CGWithOptimizer.png')
-b.plot(x='phase', ls='-', legend=True, s=0.01, xlabel='Phase', ylabel='Flux', save=path+'CGWithOptimizer.pdf')
+b['lc01@dataset'].plot(x='phase', legend=True, s=0.01)
+b['lc01@Initial_Fit'].plot(x='phase', legend=True, s=0.01)
+b['lc01@EBAI_Fit'].plot(x='phase', ls='-', legend=True, s=0.01, c='r')
+b['lc01@LC_Geometry_Fit'].plot(x='phase', ls='-', legend=True, s=0.01, c='g')
+#b.plot(x='phase', ls='-', legend=True, s=0.01, save=path+'WithOptimizer.png')
+b['lc01@Optimizer_Fit'].plot(x='phase', ls='-', legend=True, s=0.01, c='y', save=path+'WithOptimizer.pdf')
 print('Optimizer Fit Plotted\n')
 
-b.save('bundle.phoebe')
+b.save(path+fileName+'.phoebe')
+print('Bundle Saved')
+
+b = pb.Bundle.open(path+fileName+'.phoebe')
 
 #Sampler
 b.add_solver('sampler.emcee', solver='emcee_solver')
@@ -137,21 +161,21 @@ b.set_value('compute', value='fastcompute', solver='emcee_solver')
 
 b.set_value('pblum_mode', 'component-coupled') #Could also set to 'dataset-coupled'
 
-b.progress_every_niters = 5
-
 #Default distribution from example:
 b.add_distribution({'sma@binary': pb.gaussian_around(0.1),
                     'incl@binary': pb.gaussian_around(5),
                     't0_supconj': pb.gaussian_around(0.001),
                     'requiv@primary': pb.gaussian_around(0.2),
-                    'ecc@binary': pb.uniform(0, 0.005), #Set such that cannot be a negative value. Upper bound is approx estimarot value, 0.005
+                    'pblum@primary': pb.gaussian_around(0.2),
                     'sigmas_lnf@lc01': pb.uniform(-1e9, -1e4),
                    }, distribution='ball_around_guess')
 
 # b.add_distribution({'teffratio': pb.gaussian_around(0.1),
 #                     'requivsumfrac': pb.gaussian_around(5),
 #                     't0_supconj': pb.gaussian_around(0.001),
-#                     'ecc': pb.gaussian_around(0.2),
+#                     'incl@binary': pb.gaussian_around(5),
+#                     'q': pb.gaussian_around(1),
+#                     'ecc': pb.gaussian_around(0.005),
 #                     'per0': pb.gaussian_around(0.2),
 #                     'sigmas_lnf@lc01': pb.uniform(-1e9, -1e4),
 #                    }, distribution='ball_around_guess')
@@ -171,9 +195,12 @@ b.run_compute(model='EMCEE_Fit', compute='fastcompute', sample_from='emcee_solut
 
 b.adopt_solution('emcee_solution', distribution='emcee_posteriors')
 
-#b.plot_distribution_collection(distribution='emcee_posteriors', save='lightcurves/SolverFitted/IM_Persei/Sampler.png')
+#b.plot_distribution_collection(distribution='emcee_posteriors', save='lightcurves/SolverFitted/Sampler.png')
 
 print(b.uncertainties_from_distribution_collection(distribution='emcee_posteriors', sigma=3, tex=True))
+file.writelines('Sampler:\n'+str(b.uncertainties_from_distribution_collection(distribution='emcee_posteriors', sigma=3,
+                                                                              tex=True))+'\n\n')
 
+file.close()
 end = time.time()
 print('\nCompute Time:', timeConvert(end - start))

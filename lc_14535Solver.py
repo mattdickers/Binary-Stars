@@ -51,7 +51,7 @@ b.set_value('pblum_mode', 'dataset-scaled')
 #Add Other Datasets
 b.add_dataset('orb', compute_times=pb.linspace(0,4,1001), dataset='orb01')
 b.add_dataset('rv', compute_times=pb.linspace(0,1,1001), dataset='rv01')
-b.add_dataset('mesh', compute_times=pb.linspace(0,1,51), dataset='mesh01')
+b.add_dataset('mesh', compute_times=pb.linspace(0,1,101), dataset='mesh01')
 b.set_value('columns', value=['teffs'])
 #b.set_value('coordinates', value=['xyz'])
 
@@ -71,13 +71,13 @@ b['rv01@model'].plot(x='phases', xlabel='Phase', ylable='Radial Velocity', save=
 print('RV Plotted\n')
 
 #Plot Mesh
-b['mesh01@model'].plot(time=0, xlabel=r'$x$', ylabel=r'$y$', fc='teffs', ec='none', draw_sidebars=True,
+b['mesh01@model'].plot(time=0, xlabel=r'$x$', ylabel=r'$y$', fc='teffs', ec='none', fclim=(5100,6600), draw_sidebars=True,
                        fclabel=r'$T_{eff}$', save=path+'Others/'+'Mesh.png')
-b['mesh01@model'].plot(time=0, xlabel=r'$x$', ylabel=r'$y$', fc='teffs', ec='none', draw_sidebars=True,
+b['mesh01@model'].plot(time=0, xlabel=r'$x$', ylabel=r'$y$', fc='teffs', ec='none', fclim=(5100,6600), draw_sidebars=True,
                        fclabel=r'$T_{eff}$', save=path+'Others/'+'Mesh.pdf')
 print('Mesh Plotted\n')
 
-b['mesh01@model'].plot(times=pb.linspace(0,1,51), xlabel=r'$x$', ylabel=r'$y$', fc='teffs', ec='None', animate=True,
+b['mesh01@model'].plot(times=pb.linspace(0,1,101), xlabel=r'$x$', ylabel=r'$y$', fc='teffs', fclim=(5100,6600), ec='None', animate=True,
                        draw_sidebars=True, fclabel=r'$T_{eff}$', save='animations/'+fileName+'MeshAnimation.gif')
 print('Mesh Animation Plotted\n')
 

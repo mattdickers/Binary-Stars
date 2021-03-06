@@ -11,7 +11,7 @@ null,
 null
 ],
 "qualifier": "t0",
-"uniqueid": "QhcIPHkKEDJKViEncXQzkTtRjFHbHa",
+"uniqueid": "lBoDvzyFGkCvsKzWqTvcJvjguXsFfS",
 "value": 0.0
 },
 {
@@ -27,7 +27,7 @@ null,
 null
 ],
 "qualifier": "ra",
-"uniqueid": "xnHnazvwDeWBXXtJDTiifxYibwRuch",
+"uniqueid": "DToZjgZotOCwFSAlStqcQdLBZhoXaS",
 "value": 0.0
 },
 {
@@ -43,7 +43,7 @@ null,
 null
 ],
 "qualifier": "dec",
-"uniqueid": "AsydciZMNgEzjjEXgJLMgJIKVodgri",
+"uniqueid": "MWGsdjZkIKkdmfaRYGLHaZUCRbzbij",
 "value": 0.0
 },
 {
@@ -58,7 +58,7 @@ null,
 null
 ],
 "qualifier": "distance",
-"uniqueid": "GDXsZUnbpgxNdzfSAHDBIoteGlWstX",
+"uniqueid": "cbzPOBzkCFlQBElLAIIXeArxfdDUgO",
 "value": 1.0
 },
 {
@@ -73,7 +73,7 @@ null,
 null
 ],
 "qualifier": "vgamma",
-"uniqueid": "VVOEzaECHiqwyKzlDLFLTMxSQBBJqZ",
+"uniqueid": "ZaCxQjWTVjDOZEziERhqdPcstaTluY",
 "value": 0.0
 },
 {
@@ -88,7 +88,7 @@ null,
 null
 ],
 "qualifier": "ebv",
-"uniqueid": "rRvoEJYpIKODaxNDRoZBooNCzunwIp",
+"uniqueid": "cHaGdpJOEWFcQayOSQfVdLyxlKhbCr",
 "value": 0.0
 },
 {
@@ -103,7 +103,7 @@ null,
 null
 ],
 "qualifier": "Av",
-"uniqueid": "SjpiAvGtLbQmdbButYoQrkxzMxXbQj",
+"uniqueid": "ctlBZiPJKpHkWCcZFENflizYSBhwkh",
 "value": 0.0
 },
 {
@@ -118,7 +118,7 @@ null,
 null
 ],
 "qualifier": "Rv",
-"uniqueid": "tUmsNTMQDJpVUNosclqgYYKLqOtoqA",
+"uniqueid": "APtJLhygxmFGtSKIAWDoMmyqcpYLoR",
 "value": 3.1
 },
 {
@@ -128,7 +128,7 @@ null
 "copy_for": false,
 "description": "Hierarchy representation",
 "qualifier": "hierarchy",
-"uniqueid": "ZntVAyQxpGVmVtyHbrwbJARvJQdTUI",
+"uniqueid": "rWtfhNpukqOBBbMtqKuVhZYYpmwLFn",
 "value": "orbit:binary(star:primary, star:secondary)"
 },
 {
@@ -145,7 +145,7 @@ null
 null
 ],
 "qualifier": "requiv",
-"uniqueid": "XovGIquVyUosqaOCYYWcvlpxvJWBsf",
+"uniqueid": "sGmDdXRjKucqWMQMGQpfbphdLxXMpX",
 "value": 1.0
 },
 {
@@ -162,7 +162,7 @@ null
 null
 ],
 "qualifier": "requiv_max",
-"uniqueid": "FflSFaQCJxghmPZUuktdQIUNRTxwIZ",
+"uniqueid": "cAHxCfYQkDNfMzRsnffZExRQcXzUmm",
 "value": 2.47355546419891
 },
 {
@@ -179,7 +179,7 @@ null
 null
 ],
 "qualifier": "requiv_min",
-"uniqueid": "htDiinyGdHKrmGjEMsRZslsqZwOmdp",
+"uniqueid": "phYQSCOVdKlZVrWwONVyhmmhbvLFNt",
 "value": 0.1,
 "visible_if": "hierarchy.is_contact_binary:True"
 },
@@ -197,7 +197,7 @@ null
 null
 ],
 "qualifier": "teff",
-"uniqueid": "xDkbFIXvXTOPLbjQathWrLaELLqydv",
+"uniqueid": "lMeeNmtjzFqYpHwaaYFjeBBezqJXdm",
 "value": 6000.0
 },
 {
@@ -213,7 +213,7 @@ null,
 null
 ],
 "qualifier": "abun",
-"uniqueid": "WGaYbXERlxyxoNFZCkRjcFbiMUwGXQ",
+"uniqueid": "VTSKIectftLSFpxDTQgwRRUnmwkiGG",
 "value": 0.0,
 "visible_if": "hierarchy.is_contact_binary:False"
 },
@@ -231,7 +231,7 @@ null,
 null
 ],
 "qualifier": "logg",
-"uniqueid": "vsUHJDOrBJAGdPFhGvHCLsIkqejHfR",
+"uniqueid": "HtoQQEPBqMIyCpDxNwjcNICCkrZKdX",
 "value": 3.8952708840982804
 },
 {
@@ -248,7 +248,7 @@ null
 null
 ],
 "qualifier": "syncpar",
-"uniqueid": "TlJbAlNnjEdmfiLmthkwbXgrMYumdS",
+"uniqueid": "vmefpiXCSzladJLQsnNQvblgzRGfnr",
 "value": 1.0,
 "visible_if": "hierarchy.is_binary:True"
 },
@@ -267,7 +267,7 @@ null
 null
 ],
 "qualifier": "period",
-"uniqueid": "hMlThVkgbCrYyUcFygFwXedWiPHSzK",
+"uniqueid": "NgtxuYLMSpSXsSWPDXBTHxRXLFjsfj",
 "value": 2.25422694
 },
 {
@@ -285,7 +285,7 @@ null
 null
 ],
 "qualifier": "freq",
-"uniqueid": "nYWtDOBByDFuxecTeBZPNmhHmPjUOX",
+"uniqueid": "FLdqZYVXNbEDhvGsxPhdtActAjQZYl",
 "value": 2.7872903515206855
 },
 {
@@ -302,7 +302,7 @@ null,
 null
 ],
 "qualifier": "pitch",
-"uniqueid": "RkQEcQZiUcxvYNUfURzQsDTwqorRJn",
+"uniqueid": "HeitiNbjUlhusxMZRdLAFQCCMkAPpM",
 "value": 0.0,
 "visible_if": "hierarchy.is_contact_binary:False,hierarchy.is_binary:True"
 },
@@ -320,7 +320,7 @@ null,
 null
 ],
 "qualifier": "yaw",
-"uniqueid": "rXCFZbdlmrthnJcDHQHJqfHjxoKUmA",
+"uniqueid": "DesBKACAcrTyPoGLDQHIpiGGMrnAAN",
 "value": 0.0,
 "visible_if": "hierarchy.is_contact_binary:False,hierarchy.is_binary:True"
 },
@@ -339,7 +339,7 @@ null,
 null
 ],
 "qualifier": "incl",
-"uniqueid": "HkCffumikSZqmqzHxbMJNoXAUjhwQM",
+"uniqueid": "EQxOzdGEVzbNFLtDyKqwBcRGCcHHFP",
 "value": 89.97592483055723,
 "visible_if": "hierarchy.is_contact_binary:False"
 },
@@ -357,7 +357,7 @@ null,
 null
 ],
 "qualifier": "long_an",
-"uniqueid": "SCxnaGuiHKrMBuaMDqFztVZrEGtDQB",
+"uniqueid": "oxLLFhJPbrPHCEncuWDqyvuFbpbPPw",
 "value": 0.0,
 "visible_if": "hierarchy.is_contact_binary:False"
 },
@@ -374,7 +374,7 @@ null
 1.0
 ],
 "qualifier": "gravb_bol",
-"uniqueid": "bUjYcufrwdmMFvAcyHJurMgPGcbJoJ",
+"uniqueid": "AmkeijOVFvvCRUNwMzaKkkeZXFjiWY",
 "value": 0.32
 },
 {
@@ -390,7 +390,7 @@ null
 1.0
 ],
 "qualifier": "irrad_frac_refl_bol",
-"uniqueid": "yXidNwdzbiUPkufGZLsAkJYBGRTqdQ",
+"uniqueid": "UShQaZNVMjIixgtXQfLISttQpKHzuq",
 "value": 0.6
 },
 {
@@ -407,7 +407,7 @@ null
 1.0
 ],
 "qualifier": "irrad_frac_lost_bol",
-"uniqueid": "IACYNprZzUbIiLAndDNLYhpCEWydqp",
+"uniqueid": "HMzVJXemFpEPnyxQBsjuWYOITUeIkZ",
 "value": 0.4
 },
 {
@@ -422,7 +422,7 @@ null
 "description": "Mode to use for bolometric limb-darkening (used only for irradiation).",
 "kind": "star",
 "qualifier": "ld_mode_bol",
-"uniqueid": "tbLdOEjOtWTnwpzJpoKQGaUYUqbDeS",
+"uniqueid": "egPpdinUfxgfleBjyetInrSLveCWRQ",
 "value": "lookup"
 },
 {
@@ -440,7 +440,7 @@ null
 "description": "Bolometric limb darkening model (used only for irradiation).",
 "kind": "star",
 "qualifier": "ld_func_bol",
-"uniqueid": "auoNFRRyEiipnzZiClPVjnWQephbex",
+"uniqueid": "SThFioxQRaAZxinazyboeftBlFPDxB",
 "value": "logarithmic"
 },
 {
@@ -448,8 +448,8 @@ null
 "advanced": true,
 "choices": [
 "auto",
-"ck2004",
-"phoenix"
+"phoenix",
+"ck2004"
 ],
 "component": "primary",
 "context": "component",
@@ -457,7 +457,7 @@ null
 "description": "Source for bolometric limb darkening coefficients (used only for irradiation; 'auto' to interpolate from the applicable table according to the 'atm' parameter, or the name of a specific atmosphere table)",
 "kind": "star",
 "qualifier": "ld_coeffs_source_bol",
-"uniqueid": "aSCCjJeyoLiGzRmlTFXyLfzxdwzOcU",
+"uniqueid": "KYnWVTQpBQQIfJGOJHoURwsasgiIJN",
 "value": "auto",
 "visible_if": "ld_mode_bol:lookup"
 },
@@ -469,11 +469,12 @@ null
 "default_unit": "",
 "description": "Bolometric limb darkening coefficients (used only for irradiation).",
 "kind": "star",
+"latexfmt": "\\mathrm{{ ldc }}_\\mathrm{{ bol, {component} }}",
 "qualifier": "ld_coeffs_bol",
 "required_shape": [
 null
 ],
-"uniqueid": "MTtqcIqmgqdCynKEWhlpWpTrPhCgqv",
+"uniqueid": "jPPxSTvYWkaGTFcNgwrGohKqQbrzLn",
 "value": [
 0.7100141239975482,
 0.28011045509580984
@@ -494,7 +495,7 @@ null,
 null
 ],
 "qualifier": "mass",
-"uniqueid": "DciPhAEQNeFogIyEjySgBkWfQIwIQq",
+"uniqueid": "wfYqNNMakyysdMKBkahDwwbECFDXjk",
 "value": 0.2865518732197829
 },
 {
@@ -511,7 +512,7 @@ null
 null
 ],
 "qualifier": "requiv",
-"uniqueid": "JpQXqPAGyPERfLhLjcxlylFqblRJHI",
+"uniqueid": "gvzGrxfDUXFqLtgFsQEkFUlEHYaKQb",
 "value": 1.1573152767249701
 },
 {
@@ -528,7 +529,7 @@ null
 null
 ],
 "qualifier": "requiv_max",
-"uniqueid": "juSjkjhtYUKgTrhacrelcRHUxILeFZ",
+"uniqueid": "IKJyjvUoWSEYLiBEwujNexkqJVAnQu",
 "value": 1.5664457394290747
 },
 {
@@ -545,7 +546,7 @@ null
 null
 ],
 "qualifier": "requiv_min",
-"uniqueid": "OLGuTHWmVxdPnbFxjzAQrffgBptJOD",
+"uniqueid": "FyfzBGUpftEcTMDLTsTJJseQHIOWHY",
 "value": 0.1,
 "visible_if": "hierarchy.is_contact_binary:True"
 },
@@ -563,7 +564,7 @@ null
 null
 ],
 "qualifier": "teff",
-"uniqueid": "VlTnOPwIgchVJdwDBticNMIBJnHxTA",
+"uniqueid": "kRLYqJJpOKkKurXtGuELETJPsERQoX",
 "value": 5925.501263240184
 },
 {
@@ -579,7 +580,7 @@ null,
 null
 ],
 "qualifier": "abun",
-"uniqueid": "QZrbBPUYrbmuVHeItXCPElZcBlbMpj",
+"uniqueid": "BnYDzhOtqhahnAsrPhOWjFnzvVnZZt",
 "value": 0.0,
 "visible_if": "hierarchy.is_contact_binary:False"
 },
@@ -597,7 +598,7 @@ null,
 null
 ],
 "qualifier": "logg",
-"uniqueid": "UGWEGlMhYGmANOZDBEnbKZoEPTOMBW",
+"uniqueid": "goRTISdwKgDTrKNthnSLfpuaLbPFeC",
 "value": 3.3387688331487335
 },
 {
@@ -614,7 +615,7 @@ null
 null
 ],
 "qualifier": "syncpar",
-"uniqueid": "ZnFFWXKLuvzesrcwjSGRfPaZhAzdoi",
+"uniqueid": "PJToNjViaxhKUKChkvofloKUwmhVCx",
 "value": 1.0,
 "visible_if": "hierarchy.is_binary:True"
 },
@@ -633,7 +634,7 @@ null
 null
 ],
 "qualifier": "period",
-"uniqueid": "MCAXJLbsWBXCdyhzxTKFzhMytKZlxd",
+"uniqueid": "IfkvwaKrFAAZBMTQtnvmXOHHWLFhCC",
 "value": 2.25422694
 },
 {
@@ -651,7 +652,7 @@ null
 null
 ],
 "qualifier": "freq",
-"uniqueid": "qyJHuYDCCDWzcdeCNIjJQpMGfmdhvU",
+"uniqueid": "TwcKpwkGiOgfCQMleDwqiZEsUTeiTM",
 "value": 2.7872903515206855
 },
 {
@@ -668,7 +669,7 @@ null,
 null
 ],
 "qualifier": "pitch",
-"uniqueid": "NbsuiGPMEkAxSYHFGYIIxXiBUgoIlK",
+"uniqueid": "JWQURwgyFBizvEYpqoWFsbQqOBuImd",
 "value": 0.0,
 "visible_if": "hierarchy.is_contact_binary:False,hierarchy.is_binary:True"
 },
@@ -686,7 +687,7 @@ null,
 null
 ],
 "qualifier": "yaw",
-"uniqueid": "bOYmZFQcYsbacXucTTuMkStgSjtlNI",
+"uniqueid": "kjZjzPzHVfHHyxdJvbcrevcSYFxFVN",
 "value": 0.0,
 "visible_if": "hierarchy.is_contact_binary:False,hierarchy.is_binary:True"
 },
@@ -705,7 +706,7 @@ null,
 null
 ],
 "qualifier": "incl",
-"uniqueid": "rWcuVrYiLTWiNoAEaPTvNLYTMKpPDx",
+"uniqueid": "IoWUnUmXPoVdZiJjFBdbcxRMifTFEm",
 "value": 89.97592483055723,
 "visible_if": "hierarchy.is_contact_binary:False"
 },
@@ -723,7 +724,7 @@ null,
 null
 ],
 "qualifier": "long_an",
-"uniqueid": "ChdNYcrDOVatwQPxLUrVgzjffPJuWF",
+"uniqueid": "njdvRqvTcgCBDxJgdCHBZplKoKstFW",
 "value": 0.0,
 "visible_if": "hierarchy.is_contact_binary:False"
 },
@@ -740,7 +741,7 @@ null
 1.0
 ],
 "qualifier": "gravb_bol",
-"uniqueid": "YDFBIcVVBpOdpMmIKZPdEExmmBfCUG",
+"uniqueid": "BHxmuGUFkmGvmGZVXdGECkYElQQDwJ",
 "value": 0.32
 },
 {
@@ -756,7 +757,7 @@ null
 1.0
 ],
 "qualifier": "irrad_frac_refl_bol",
-"uniqueid": "EoMUAJfzAXZIKindJtFgKBMQtrlqHj",
+"uniqueid": "qFGpMwEtstxzAbRvOAHHMNCZhZaJWI",
 "value": 0.6
 },
 {
@@ -773,7 +774,7 @@ null
 1.0
 ],
 "qualifier": "irrad_frac_lost_bol",
-"uniqueid": "HckoPqBSuhIxRfytkbDrsfJCCViMDa",
+"uniqueid": "rogZwQPvBuziTbHFqBKOgVQctaomil",
 "value": 0.4
 },
 {
@@ -788,7 +789,7 @@ null
 "description": "Mode to use for bolometric limb-darkening (used only for irradiation).",
 "kind": "star",
 "qualifier": "ld_mode_bol",
-"uniqueid": "DJmUczcgvEYqVkQynWtffBrxFOTsve",
+"uniqueid": "zCOpjaCzgDECeulrNcvszXmmCuZSft",
 "value": "lookup"
 },
 {
@@ -806,7 +807,7 @@ null
 "description": "Bolometric limb darkening model (used only for irradiation).",
 "kind": "star",
 "qualifier": "ld_func_bol",
-"uniqueid": "WLXnOFJJEiApRkCLOWhwEUCZXxsLmN",
+"uniqueid": "FeLPoeuYaiNfdUGYaRHpQgpcbofbBN",
 "value": "logarithmic"
 },
 {
@@ -814,8 +815,8 @@ null
 "advanced": true,
 "choices": [
 "auto",
-"ck2004",
-"phoenix"
+"phoenix",
+"ck2004"
 ],
 "component": "secondary",
 "context": "component",
@@ -823,7 +824,7 @@ null
 "description": "Source for bolometric limb darkening coefficients (used only for irradiation; 'auto' to interpolate from the applicable table according to the 'atm' parameter, or the name of a specific atmosphere table)",
 "kind": "star",
 "qualifier": "ld_coeffs_source_bol",
-"uniqueid": "NgiZHxyxwTWrErLUBtTMUoMrXwdKSe",
+"uniqueid": "DwsPNlRkNGbQRDoeCKLfgTilhgYSfA",
 "value": "auto",
 "visible_if": "ld_mode_bol:lookup"
 },
@@ -835,11 +836,12 @@ null
 "default_unit": "",
 "description": "Bolometric limb darkening coefficients (used only for irradiation).",
 "kind": "star",
+"latexfmt": "\\mathrm{{ ldc }}_\\mathrm{{ bol, {component} }}",
 "qualifier": "ld_coeffs_bol",
 "required_shape": [
 null
 ],
-"uniqueid": "isXzbImejsySRTYxzuZBnSjVVYBtKJ",
+"uniqueid": "RHXEYrULsVqhxvuGpbxwSDHodynmXF",
 "value": [
 0.7101469680362628,
 0.27937820739038927
@@ -860,7 +862,7 @@ null,
 null
 ],
 "qualifier": "mass",
-"uniqueid": "QOqlvpVweRYlQNGCrfKuOhbMvYwIZK",
+"uniqueid": "RoeJGQHNWHLcZMpBylGhpTyDkpphzL",
 "value": 0.10656254221046492
 },
 {
@@ -877,7 +879,7 @@ null
 null
 ],
 "qualifier": "period",
-"uniqueid": "UNYQpCkClqoRRwGIvomthlzkYTzrsp",
+"uniqueid": "eRNuOQxZMabeCBRraDVeRSXkkexAlY",
 "value": 2.25422694
 },
 {
@@ -894,7 +896,7 @@ null,
 null
 ],
 "qualifier": "period_anom",
-"uniqueid": "UwwXkDfcPvDajupcOihqueEuQnUxpr",
+"uniqueid": "FywbVvLoeqRykDhntLBRHQbdgKDnan",
 "value": 2.25422694,
 "visible_if": "dperdt:!0.0"
 },
@@ -913,7 +915,7 @@ null,
 null
 ],
 "qualifier": "freq",
-"uniqueid": "ayvqjUeBXgqAfejEPjTMkrbdziBnDi",
+"uniqueid": "vsUCGNgZKqRtsxfrEBpYxMYnUMOGqS",
 "value": 2.7872903515206855
 },
 {
@@ -931,7 +933,7 @@ null,
 null
 ],
 "qualifier": "dpdt",
-"uniqueid": "fxwyAYoRwFTPNcunzLouKWnlmdeWmO",
+"uniqueid": "awZphDtFVeGvQvSKESCbpeWGapaxOk",
 "value": 0.0
 },
 {
@@ -948,7 +950,7 @@ null,
 null
 ],
 "qualifier": "per0",
-"uniqueid": "pkzKsexbAQEnHkTpoYwwgIayVcsjNR",
+"uniqueid": "tGoDDizfVXnAgxncKebRYngFKHuChF",
 "value": 104.38994044969633
 },
 {
@@ -966,7 +968,7 @@ null,
 null
 ],
 "qualifier": "dperdt",
-"uniqueid": "pnkjxWODpsMFbZdFYMddfaMEiqDqFT",
+"uniqueid": "wYRbhAEacXuKHIkEUUddTmAXelIYXD",
 "value": 0.0
 },
 {
@@ -983,7 +985,7 @@ null
 0.999999
 ],
 "qualifier": "ecc",
-"uniqueid": "FGALTUXCbiNJhgEfeAQKbgVFCfSINi",
+"uniqueid": "dzESgkTuRePJdxKKHQFgdxmovyBeqt",
 "value": 0.005276502745636175
 },
 {
@@ -1000,7 +1002,7 @@ null,
 null
 ],
 "qualifier": "t0_perpass",
-"uniqueid": "kjIWNmdknIBxdNgOICXYGKvurCNyAG",
+"uniqueid": "wgJViEbWoyQiRWkkEfrSEpfHMFMzxs",
 "value": 0.09126486447003368
 },
 {
@@ -1017,7 +1019,7 @@ null,
 null
 ],
 "qualifier": "t0_supconj",
-"uniqueid": "MsdsHWNBXrYsTgJpTbXoZlSMkirZAU",
+"uniqueid": "jfdRZJrrBQrgPLaFDONoXrvGdHjpGR",
 "value": 0.0020961072935547116
 },
 {
@@ -1034,7 +1036,7 @@ null,
 null
 ],
 "qualifier": "t0_ref",
-"uniqueid": "mUIUkQONnQbdOtkQpyastIGPeeEFKY",
+"uniqueid": "rxAdXkgNYcmsabwGAYbrYDfmLSYzLw",
 "value": 0.0011587771736415562
 },
 {
@@ -1051,7 +1053,7 @@ null,
 null
 ],
 "qualifier": "mean_anom",
-"uniqueid": "FMGZBTvTBaSjwJUOChZzMJiaUETQys",
+"uniqueid": "jmWgScfGXUnYFANJraFrOPmGsNwnbj",
 "value": 345.42500356998573
 },
 {
@@ -1068,7 +1070,7 @@ null
 180.0
 ],
 "qualifier": "incl",
-"uniqueid": "ZSxOMRjJIOUSurGVKqjkxmrpaEIQJB",
+"uniqueid": "rktqHGZtWDvvkskOXbcUGgECxQYxRa",
 "value": 89.97592483055723
 },
 {
@@ -1085,7 +1087,7 @@ null
 null
 ],
 "qualifier": "q",
-"uniqueid": "wTasuizhNMdERrAqhvePhyQIvPooUr",
+"uniqueid": "RvEDokBbCZbetuCdhXvIhkjOjuvcHQ",
 "value": 0.37187871436014774
 },
 {
@@ -1102,7 +1104,7 @@ null
 null
 ],
 "qualifier": "sma",
-"uniqueid": "JOKScQANkLKHVEljMddsGZMWQwIMZV",
+"uniqueid": "fvUzuiTZGTFjmrJuvroYjvkTtuMSGj",
 "value": 5.3
 },
 {
@@ -1119,7 +1121,7 @@ null,
 null
 ],
 "qualifier": "long_an",
-"uniqueid": "ztllYcUynDnyNHNecBReIWglmeOdPO",
+"uniqueid": "NuXgAUWmhbVOMRqpjIjDNQTdQzUSEx",
 "value": 0.0
 },
 {
@@ -1136,7 +1138,7 @@ null,
 null
 ],
 "qualifier": "asini",
-"uniqueid": "fPQGmQJhWLQtyyOOYlhCjsJJZHUygg",
+"uniqueid": "WmtKeMzBmVwAIdZbehEbLsJWhobyVY",
 "value": 5.2999995321148
 },
 {
@@ -1153,7 +1155,7 @@ null
 1.0
 ],
 "qualifier": "ecosw",
-"uniqueid": "ysIIqiMPDcIeXiNeRoOPqXNUOjwMEY",
+"uniqueid": "HaVjvniPzMCXzTZxluNWKokRMjqHUb",
 "value": -0.0013113155494287076
 },
 {
@@ -1170,7 +1172,7 @@ null
 1.0
 ],
 "qualifier": "esinw",
-"uniqueid": "ZbtdTphWIDXxtEOUiUlmVugEYQTCEz",
+"uniqueid": "MBDtYnBiHzqxdcDUfIRXofKebdmQxH",
 "value": 0.005110962018498336
 },
 {
@@ -1188,7 +1190,7 @@ null,
 null
 ],
 "qualifier": "sma",
-"uniqueid": "AKSGMMultoigkbPOTKiKCerbIkMbMD",
+"uniqueid": "jTtjnsWksXgGGAwFFfupSdbAOABkNA",
 "value": 1.4366847196313917
 },
 {
@@ -1206,7 +1208,7 @@ null,
 null
 ],
 "qualifier": "asini",
-"uniqueid": "rwURfHwfyGoLUMubisTfgMbFQkUfog",
+"uniqueid": "osZMSxWWkinacQTmMRQaNigQUaiaPw",
 "value": 1.4366845928005394
 },
 {
@@ -1224,7 +1226,7 @@ null,
 null
 ],
 "qualifier": "sma",
-"uniqueid": "AJetuiqiRqLfrbOQnbrQUKkqkQePrL",
+"uniqueid": "aWBneJAeOmIkVsUIuyGBSafnVUkwOJ",
 "value": 3.8633152803686084
 },
 {
@@ -1242,7 +1244,7 @@ null,
 null
 ],
 "qualifier": "asini",
-"uniqueid": "qtGsrbtxHzFjIsAMlDAfwZHyFvLfUY",
+"uniqueid": "nvQzdzqUSeKOSrgppEGqXTFqRBKuyD",
 "value": 3.863314939314261
 },
 {
@@ -1259,7 +1261,7 @@ null
 null
 ],
 "qualifier": "teffratio",
-"uniqueid": "paZuhYIVblyCbSFBjLoIRjeYqLFIYn",
+"uniqueid": "AKKVZODhIBMTZZJmKqENjlgMyeJXsw",
 "value": 0.9875835438733638
 },
 {
@@ -1276,7 +1278,7 @@ null
 null
 ],
 "qualifier": "requivsumfrac",
-"uniqueid": "qiuxvtrfSgiVgfOpudsgbiOuDloGWj",
+"uniqueid": "UoUsaPlRjsBtlgAiPClJDdFcDjCkza",
 "value": 0.4070406182499944
 },
 {
@@ -1291,7 +1293,7 @@ null
 "required_shape": [
 null
 ],
-"uniqueid": "gMSKymWagWKVyGgfEDSAOsgcMRaCGW",
+"uniqueid": "FfhTGgYzNsCIDWKMchvXAUNLBnlQAs",
 "value": [
 0.0,
 0.002245245956175299,
@@ -2312,7 +2314,7 @@ null
 "required_shape": [
 null
 ],
-"uniqueid": "vuFpGoEARXCpyBpUGVEXZqcPhfBmoj",
+"uniqueid": "adJuGapMliLyZtZPfgBLLitvFdykWv",
 "value": [
 0.9985940043990804,
 0.9755050671197358,
@@ -3340,7 +3342,7 @@ null
 "description": "Mode to use for limb-darkening",
 "kind": "lc",
 "qualifier": "ld_mode",
-"uniqueid": "CMDhtnQVfHdDfLBIUEBTWihSzrrXHQ",
+"uniqueid": "kPInqBelNrlKaspCCGdWUiNaaGsloL",
 "value": "lookup"
 },
 {
@@ -3364,7 +3366,7 @@ null
 "description": "Limb darkening model",
 "kind": "lc",
 "qualifier": "ld_func",
-"uniqueid": "AtEVDHDGREpBiruxXDohAcysqIGdXf",
+"uniqueid": "RFxFkGiZVpOJoOGFxgYBBLGSBOJwiP",
 "value": "logarithmic",
 "visible_if": "ld_mode:lookup|manual"
 },
@@ -3388,7 +3390,7 @@ null
 "description": "Source for limb darkening coefficients ('auto' to interpolate from the applicable table according to the 'atm' parameter, or the name of a specific atmosphere table)",
 "kind": "lc",
 "qualifier": "ld_coeffs_source",
-"uniqueid": "SkdTZyineaObKJxlSeKCsbGeCiHwXm",
+"uniqueid": "cuUtsYnYgQQbwnvntvQjJOwZfLqDUz",
 "value": "auto",
 "visible_if": "ld_mode:lookup"
 },
@@ -3406,11 +3408,12 @@ null
 "default_unit": "",
 "description": "Limb darkening coefficients",
 "kind": "lc",
+"latexfmt": "\\mathrm{{ ldc }}_\\mathrm{{ {dataset}, {component} }}",
 "qualifier": "ld_coeffs",
 "required_shape": [
 null
 ],
-"uniqueid": "WXCxahmIyBMROejfdLoqiTdTdZVnoy",
+"uniqueid": "XEAkzIzDeEIPUVUbrqWkeFgXKPwXOs",
 "value": [
 0.5,
 0.5
@@ -3420,55 +3423,55 @@ null
 {
 "Class": "ChoiceParameter",
 "choices": [
-"PanStarrs:w",
-"Johnson:U",
-"Gaia:G",
-"Stromgren:v",
-"Cousins:I",
-"PanStarrs:z",
-"SWASP:pre2004",
+"Gaia:RP",
+"Tycho:B",
+"SWASP:default",
+"LSST:i",
 "SDSS:u",
-"Kepler:mean",
-"SDSS:iprime",
-"SDSS:zprime",
-"Tycho:V",
-"BRITE:red",
+"PanStarrs:g",
+"Cousins:I",
 "LSST:z",
+"Bolometric:900-40000",
+"Stromgren:u",
+"LSST:r",
+"LSST:y3",
+"Stromgren:v",
+"SDSS:zprime",
+"Cousins:R",
+"Tycho:V",
+"PanStarrs:r",
+"Gaia:RVS",
+"Johnson:U",
+"Hipparcos:Hp",
+"TESS:T",
+"PanStarrs:z",
+"PanStarrs:w",
+"Johnson:I",
+"KELT:R",
+"BRITE:red",
+"Johnson:V",
 "LSST:u",
+"PanStarrs:i",
+"SDSS:g",
+"SDSS:iprime",
+"PanStarrs:open",
+"PanStarrs:y",
 "SDSS:r",
-"SDSS:uprime",
+"Johnson:R",
+"Gaia:G",
+"Stromgren:y",
+"BRITE:blue",
 "SDSS:z",
 "Gaia:BP",
-"KELT:R",
-"Johnson:I",
-"BRITE:blue",
-"PanStarrs:open",
-"Tycho:B",
-"Gaia:RVS",
-"SDSS:g",
-"Gaia:RP",
-"PanStarrs:g",
-"SDSS:i",
-"Hipparcos:Hp",
-"PanStarrs:i",
-"Bolometric:900-40000",
-"LSST:i",
-"SWASP:default",
+"SDSS:rprime",
+"Johnson:B",
 "Stromgren:b",
 "SDSS:gprime",
-"SDSS:rprime",
-"Cousins:R",
-"Johnson:B",
-"TESS:T",
+"SWASP:pre2004",
+"Kepler:mean",
+"SDSS:i",
 "LSST:g",
-"LSST:r",
-"Johnson:R",
-"Johnson:V",
-"PanStarrs:r",
-"LSST:y3",
-"Stromgren:y",
-"PanStarrs:y",
-"Stromgren:u"
+"SDSS:uprime"
 ],
 "context": "dataset",
 "copy_for": false,
@@ -3476,7 +3479,7 @@ null
 "description": "Passband",
 "kind": "lc",
 "qualifier": "passband",
-"uniqueid": "zXDhtNnxizlKSUoFyGSoKAoJlmAVzv",
+"uniqueid": "UZOTOQbtEDLCpynEHlowCFeGIgjUes",
 "value": "Johnson:R"
 },
 {
@@ -3492,7 +3495,7 @@ null
 "description": "Whether passband intensities are weighted by energy or photons",
 "kind": "lc",
 "qualifier": "intens_weighting",
-"uniqueid": "dQVEVuWipgdMlXhPumyBmvTFlzDQfR",
+"uniqueid": "UpoTxsSHFfISfFcVWsOmlgsJRBaCom",
 "value": "energy"
 },
 {
@@ -3507,7 +3510,7 @@ null
 "required_shape": [
 null
 ],
-"uniqueid": "MlJWziQpgzspfxcgiAsLQyqbNsoHDy",
+"uniqueid": "CZeeyNjjSUTrEzxvUnWzSQrcChBEcw",
 "value": []
 },
 {
@@ -3523,7 +3526,7 @@ null
 "required_shape": [
 null
 ],
-"uniqueid": "niLpYVfUicpzCqWWwgspKpbixIPmbG",
+"uniqueid": "itRaRGsJMptAXhDobfzikzfHPaxMtb",
 "value": []
 },
 {
@@ -3540,7 +3543,7 @@ null
 "description": "period to use when converting between compute_times and compute_phases as well as when applying mask_phases",
 "kind": "lc",
 "qualifier": "phases_period",
-"uniqueid": "kRwhxksVayaRQGleXmfkpzIojrpYnc",
+"uniqueid": "UFjwUIyGqgtSDVUMAZlgALKxAZvOwK",
 "value": "period",
 "visible_if": "[dataset][context][kind]dperdt:!0.0,hierarchy.is_meshable:False"
 },
@@ -3558,7 +3561,7 @@ null
 "description": "dpdt to use when converting between compute_times and compute_phases as well as when applying mask_phases",
 "kind": "lc",
 "qualifier": "phases_dpdt",
-"uniqueid": "CFerByPuNansjBvcSvicllWfSuHEoV",
+"uniqueid": "ScKbHQjkHaldaMlamEdZtaXUncXMAa",
 "value": "dpdt",
 "visible_if": "[dataset][context][kind]dpdt:!0.0,hierarchy.is_meshable:False"
 },
@@ -3577,7 +3580,7 @@ null
 "description": "t0 to use when converting between compute_times and compute_phases as well as when applying mask_phases",
 "kind": "lc",
 "qualifier": "phases_t0",
-"uniqueid": "zYZCHolFClRkqLWbqIXotbTLjoVnSA",
+"uniqueid": "sGzICGhvCvZycnzuvalhLfIEwzywsu",
 "value": "t0_supconj",
 "visible_if": "hierarchy.is_meshable:False"
 },
@@ -3589,7 +3592,7 @@ null
 "description": "Whether to apply the mask in mask_phases during plotting, calculate_residuals, calculate_chi2, calculate_lnlikelihood, and run_solver",
 "kind": "lc",
 "qualifier": "mask_enabled",
-"uniqueid": "GZBPbuquyjJbHtItTEnQPoMfxUQdyT",
+"uniqueid": "RbArmBxijzvMhrINTyCaemFMCVTqGI",
 "value": true
 },
 {
@@ -3606,7 +3609,7 @@ null
 null,
 2
 ],
-"uniqueid": "UGoKdarGsPnTDSoLPnnoUpySYlHopU",
+"uniqueid": "LPuJucQMcVuToTPhWonLMFFqYzMMHx",
 "value": [],
 "visible_if": "[component]mask_enabled:True"
 },
@@ -3623,7 +3626,7 @@ null,
 "description": "times to use within run_solver.  All options will properly account for masking from mask_times.  To see how this is parsed, see b.parse_solver_times.  auto: use compute_times if provided and shorter than times, otherwise use times.  compute_times: use compute_times if provided.  times: use times array.",
 "kind": "lc",
 "qualifier": "solver_times",
-"uniqueid": "HvmpFBHQbUxYDeoiNGhfxEOfbQiRTC",
+"uniqueid": "SkkVwOSHYhwazMmqUnjTQLtfhFlWNv",
 "value": "auto"
 },
 {
@@ -3638,7 +3641,7 @@ null,
 "required_shape": [
 null
 ],
-"uniqueid": "XwPlDOtzRNNWSvNRgtkWJylJsablZs",
+"uniqueid": "DvWKypRaJVGEumprSZfQIqKdUTFKCu",
 "value": [
 0.04,
 0.04,
@@ -4661,7 +4664,7 @@ null,
 null
 ],
 "qualifier": "sigmas_lnf",
-"uniqueid": "rZcFCfUyifNrwfDtiukFxYNKemfmxM",
+"uniqueid": "CqLXHNRoPGqgRiPUKllbAhHcNirxTA",
 "value": -Infinity,
 "visible_if": "sigmas:<notempty>"
 },
@@ -4680,7 +4683,7 @@ null
 "description": "Mode for scaling passband luminosities",
 "kind": "lc",
 "qualifier": "pblum_mode",
-"uniqueid": "tmLBsspXpuVmOFfVueyXBXacCXLMUK",
+"uniqueid": "sFNFtsUmwWElxomaOueeFxBBZwLXCB",
 "value": "dataset-scaled"
 },
 {
@@ -4696,7 +4699,7 @@ null
 "description": "Which component's pblum will be provided",
 "kind": "lc",
 "qualifier": "pblum_component",
-"uniqueid": "JfBgmaBXQqxyPJJrrXKUvIOXJxmAhN",
+"uniqueid": "AgdDyOqsjyflebGmVaMFnexWxvwHNb",
 "value": "primary",
 "visible_if": "pblum_mode:component-coupled"
 },
@@ -4720,7 +4723,7 @@ null,
 null
 ],
 "qualifier": "pblum",
-"uniqueid": "odnrcwUniiXgBmPoUslPrtuEYXgoBJ",
+"uniqueid": "jRFCtSEffVxxcjEbmmkwNBromKHLHG",
 "value": 12.566370614359172,
 "visible_if": "[component]pblum_mode:decoupled||[component]pblum_mode:component-coupled,[component]pblum_component:<component>"
 },
@@ -4735,7 +4738,7 @@ null
 "description": "Dataset with which to couple luminosities based on color",
 "kind": "lc",
 "qualifier": "pblum_dataset",
-"uniqueid": "gsDIawoaokvhCJsBCsoKRNHyAMNGhp",
+"uniqueid": "sJwwZhRTCUliZdOcKfHkAHarvRzaMM",
 "value": "",
 "visible_if": "pblum_mode:dataset-coupled"
 },
@@ -4752,7 +4755,7 @@ null,
 null
 ],
 "qualifier": "pbflux",
-"uniqueid": "WvglVCzFTiAWMyVgbggfnBWINRneba",
+"uniqueid": "czPUiisfAOtaCQUqcdKXshlODWefOJ",
 "value": 1.0,
 "visible_if": "false"
 },
@@ -4768,7 +4771,7 @@ null
 "description": "Whether third light is given in units of flux or as a fraction of total light",
 "kind": "lc",
 "qualifier": "l3_mode",
-"uniqueid": "AnczmPEofULViolenjeSymiwQUQfIO",
+"uniqueid": "FRnoMJSNxkeFLnnoXgarJfyNpJdcUR",
 "value": "flux"
 },
 {
@@ -4785,7 +4788,7 @@ null
 null
 ],
 "qualifier": "l3",
-"uniqueid": "SJElEyfoRxWgLMhttaxsoaZAoCWfgL",
+"uniqueid": "cbMmuioTnaHUxvEulsAZQfJNBeWZVZ",
 "value": 0.0,
 "visible_if": "l3_mode:flux"
 },
@@ -4803,7 +4806,7 @@ null
 1.0
 ],
 "qualifier": "l3_frac",
-"uniqueid": "TCNnGqLggIbGMPiDeiWRTCVTyksAYH",
+"uniqueid": "lLQoCeMRhBZKYRTrqajfjDQJtglGGp",
 "value": 0.0,
 "visible_if": "l3_mode:fraction"
 },
@@ -4820,7 +4823,7 @@ null,
 null
 ],
 "qualifier": "exptime",
-"uniqueid": "vxctARjuLfZORSjzecuflVsaYVWqiZ",
+"uniqueid": "faUzLbjzHgbIVrzpHSGwcvQkLWqUTH",
 "value": 0.0
 },
 {
@@ -4837,7 +4840,7 @@ null
 "description": "Mode to use for limb-darkening",
 "kind": "lc",
 "qualifier": "ld_mode",
-"uniqueid": "MvGDQugIFdyvHorUnYGsEyePKjvnXL",
+"uniqueid": "oqAuQxDKLpFaGzbzqCjSogwgBZCpLS",
 "value": "lookup"
 },
 {
@@ -4854,7 +4857,7 @@ null
 "description": "Mode to use for limb-darkening",
 "kind": "lc",
 "qualifier": "ld_mode",
-"uniqueid": "zXjKrJEvaUCVHZBvLJJxggaCqLTlnN",
+"uniqueid": "qtziWgiMJgJmvpCLMKQjJMWiNSbmxP",
 "value": "lookup"
 },
 {
@@ -4873,7 +4876,7 @@ null
 "description": "Limb darkening model",
 "kind": "lc",
 "qualifier": "ld_func",
-"uniqueid": "rcHPxCkOoesOuqeQEgUfzVuzLEPIay",
+"uniqueid": "VhCjtaiDaNIWDRkLDxqrCEkPNNmuVj",
 "value": "logarithmic",
 "visible_if": "ld_mode:lookup|manual"
 },
@@ -4893,7 +4896,7 @@ null
 "description": "Limb darkening model",
 "kind": "lc",
 "qualifier": "ld_func",
-"uniqueid": "OaDyEWYLESxjAtetnIRFJayxAtuboa",
+"uniqueid": "TMhQpTUBKnHQvEHCJyHSYwVGJOapjv",
 "value": "logarithmic",
 "visible_if": "ld_mode:lookup|manual"
 },
@@ -4912,7 +4915,7 @@ null
 "description": "Source for limb darkening coefficients ('auto' to interpolate from the applicable table according to the 'atm' parameter, or the name of a specific atmosphere table)",
 "kind": "lc",
 "qualifier": "ld_coeffs_source",
-"uniqueid": "TmVTMeqOCZVcOoHjndMCPooSEdGvBe",
+"uniqueid": "jCzMfsWhmjEmKGlzSTYoxsNRyAIaIE",
 "value": "auto",
 "visible_if": "ld_mode:lookup"
 },
@@ -4931,7 +4934,7 @@ null
 "description": "Source for limb darkening coefficients ('auto' to interpolate from the applicable table according to the 'atm' parameter, or the name of a specific atmosphere table)",
 "kind": "lc",
 "qualifier": "ld_coeffs_source",
-"uniqueid": "hkVqAzpFyqnYSNBAUuxNleeMdXIcfA",
+"uniqueid": "AxWGLkLxHWCzmJlSeRacOjllGciVUD",
 "value": "auto",
 "visible_if": "ld_mode:lookup"
 },
@@ -4944,11 +4947,12 @@ null
 "default_unit": "",
 "description": "Limb darkening coefficients",
 "kind": "lc",
+"latexfmt": "\\mathrm{{ ldc }}_\\mathrm{{ {dataset}, {component} }}",
 "qualifier": "ld_coeffs",
 "required_shape": [
 null
 ],
-"uniqueid": "ghJISbnhoOCONDGCuwyjFQFliCNxhk",
+"uniqueid": "szvUsOZcCvrtPSJShcFVzcNNleXYoq",
 "value": [
 0.704225014916845,
 0.33272003381704957
@@ -4964,11 +4968,12 @@ null
 "default_unit": "",
 "description": "Limb darkening coefficients",
 "kind": "lc",
+"latexfmt": "\\mathrm{{ ldc }}_\\mathrm{{ {dataset}, {component} }}",
 "qualifier": "ld_coeffs",
 "required_shape": [
 null
 ],
-"uniqueid": "VbRzLLcJLRzcvkduyhkRUtchNYwcVP",
+"uniqueid": "vniEyJcRsCKToPgRaWWuhWvqkRiftU",
 "value": [
 0.7087520768965857,
 0.32760743989461427
@@ -4990,7 +4995,7 @@ null,
 null
 ],
 "qualifier": "pblum",
-"uniqueid": "jbSaaIkoHIcbjKctEdMGusCduVVjnr",
+"uniqueid": "dsykSggFsUbBlxddycAKuAuKftvRwn",
 "value": 12.566370614359172,
 "visible_if": "[component]pblum_mode:decoupled||[component]pblum_mode:component-coupled,[component]pblum_component:<component>"
 },
@@ -5009,7 +5014,7 @@ null,
 null
 ],
 "qualifier": "pblum",
-"uniqueid": "AhYlFRsNPzADCtXQTUFDEDRDVSCtjq",
+"uniqueid": "DMFKekVsQmYOnocqtZYpyHVRQNwtYS",
 "value": 12.566370614359172,
 "visible_if": "[component]pblum_mode:decoupled||[component]pblum_mode:component-coupled,[component]pblum_component:<component>"
 },
@@ -5024,7 +5029,7 @@ null
 "in_solar_units": true,
 "kind": "extinction",
 "qualifier": "ebv",
-"uniqueid": "RgMKWCxsaMweLQNUQKYKYQUGZZxtyi",
+"uniqueid": "lGruoyrUJAzRIHQQDGrIhAmguLGdTA",
 "value": "{Av@system} / {Rv@system}"
 },
 {
@@ -5041,7 +5046,7 @@ null
 "in_solar_units": true,
 "kind": "star",
 "qualifier": "freq",
-"uniqueid": "jyXMAyhUWryrDgMSjqOWeltLmnDphA",
+"uniqueid": "LvkjaPHxWSGRIqVZpEuNhHFzAFpILa",
 "value": "6.283185 / {period@primary@component}"
 },
 {
@@ -5058,7 +5063,7 @@ null
 "in_solar_units": true,
 "kind": "star",
 "qualifier": "logg",
-"uniqueid": "wxNsNySbYRCCIJwNxvRFNkMQTnzNhU",
+"uniqueid": "ZHaxccYNyGDKJcMctVXdkSSELbzMGa",
 "value": "log10((({mass@primary@component} / ({requiv@primary@component} ** 2.000000)) * 2942.206218) * 9.319541)"
 },
 {
@@ -5075,7 +5080,7 @@ null
 "in_solar_units": true,
 "kind": "star",
 "qualifier": "irrad_frac_lost_bol",
-"uniqueid": "kRWjGgukBBpvBxsvDmMJiKlGFEfizE",
+"uniqueid": "oFSjCWPtyiNfEdGimnzjuHdwXufDxA",
 "value": "1.000000 - {irrad_frac_refl_bol@primary@component}"
 },
 {
@@ -5092,7 +5097,7 @@ null
 "in_solar_units": true,
 "kind": "star",
 "qualifier": "freq",
-"uniqueid": "RnifqFiBSUXldXjBLMRqfZPuBLXtHa",
+"uniqueid": "IZHKzmzuWEtWFldeWKYwSrwvNbyIKh",
 "value": "6.283185 / {period@secondary@component}"
 },
 {
@@ -5109,7 +5114,7 @@ null
 "in_solar_units": true,
 "kind": "star",
 "qualifier": "logg",
-"uniqueid": "KkvdzOoClbWYqXaGvYSfRFAJVBdKkZ",
+"uniqueid": "UijpSzmgbYdtwZubgDljXtnvUVUBDI",
 "value": "log10((({mass@secondary@component} / ({requiv@secondary@component} ** 2.000000)) * 2942.206218) * 9.319541)"
 },
 {
@@ -5126,7 +5131,7 @@ null
 "in_solar_units": true,
 "kind": "star",
 "qualifier": "irrad_frac_lost_bol",
-"uniqueid": "ZwxLiQgQadVkhzVHDVeunEExwznwWR",
+"uniqueid": "VlTHZhHVtEACzsCIRnGHtlnqHiQzSL",
 "value": "1.000000 - {irrad_frac_refl_bol@secondary@component}"
 },
 {
@@ -5143,7 +5148,7 @@ null
 "in_solar_units": true,
 "kind": "orbit",
 "qualifier": "asini",
-"uniqueid": "hkqssQqgxUqCnaOaFNcHnBsEnqOQgV",
+"uniqueid": "aAvTZgRkpeGlywRTWcitxOBltQXBzN",
 "value": "{sma@binary@component} * (sin({incl@binary@component}))"
 },
 {
@@ -5160,7 +5165,7 @@ null
 "in_solar_units": true,
 "kind": "orbit",
 "qualifier": "t0_perpass",
-"uniqueid": "GlPcjkKpnPuysGVPZoivmlScOdgLjq",
+"uniqueid": "AOpRKetifqHfetMWXKbnWPGsDpEYPs",
 "value": "t0_supconj_to_perpass({t0_supconj@binary@component}, {period@binary@component}, {ecc@binary@component}, {per0@binary@component}, {dpdt@binary@component}, {dperdt@binary@component}, {t0@system})"
 },
 {
@@ -5177,7 +5182,7 @@ null
 "in_solar_units": true,
 "kind": "orbit",
 "qualifier": "t0_ref",
-"uniqueid": "CsZWsBnzlarqOYiTodTqXxQhelSUFu",
+"uniqueid": "EuZNQetdqySwQChtvgeFqWsZQbSKzt",
 "value": "t0_supconj_to_ref({t0_supconj@binary@component}, {period@binary@component}, {ecc@binary@component}, {per0@binary@component}, {dpdt@binary@component}, {dperdt@binary@component}, {t0@system})"
 },
 {
@@ -5194,7 +5199,7 @@ null
 "in_solar_units": true,
 "kind": "orbit",
 "qualifier": "period_anom",
-"uniqueid": "yJcwvYjlxWmjsariYnRmnnlkaqPCky",
+"uniqueid": "RWZzMolANbXRIkQmETIdEfphozxBtR",
 "value": "{period@binary@component} / ((((-1.000000 * {period@binary@component}) * {dperdt@binary@component}) / 6.283185307179586231995926937088) + 1.000000000000000000000000000000)"
 },
 {
@@ -5211,7 +5216,7 @@ null
 "in_solar_units": true,
 "kind": "orbit",
 "qualifier": "mean_anom",
-"uniqueid": "gwQyPDzPcQGgBRemiirxMEiBgfKDtr",
+"uniqueid": "deNGAidJwknQfOpgNmYqritUFLsHep",
 "value": "(6.283185 * ({t0@system} - {t0_perpass@binary@component})) / {period@binary@component}"
 },
 {
@@ -5233,7 +5238,7 @@ null
 "in_solar_units": true,
 "kind": "orbit",
 "qualifier": "ecosw",
-"uniqueid": "RpNEsZZrlUuKpQdxiqKeyzqpNFamER",
+"uniqueid": "VlcoZCikrjFOOfkGPAmMYyDhphhdWF",
 "value": "{ecc@binary@component} * (cos({per0@binary@component}))"
 },
 {
@@ -5256,7 +5261,7 @@ null
 "in_solar_units": true,
 "kind": "orbit",
 "qualifier": "esinw",
-"uniqueid": "DOltWCatvQdgqxfdOnlvXtkRsHHXQu",
+"uniqueid": "BgrPMlgNiBMNYDYJwNfUOHhzjBwUgS",
 "value": "{ecc@binary@component} * (sin({per0@binary@component}))"
 },
 {
@@ -5273,7 +5278,7 @@ null
 "in_solar_units": true,
 "kind": "orbit",
 "qualifier": "freq",
-"uniqueid": "VdfwcgsafcpeVoVNfmUbjNJhuRIWbs",
+"uniqueid": "CPAirybpvRJTWDMbeAWCdlYTcbDZjD",
 "value": "6.283185 / {period@binary@component}"
 },
 {
@@ -5295,8 +5300,8 @@ null
 "in_solar_units": true,
 "kind": "star",
 "qualifier": "mass",
-"uniqueid": "ertxTzujYFxUOhbermnLhYXmIxkCAl",
-"value": "(39.478418 * ({sma@binary@component} ** 3.000000)) / ((({period@binary@component} ** 2.000000) * (1.000000 + {q@binary@component})) * 2942.206217504419328179210424423218)"
+"uniqueid": "uoXlJNyysBneLzvbkkvfacgduPWtIo",
+"value": "(39.478418 * ({sma@binary@component} ** 3.000000)) / ((({period@binary@component} ** 2.000000) * ({q@binary@component} + 1.000000)) * 2942.206217504419328179210424423218)"
 },
 {
 "Class": "ConstraintParameter",
@@ -5312,8 +5317,8 @@ null
 "in_solar_units": true,
 "kind": "star",
 "qualifier": "sma",
-"uniqueid": "lWsffFafXnesrrjeMUcHwFLzQpgHYh",
-"value": "{sma@binary@component} / (1.000000 + (1.000000 / {q@binary@component}))"
+"uniqueid": "suoTqbuyMUnKAqLEMoNgUPkhpWiGKd",
+"value": "{sma@binary@component} / ((1.000000 / {q@binary@component}) + 1.000000)"
 },
 {
 "Class": "ConstraintParameter",
@@ -5329,8 +5334,8 @@ null
 "in_solar_units": true,
 "kind": "star",
 "qualifier": "asini",
-"uniqueid": "bDotVjSjFaqIbNVzTUeZbaTJaFYDkq",
-"value": "({sma@binary@component} * (sin({incl@binary@component}))) / (1.000000 + (1.000000 / {q@binary@component}))"
+"uniqueid": "UWasfxIMuvWkBjApZKACPntxceVGuv",
+"value": "({sma@binary@component} * (sin({incl@binary@component}))) / ((1.000000 / {q@binary@component}) + 1.000000)"
 },
 {
 "Class": "ConstraintParameter",
@@ -5346,7 +5351,7 @@ null
 "in_solar_units": true,
 "kind": "star",
 "qualifier": "period",
-"uniqueid": "yeSreLqghMUWEsutffodGjsohywJoZ",
+"uniqueid": "NOoueOIMMkPSmiQJaSnbyDhhpTBmWa",
 "value": "{period@binary@component} / {syncpar@primary@component}"
 },
 {
@@ -5363,7 +5368,7 @@ null
 "in_solar_units": true,
 "kind": "star",
 "qualifier": "incl",
-"uniqueid": "BdLsOHIytcpXgQYYhdJVnvvScRAExs",
+"uniqueid": "abjcLuOIhKpCMSDxkxxdVIDmjLFCzV",
 "value": "{incl@binary@component} + {pitch@primary@component}"
 },
 {
@@ -5380,7 +5385,7 @@ null
 "in_solar_units": true,
 "kind": "star",
 "qualifier": "long_an",
-"uniqueid": "lLNetclWPTdMYfbjNescNEQNqwQllS",
+"uniqueid": "fOtlgqhRmwaGKpNPjNorDRkOYmKteo",
 "value": "{long_an@binary@component} + {yaw@primary@component}"
 },
 {
@@ -5397,7 +5402,7 @@ null
 "in_solar_units": true,
 "kind": "star",
 "qualifier": "requiv_max",
-"uniqueid": "PNGpsUzdeTtrUnNEZOHyEwzdeqgVJk",
+"uniqueid": "ayjKZgBbIirPpinMtBsCPxQLxiUjwI",
 "value": "requiv_L1({q@binary@component}, {syncpar@primary@component}, {ecc@binary@component}, {sma@binary@component}, {incl@primary@component}, {long_an@primary@component}, {incl@binary@component}, {long_an@binary@component}, 1)"
 },
 {
@@ -5419,8 +5424,8 @@ null
 "in_solar_units": true,
 "kind": "star",
 "qualifier": "mass",
-"uniqueid": "KCHFiAIieYmtzkqDzDRlwDVdVgOlhb",
-"value": "(39.478418 * ({sma@binary@component} ** 3.000000)) / ((({period@binary@component} ** 2.000000) * (1.000000 + (1.000000 / {q@binary@component}))) * 2942.206217504419328179210424423218)"
+"uniqueid": "tELgxHKpIjbPzsQsVogZsALqrJPlDn",
+"value": "(39.478418 * ({sma@binary@component} ** 3.000000)) / ((({period@binary@component} ** 2.000000) * ((1.000000 / {q@binary@component}) + 1.000000)) * 2942.206217504419328179210424423218)"
 },
 {
 "Class": "ConstraintParameter",
@@ -5436,8 +5441,8 @@ null
 "in_solar_units": true,
 "kind": "star",
 "qualifier": "sma",
-"uniqueid": "ZwGFbLErpaLFweAloMMRDLLaPWMrfe",
-"value": "{sma@binary@component} / (1.000000 + {q@binary@component})"
+"uniqueid": "aIayeuCtRKsrqvaTNFnNMCBFYeFxUh",
+"value": "{sma@binary@component} / ({q@binary@component} + 1.000000)"
 },
 {
 "Class": "ConstraintParameter",
@@ -5453,8 +5458,8 @@ null
 "in_solar_units": true,
 "kind": "star",
 "qualifier": "asini",
-"uniqueid": "VwHEmMUGAzQHBKrRlNvRseHDwQJmDj",
-"value": "({sma@binary@component} * (sin({incl@binary@component}))) / (1.000000 + {q@binary@component})"
+"uniqueid": "vxEsIarpPQMeASXgKJSrghLOjjmJIe",
+"value": "({sma@binary@component} * (sin({incl@binary@component}))) / ({q@binary@component} + 1.000000)"
 },
 {
 "Class": "ConstraintParameter",
@@ -5470,7 +5475,7 @@ null
 "in_solar_units": true,
 "kind": "star",
 "qualifier": "period",
-"uniqueid": "YwxnmpRBOfZqwpFAzbDYrZYitHLSad",
+"uniqueid": "TsRnLfCsXtTuAIBLTajGmeyPjJZkoM",
 "value": "{period@binary@component} / {syncpar@secondary@component}"
 },
 {
@@ -5487,7 +5492,7 @@ null
 "in_solar_units": true,
 "kind": "star",
 "qualifier": "incl",
-"uniqueid": "VcUjnfQthbZtlAzEVdnELRmBDmBTpu",
+"uniqueid": "sRlkrrONeEUYDikrjwANSxChclQLHr",
 "value": "{incl@binary@component} + {pitch@secondary@component}"
 },
 {
@@ -5504,7 +5509,7 @@ null
 "in_solar_units": true,
 "kind": "star",
 "qualifier": "long_an",
-"uniqueid": "LeRZRORApOxnIwCKeOBsMwFSguTFZP",
+"uniqueid": "aZryEIBLTnIrXJSPuGCqUzernUcgZN",
 "value": "{long_an@binary@component} + {yaw@secondary@component}"
 },
 {
@@ -5521,7 +5526,7 @@ null
 "in_solar_units": true,
 "kind": "star",
 "qualifier": "requiv_max",
-"uniqueid": "JLwSfAEYJSAbUNoLLuAxzMZDxstpGZ",
+"uniqueid": "coEKBjvfWgPxInOEzniOTeaQOLgWXE",
 "value": "requiv_L1({q@binary@component}, {syncpar@secondary@component}, {ecc@binary@component}, {sma@binary@component}, {incl@secondary@component}, {long_an@secondary@component}, {incl@binary@component}, {long_an@binary@component}, 2)"
 },
 {
@@ -5540,7 +5545,7 @@ null
 "in_solar_units": true,
 "kind": "lc",
 "qualifier": "compute_phases",
-"uniqueid": "afQbWCmDPVFEledImAiGiguEjxOeXK",
+"uniqueid": "sQpOrybvtQtMPTnROMZaDDeNvbQAZA",
 "value": "times_to_phases({compute_times@lc01@dataset}, {phases_period@lc01@dataset}, {period@binary@component}, {period_anom@binary@component}, {phases_dpdt@lc01@dataset}, {dpdt@binary@component}, {phases_t0@lc01@dataset}, {t0_supconj@binary@component}, {t0_perpass@binary@component}, {t0_ref@binary@component})"
 },
 {
@@ -5557,7 +5562,7 @@ null
 "in_solar_units": true,
 "kind": "star",
 "qualifier": "teff",
-"uniqueid": "XDBbayqiOKszfmphSKOMpeLYFKEsEw",
+"uniqueid": "impHtBjzsoVnkGejGNKaSxAUCDYBWi",
 "value": "{teffratio@binary@component} * {teff@primary@component}"
 },
 {
@@ -5579,7 +5584,7 @@ null
 "in_solar_units": true,
 "kind": "star",
 "qualifier": "requiv",
-"uniqueid": "eeZSkwMrOkPuByhOncMZEBsTVsoZhX",
+"uniqueid": "igdVXgcHdSWLXFDqkxmCfsDUjfAWYA",
 "value": "({requivsumfrac@binary@component} * {sma@binary@component}) - {requiv@primary@component}"
 },
 {
@@ -5595,7 +5600,7 @@ null
 "description": "distributions or solutions to use for sampling.  If pointing to a solution, adopt_solution(as_distributions=True, **kwargs) will be called to create a temporary distribution which will be removed automatically.  If all distributions are delta functions (face-values), sample_mode and sample_num will be ignored with a warning.",
 "kind": "phoebe",
 "qualifier": "sample_from",
-"uniqueid": "xxJsRcydLGLFlXmWksNTcxDTBAbhIW",
+"uniqueid": "SJFmgoBHBIVuftEMZVlzfyYycvNMzn",
 "value": []
 },
 {
@@ -5609,7 +5614,7 @@ null
 "description": "Method to use to combine multiple distributions from sample_from for the same parameter.  first: ignore duplicate entries and take the first in the sample_from parameter",
 "kind": "phoebe",
 "qualifier": "sample_from_combine",
-"uniqueid": "hEJmnQOYUpRzzYEYVnGkaXDvjuAOqo",
+"uniqueid": "DVnNJxZxFFXVwAAIeDwBuGFpWMvixI",
 "value": "first",
 "visible_if": "sample_from:<notempty>"
 },
@@ -5625,7 +5630,7 @@ null
 1000000.0
 ],
 "qualifier": "sample_num",
-"uniqueid": "qVnyiSjIITmpAWekGySsdiHAREgLyV",
+"uniqueid": "wyNBlstQMEcGrBHEysJJocbMaQCfHR",
 "value": 10,
 "visible_if": "sample_from:<notempty>"
 },
@@ -5644,7 +5649,7 @@ null
 "description": "Mode to use when exposing model after sampling.  all: expose all sampled forward-models.  median: only return the median of all sampled models.  1/3/5-sigma: expose the synthetic variable at the median and +/- n-sigma.",
 "kind": "phoebe",
 "qualifier": "sample_mode",
-"uniqueid": "pRtvPqSNJnVJGEwrTErPJRgknyUCuB",
+"uniqueid": "oWibjUDrChdyraGUfYxwzDIlmgJWPQ",
 "value": "1-sigma",
 "visible_if": "sample_from:<notempty>"
 },
@@ -5656,7 +5661,7 @@ null
 "description": "Whether to expose failed samples along with the simplified error messages.",
 "kind": "phoebe",
 "qualifier": "expose_samples",
-"uniqueid": "XhpfgxgVssRRyaHhqKqAemTSHddJbs",
+"uniqueid": "plEBBtjNNjcaKJnFehZLXWIuMMesKK",
 "value": true,
 "visible_if": "sample_from:<notempty>"
 },
@@ -5668,7 +5673,7 @@ null
 "description": "Whether to expose failed samples along with the simplified error messages.",
 "kind": "phoebe",
 "qualifier": "expose_failed",
-"uniqueid": "KnvOYvxsGAFYpPQSzzVfPRvSKWhbOa",
+"uniqueid": "fuQFkKADXKlSDcQBhyFslBMKewdyzV",
 "value": true,
 "visible_if": "sample_from:<notempty>"
 },
@@ -5680,7 +5685,7 @@ null
 "description": "User-provided comments for these compute-options.  Feel free to place any notes here - if not overridden, they will be copied to any resulting models.",
 "kind": "phoebe",
 "qualifier": "comments",
-"uniqueid": "yrfVnJkNKYdnijIOjQhcVZmObOHFld",
+"uniqueid": "ShMrjJYLEeSKgcPhtBQwUXIhIDonLT",
 "value": ""
 },
 {
@@ -5695,7 +5700,7 @@ null
 "description": "Whether to create synthetics in compute/solver run",
 "kind": "phoebe",
 "qualifier": "enabled",
-"uniqueid": "kdtrRFlfkVVksTOnJDVgUlEopHHZIv",
+"uniqueid": "hRVZIYurMuNpdhvYuyBaoDMxaiareF",
 "value": true
 },
 {
@@ -5710,7 +5715,7 @@ null
 "feature": "_default",
 "kind": "phoebe",
 "qualifier": "enabled",
-"uniqueid": "uHGyQGXHKRFfQgjbUByPQrdPsDQkCm",
+"uniqueid": "pZgghSKUHOZSPuGPquOdVHnHsShxCd",
 "value": true
 },
 {
@@ -5724,7 +5729,7 @@ null
 "description": "Which method to use to determine the dynamics of components",
 "kind": "phoebe",
 "qualifier": "dynamics_method",
-"uniqueid": "llSMNLkRnPioVuYfvVqPRrJWXlxwqV",
+"uniqueid": "TLyMynxEgMUGHTizoCRkrGySTVlitD",
 "value": "keplerian"
 },
 {
@@ -5735,7 +5740,7 @@ null
 "description": "Correct for light travel time effects",
 "kind": "phoebe",
 "qualifier": "ltte",
-"uniqueid": "wzEDXzMGxuJflrwJRNdmWJRcjuQPbb",
+"uniqueid": "mXLeSYchZRNTrFKLCNxSaLRLsQobaa",
 "value": false
 },
 {
@@ -5751,7 +5756,7 @@ null
 "description": "Which method to use to handle all irradiation effects (reflection, redistribution)",
 "kind": "phoebe",
 "qualifier": "irrad_method",
-"uniqueid": "FvnMXRqTkvtXEksdcSYzhqwAcNqdcN",
+"uniqueid": "yVRzUVaKwNXoDgVMJpRCqRXvMAwmYe",
 "value": "horvat"
 },
 {
@@ -5766,7 +5771,7 @@ null
 "description": "Type of boosting method",
 "kind": "phoebe",
 "qualifier": "boosting_method",
-"uniqueid": "ZVQGBForDCmzCBJlObBgLLIGdZITBv",
+"uniqueid": "zVowklZCOSgcuhIIpojpUNdGZeoDmR",
 "value": "none"
 },
 {
@@ -5787,7 +5792,7 @@ null
 "description": "Which method to use for discretizing the surface",
 "kind": "phoebe",
 "qualifier": "mesh_method",
-"uniqueid": "cflOhEXJbcEfDDjDHyAGovgXRseede",
+"uniqueid": "xbsnZfbCzUGTjaEpuPglCiHvCMQWPw",
 "value": "marching",
 "visible_if": "hierarchy.is_meshable:true"
 },
@@ -5810,7 +5815,7 @@ null
 null
 ],
 "qualifier": "ntriangles",
-"uniqueid": "BJCJgecYeEPpECIflmGaaMKzvhwbKy",
+"uniqueid": "EwSQbhTDgtBXTurvngywyzBahGdPCm",
 "value": 1500,
 "visible_if": "mesh_method:marching,hierarchy.is_meshable:true"
 },
@@ -5834,7 +5839,7 @@ null
 "description": "Method to use for distorting stars",
 "kind": "phoebe",
 "qualifier": "distortion_method",
-"uniqueid": "OwqjUyAKIjTSyQfnVxsDrkHgtBlOrz",
+"uniqueid": "VBCwyraOjjvncKgfLznfSJBLGFUNkJ",
 "value": "roche",
 "visible_if": "mesh_method:marching,hierarchy.is_meshable:true"
 },
@@ -5851,7 +5856,7 @@ null
 "description": "Type of eclipse algorithm",
 "kind": "phoebe",
 "qualifier": "eclipse_method",
-"uniqueid": "zZxdEfbBnoJNGVuExlqYMYkvCpHWfG",
+"uniqueid": "MevyFkeBZLkTUJnHfWdwtDUxtNoUaV",
 "value": "native"
 },
 {
@@ -5866,18 +5871,18 @@ null
 "description": "Type of horizon method",
 "kind": "phoebe",
 "qualifier": "horizon_method",
-"uniqueid": "RxrnOVDJvuXJFWuxTXQYdVkLasSqQf",
+"uniqueid": "IyeqdhvGoZwxrcjDbxPnZrfAzGWvdy",
 "value": "boolean",
 "visible_if": "eclipse_method:native"
 },
 {
 "Class": "ChoiceParameter",
 "choices": [
-"phoenix",
-"extern_atmx",
-"ck2004",
 "extern_planckint",
-"blackbody"
+"extern_atmx",
+"blackbody",
+"phoenix",
+"ck2004"
 ],
 "component": "_default",
 "compute": "phoebe01",
@@ -5891,7 +5896,7 @@ null
 "description": "Atmosphere table",
 "kind": "phoebe",
 "qualifier": "atm",
-"uniqueid": "ixAAuHLHsamWYhmRSUmRCQHWZNvAHG",
+"uniqueid": "yTpnWvgNkiVfIgAyHHfCGPZlmqKFLv",
 "value": "ck2004"
 },
 {
@@ -5912,7 +5917,7 @@ null
 "description": "How to handle finite-time integration (when non-zero exptime)",
 "kind": "phoebe",
 "qualifier": "fti_method",
-"uniqueid": "sFSNLYfMnebRmnDMGTQbETFuHUClsH",
+"uniqueid": "bQJbgNjEmRdlNABKTZzozftAjFrHZS",
 "value": "none"
 },
 {
@@ -5933,7 +5938,7 @@ null
 null
 ],
 "qualifier": "fti_oversample",
-"uniqueid": "fUIhseHYRTKPvyjSsJowcvBPMEAmiX",
+"uniqueid": "fukZKwYiooudqIuIHKlHbbWfUrmfRg",
 "value": 5,
 "visible_if": "fti_method:oversample"
 },
@@ -5958,7 +5963,7 @@ null
 "description": "Method to use for computing RVs (must be flux-weighted for Rossiter-McLaughlin effects)",
 "kind": "phoebe",
 "qualifier": "rv_method",
-"uniqueid": "BQdVZIHzFRFPgnrMdsCmjQrrjVJrZW",
+"uniqueid": "BEVIWLbhhucgQmptHaLIoXOpHLttIe",
 "value": "flux-weighted"
 },
 {
@@ -5978,7 +5983,7 @@ null
 "description": "Whether gravitational redshift effects are enabled for RVs",
 "kind": "phoebe",
 "qualifier": "rv_grav",
-"uniqueid": "bgjggEgmzkzJUQgTXfIVMyOrRSuBlv",
+"uniqueid": "NYOfIsyXBGrDQSFPsrjjRVtmYzysfI",
 "value": false,
 "visible_if": "rv_method:flux-weighted"
 },
@@ -5994,7 +5999,7 @@ null
 "description": "Which method to use for discretizing the surface",
 "kind": "phoebe",
 "qualifier": "mesh_method",
-"uniqueid": "pXjhVoEvoNrYpbNqQNWccNyWEtIkcp",
+"uniqueid": "BctvrvlchegkWCREpGLjTULmtBDyzW",
 "value": "marching",
 "visible_if": "hierarchy.is_meshable:true"
 },
@@ -6010,7 +6015,7 @@ null
 "description": "Which method to use for discretizing the surface",
 "kind": "phoebe",
 "qualifier": "mesh_method",
-"uniqueid": "PBwECgIleDnCKxTGZRqMcUmmFhZxxC",
+"uniqueid": "WrIVXeBEpKVuiyoaBCiDZwporMlmDn",
 "value": "marching",
 "visible_if": "hierarchy.is_meshable:true"
 },
@@ -6027,7 +6032,7 @@ null
 null
 ],
 "qualifier": "ntriangles",
-"uniqueid": "WlMcqEqJqPejIlJkHTluQakxjffTHz",
+"uniqueid": "toajALcEEyJIpfGBSvpoNlGapuTixA",
 "value": 1500,
 "visible_if": "mesh_method:marching,hierarchy.is_meshable:true"
 },
@@ -6044,7 +6049,7 @@ null
 null
 ],
 "qualifier": "ntriangles",
-"uniqueid": "xkcQHtEByjXWPBuRDdkZeamEAIjJKp",
+"uniqueid": "DXpDGVfrkYTlMysxXgPvoCgDQtKwSO",
 "value": 1500,
 "visible_if": "mesh_method:marching,hierarchy.is_meshable:true"
 },
@@ -6063,7 +6068,7 @@ null
 "description": "Method to use for distorting stars",
 "kind": "phoebe",
 "qualifier": "distortion_method",
-"uniqueid": "nuUKWSHxllaRdbszCwieaPqnNdrLsG",
+"uniqueid": "BhRJftXnJHOtvwJOdbQzhzNmQvwrvq",
 "value": "roche",
 "visible_if": "mesh_method:marching,hierarchy.is_meshable:true"
 },
@@ -6082,18 +6087,18 @@ null
 "description": "Method to use for distorting stars",
 "kind": "phoebe",
 "qualifier": "distortion_method",
-"uniqueid": "TdRimvpTLyVPAhCCDAjNKiasCTarUE",
+"uniqueid": "BghWcFFisCcwNjPdMWmRjioDGHRwKn",
 "value": "roche",
 "visible_if": "mesh_method:marching,hierarchy.is_meshable:true"
 },
 {
 "Class": "ChoiceParameter",
 "choices": [
-"phoenix",
-"extern_atmx",
-"ck2004",
 "extern_planckint",
-"blackbody"
+"extern_atmx",
+"blackbody",
+"phoenix",
+"ck2004"
 ],
 "component": "primary",
 "compute": "phoebe01",
@@ -6102,17 +6107,17 @@ null
 "description": "Atmosphere table",
 "kind": "phoebe",
 "qualifier": "atm",
-"uniqueid": "VLKaGrMIQQafcrHcefGyLatPglJKUd",
+"uniqueid": "RwdiVJVXYAKIqaKvhguwQmPbToJuWZ",
 "value": "ck2004"
 },
 {
 "Class": "ChoiceParameter",
 "choices": [
-"phoenix",
-"extern_atmx",
-"ck2004",
 "extern_planckint",
-"blackbody"
+"extern_atmx",
+"blackbody",
+"phoenix",
+"ck2004"
 ],
 "component": "secondary",
 "compute": "phoebe01",
@@ -6121,7 +6126,7 @@ null
 "description": "Atmosphere table",
 "kind": "phoebe",
 "qualifier": "atm",
-"uniqueid": "laRrHwSKtEXcQfpQAYORJDQntHBbSA",
+"uniqueid": "lvTHNZyGLNgZKBAWcyWGPoQmyUHXHp",
 "value": "ck2004"
 },
 {
@@ -6133,7 +6138,7 @@ null
 "description": "Whether to create synthetics in compute/solver run",
 "kind": "phoebe",
 "qualifier": "enabled",
-"uniqueid": "SyDegynhSOLAsJLRYSszmPearSVHld",
+"uniqueid": "rIuLzOMRVBVMienCsrkGzbFAsWrFeZ",
 "value": true
 },
 {
@@ -6149,7 +6154,7 @@ null
 "description": "How to handle finite-time integration (when non-zero exptime)",
 "kind": "phoebe",
 "qualifier": "fti_method",
-"uniqueid": "DJtnoAoKSzTyNdMeOugMNsyThKSMkm",
+"uniqueid": "KseSkWqUOhSbPVoMUnShOkbsIUjEAR",
 "value": "none"
 },
 {
@@ -6165,7 +6170,7 @@ null
 null
 ],
 "qualifier": "fti_oversample",
-"uniqueid": "MZhFqjiUQfalddQDyyNzULlpeOAaQI",
+"uniqueid": "WYhzbDOZmPVwFNqYyiHmtwiFJOdeaj",
 "value": 5,
 "visible_if": "fti_method:oversample"
 },
@@ -6182,7 +6187,7 @@ null
 "description": "distributions or solutions to use for sampling.  If pointing to a solution, adopt_solution(as_distributions=True, **kwargs) will be called to create a temporary distribution which will be removed automatically.  If all distributions are delta functions (face-values), sample_mode and sample_num will be ignored with a warning.",
 "kind": "ellc",
 "qualifier": "sample_from",
-"uniqueid": "jrQituPnNbSdnWzXthcRtdcKxQXIpH",
+"uniqueid": "MjtsUVUvNRaUvvoqDNLARCNycucUmq",
 "value": []
 },
 {
@@ -6196,7 +6201,7 @@ null
 "description": "Method to use to combine multiple distributions from sample_from for the same parameter.  first: ignore duplicate entries and take the first in the sample_from parameter",
 "kind": "ellc",
 "qualifier": "sample_from_combine",
-"uniqueid": "raZcLcfnPBmMfhrDqtgYeHbUoXVtsR",
+"uniqueid": "UKOUXaajQIkaTtoZNVyIyXFTEcwpCn",
 "value": "first",
 "visible_if": "sample_from:<notempty>"
 },
@@ -6212,7 +6217,7 @@ null
 1000000.0
 ],
 "qualifier": "sample_num",
-"uniqueid": "rrvFbbqGamiyAJgktkpOEgosMlnpir",
+"uniqueid": "XQdSuniDMHWPKPgzCfALeUKvCcfowj",
 "value": 10,
 "visible_if": "sample_from:<notempty>"
 },
@@ -6231,7 +6236,7 @@ null
 "description": "Mode to use when exposing model after sampling.  all: expose all sampled forward-models.  median: only return the median of all sampled models.  1/3/5-sigma: expose the synthetic variable at the median and +/- n-sigma.",
 "kind": "ellc",
 "qualifier": "sample_mode",
-"uniqueid": "aWVNiVzlltGrodVdUHrMjxzfzRxBPR",
+"uniqueid": "JoaTFDXQZeBstKGBeUxgMbIQTsupEL",
 "value": "1-sigma",
 "visible_if": "sample_from:<notempty>"
 },
@@ -6243,7 +6248,7 @@ null
 "description": "Whether to expose failed samples along with the simplified error messages.",
 "kind": "ellc",
 "qualifier": "expose_samples",
-"uniqueid": "zYIZHVdIsNOpvjRhVHKJsKHxoTWkkg",
+"uniqueid": "tUSWaOusJPnsBFjanQeAlZuZJXAOpn",
 "value": true,
 "visible_if": "sample_from:<notempty>"
 },
@@ -6255,7 +6260,7 @@ null
 "description": "Whether to expose failed samples along with the simplified error messages.",
 "kind": "ellc",
 "qualifier": "expose_failed",
-"uniqueid": "ImnQXdPfcJopCmNTpDGLBSykeAGxlm",
+"uniqueid": "FdzPSADtGPtJjPUtGoneKIyuTQpaxL",
 "value": true,
 "visible_if": "sample_from:<notempty>"
 },
@@ -6267,7 +6272,7 @@ null
 "description": "User-provided comments for these compute-options.  Feel free to place any notes here - if not overridden, they will be copied to any resulting models.",
 "kind": "ellc",
 "qualifier": "comments",
-"uniqueid": "aVkZqaQiWBrYhhkMvMfwWBsuobmSwJ",
+"uniqueid": "xdgoZLzTucNUGUSKcrPvzRPpGqIGmT",
 "value": ""
 },
 {
@@ -6286,7 +6291,7 @@ null
 "description": "Whether to create synthetics in compute/solver run",
 "kind": "ellc",
 "qualifier": "enabled",
-"uniqueid": "WQckmACFIRMiVsRSjkATiIIHDzJZRQ",
+"uniqueid": "JpgsfOPeRTIWjkBEJFCOijfaBpDkgl",
 "value": true
 },
 {
@@ -6305,18 +6310,18 @@ null
 "feature": "_default",
 "kind": "ellc",
 "qualifier": "enabled",
-"uniqueid": "bRSVdZmRBtAjVvcdsjLYeihREqTnhl",
+"uniqueid": "NQJFgPaNIKEHatSTGUELnzNjeghIEs",
 "value": true
 },
 {
 "Class": "ChoiceParameter",
 "advanced": true,
 "choices": [
-"phoenix",
-"extern_atmx",
-"ck2004",
 "extern_planckint",
-"blackbody"
+"extern_atmx",
+"blackbody",
+"phoenix",
+"ck2004"
 ],
 "component": "_default",
 "compute": "fastcompute",
@@ -6330,7 +6335,7 @@ null
 "description": "Atmosphere table to use when estimating passband luminosities and flux scaling (see pblum_method).  Note ellc itself does not support atmospheres.",
 "kind": "ellc",
 "qualifier": "atm",
-"uniqueid": "epaZDKWhEpkxDCJhFOQNeNcUmWAOOt",
+"uniqueid": "PwwoALoKqWksmTvPuxJvDorcaECtxX",
 "value": "ck2004"
 },
 {
@@ -6345,7 +6350,7 @@ null
 "description": "Method to estimate passband luminosities and handle scaling of returned fluxes from ellc.  stefan-boltzmann: approximate the star as a uniform sphere and estimate the luminosities from teff, requiv, logg, and abun from the internal passband and atmosphere tables.  phoebe: build the mesh using roche distortion at time t0 and compute luminosities use the internal atmosphere tables (considerable overhead, but more accurate for distorted stars).",
 "kind": "ellc",
 "qualifier": "pblum_method",
-"uniqueid": "GuBELpfSEyAaOfhvanmIlXgyDspbQr",
+"uniqueid": "bdfTbJNlvjGEATlvWrEVhteFotPMSC",
 "value": "stefan-boltzmann"
 },
 {
@@ -6370,7 +6375,7 @@ null
 "description": "Method to use for distorting stars",
 "kind": "ellc",
 "qualifier": "distortion_method",
-"uniqueid": "EREDzRGUegxbkvEVLQkbDHONcNCYDg",
+"uniqueid": "RTASSGSfTwNjXEQZTvQqKbMpgcwtOV",
 "value": "roche"
 },
 {
@@ -6392,7 +6397,7 @@ null
 null
 ],
 "qualifier": "hf",
-"uniqueid": "UKvYFuqCLYQnrcMPJPDuSsJCfAgvoj",
+"uniqueid": "IQWgFVKqXgcufXgrzTiEiUzNRBooAc",
 "value": 1.5,
 "visible_if": "distortion_method:love"
 },
@@ -6417,7 +6422,7 @@ null
 "description": "Grid size used to calculate the flux.",
 "kind": "ellc",
 "qualifier": "grid",
-"uniqueid": "mLZvDOVKtBLNIjnvBuBmlbkPbEYCea",
+"uniqueid": "raIndmtdkzaSvAjsXgbbJuwprxfxfb",
 "value": "default"
 },
 {
@@ -6428,7 +6433,7 @@ null
 "description": "Whether to use point-by-point calculation of local surface gravity for calculation of gravity darkening or a (much faster) approximation based on functional form fit to local gravity at 4 points on the star.",
 "kind": "ellc",
 "qualifier": "exact_grav",
-"uniqueid": "AgGqwxNMkxxLvzOKqIggMfjJJormHu",
+"uniqueid": "TGtAfSDDCNsglZGQyPQJlAWVgezRaV",
 "value": false
 },
 {
@@ -6452,7 +6457,7 @@ null
 "description": "Method to use for computing RVs (must be flux-weighted for Rossiter-McLaughlin).  Note that 'flux-weighted' is not allowed and will raise an error if irradiation is enabled (see irrad_method).",
 "kind": "ellc",
 "qualifier": "rv_method",
-"uniqueid": "TJxnRSfLxXuUzvtaZWjgstbMpOkZGR",
+"uniqueid": "jziRKIqJAMEbJNQeZdIzpiKgyOZTNG",
 "value": "dynamical"
 },
 {
@@ -6474,7 +6479,7 @@ null
 "description": "How to handle finite-time integration (when non-zero exptime).  ellc: use ellcs native oversampling. oversample: use phoebe's oversampling",
 "kind": "ellc",
 "qualifier": "fti_method",
-"uniqueid": "wXMxYkgGZgoGxvRijJsLMoFbYVJeCU",
+"uniqueid": "VLKFLvRGVArIrdmkWWFXGYyONGpFun",
 "value": "none"
 },
 {
@@ -6495,7 +6500,7 @@ null
 null
 ],
 "qualifier": "fti_oversample",
-"uniqueid": "ECfysetWiOgyuxpOLMKQalmkmzAUID",
+"uniqueid": "ZQEMatnyWJGQzFomPMDCYmfNvJPxQm",
 "value": 5,
 "visible_if": "fti_method:ellc|oversample"
 },
@@ -6511,7 +6516,7 @@ null
 "description": "Which method to use to handle all irradiation effects.  Note that irradiation and rv_method='flux-weighted' cannot be used together.",
 "kind": "ellc",
 "qualifier": "irrad_method",
-"uniqueid": "uFQJgmERlHfhqVTcoRYEPkImaOvCGj",
+"uniqueid": "LlNMUJjDpPzPamIsvjHypEokZvxCwv",
 "value": "lambert"
 },
 {
@@ -6523,18 +6528,18 @@ null
 "description": "Whether to create synthetics in compute/solver run",
 "kind": "ellc",
 "qualifier": "enabled",
-"uniqueid": "uNOcgVnITURsWRwtLcawCEEaLziFQH",
+"uniqueid": "rOpiToeOdPEvtxkgjdlKiaGZYUBrCe",
 "value": true
 },
 {
 "Class": "ChoiceParameter",
 "advanced": true,
 "choices": [
-"phoenix",
-"extern_atmx",
-"ck2004",
 "extern_planckint",
-"blackbody"
+"extern_atmx",
+"blackbody",
+"phoenix",
+"ck2004"
 ],
 "component": "primary",
 "compute": "fastcompute",
@@ -6543,18 +6548,18 @@ null
 "description": "Atmosphere table to use when estimating passband luminosities and flux scaling (see pblum_method).  Note ellc itself does not support atmospheres.",
 "kind": "ellc",
 "qualifier": "atm",
-"uniqueid": "tDTpbNbFkkcVuYKpWUDKjMXyPBemra",
+"uniqueid": "qgjWAHTZyhSqKdRxOJaCLNSARsvMpx",
 "value": "ck2004"
 },
 {
 "Class": "ChoiceParameter",
 "advanced": true,
 "choices": [
-"phoenix",
-"extern_atmx",
-"ck2004",
 "extern_planckint",
-"blackbody"
+"extern_atmx",
+"blackbody",
+"phoenix",
+"ck2004"
 ],
 "component": "secondary",
 "compute": "fastcompute",
@@ -6563,7 +6568,7 @@ null
 "description": "Atmosphere table to use when estimating passband luminosities and flux scaling (see pblum_method).  Note ellc itself does not support atmospheres.",
 "kind": "ellc",
 "qualifier": "atm",
-"uniqueid": "XxEaiGYKDUNdOlkrFuUPWMwZZtogxb",
+"uniqueid": "lxhmmRrYnUDcDLTrOiUhZIyQGgsqde",
 "value": "ck2004"
 },
 {
@@ -6583,7 +6588,7 @@ null
 "description": "Method to use for distorting stars",
 "kind": "ellc",
 "qualifier": "distortion_method",
-"uniqueid": "SrFjdwnzUOHTlOlRpcRCRyqlxPvRBw",
+"uniqueid": "ulwVqmkfJMFgHqdEQsmFAGhqnRlodw",
 "value": "roche"
 },
 {
@@ -6603,7 +6608,7 @@ null
 "description": "Method to use for distorting stars",
 "kind": "ellc",
 "qualifier": "distortion_method",
-"uniqueid": "WzepXiKFbkxqJEdHBYalhGvYcVskqg",
+"uniqueid": "UFzoRzAspIXONYPkvhUIJcildvAgfM",
 "value": "roche"
 },
 {
@@ -6620,7 +6625,7 @@ null
 null
 ],
 "qualifier": "hf",
-"uniqueid": "ieqUxSFpdBxIwlpKIXdalOcVRQUVWa",
+"uniqueid": "lCOEAIRZrDZyPTsUvgUYIjqlQqussh",
 "value": 1.5,
 "visible_if": "distortion_method:love"
 },
@@ -6638,7 +6643,7 @@ null
 null
 ],
 "qualifier": "hf",
-"uniqueid": "EhEuiOYrZFfgQQYfqgZRQzbxqkwzZP",
+"uniqueid": "lYqsJqknQWAKKgyIxpaNhzmaOobyaS",
 "value": 1.5,
 "visible_if": "distortion_method:love"
 },
@@ -6658,7 +6663,7 @@ null
 "description": "Grid size used to calculate the flux.",
 "kind": "ellc",
 "qualifier": "grid",
-"uniqueid": "UAvWQzERYhLPdvlceMKWCDnlKYIpLT",
+"uniqueid": "GFGfsszPvXploDaqTOoSsCvgdmppOT",
 "value": "default"
 },
 {
@@ -6677,7 +6682,7 @@ null
 "description": "Grid size used to calculate the flux.",
 "kind": "ellc",
 "qualifier": "grid",
-"uniqueid": "wEaiNGGFNszWkGLnknrRTpcMOEoKdZ",
+"uniqueid": "qORIucoqlCHOqcVnwqojZkGyKKDECT",
 "value": "default"
 },
 {
@@ -6694,7 +6699,7 @@ null
 "description": "How to handle finite-time integration (when non-zero exptime).  ellc: use ellcs native oversampling. oversample: use phoebe's oversampling",
 "kind": "ellc",
 "qualifier": "fti_method",
-"uniqueid": "BXuAWRVPdiEWTYppykgVKRMrhYPXzd",
+"uniqueid": "aKhOdmQYxdTmnRlnXdZfgvqVEWAUtP",
 "value": "none"
 },
 {
@@ -6710,7 +6715,7 @@ null
 null
 ],
 "qualifier": "fti_oversample",
-"uniqueid": "mKIBuQVnSDeqaEdWNKRWlEJMIqQcrb",
+"uniqueid": "OqzBvsyuEcTPDfeJwlkRzuEMwRwpHf",
 "value": 5,
 "visible_if": "fti_method:ellc|oversample"
 },
@@ -6729,7 +6734,7 @@ null
 "required_shape": [
 null
 ],
-"uniqueid": "EWxbTpXLXruqdIbhzrZlWJcLwnQUye",
+"uniqueid": "rEEwaWvwsAMnUYGaPqSPEuGrOLmMyy",
 "value": [
 0.0,
 0.002245245956175299,
@@ -7750,7 +7755,7 @@ null
 "model": "Initial_Fit",
 "qualifier": "fluxes",
 "readonly": true,
-"uniqueid": "uJAXZeyyiwPtJFqOskRSWzPAhHEyAl",
+"uniqueid": "vpaLcvNurQLxulmlaUNEfbUpOHXleI",
 "value": [
 0.9524368002747825,
 0.9643338094845916,
@@ -8774,7 +8779,7 @@ null
 "model": "Initial_Fit",
 "qualifier": "flux_scale",
 "readonly": true,
-"uniqueid": "twwcAWiBhZjpfyUUkNposESVzdyihr",
+"uniqueid": "dFkbHfoonyoBZqwoawKolkvuxnHHeW",
 "value": 1.2443375301020073e-25
 },
 {
@@ -8785,7 +8790,7 @@ null
 "description": "User-provided comments for this model.  Feel free to place any notes here.",
 "model": "Initial_Fit",
 "qualifier": "comments",
-"uniqueid": "EeMTqoPcHfQIyDRLCPQCIKdcFRPBkv",
+"uniqueid": "NyEjckdiutlEVKLvLFrpqADPJpohNZ",
 "value": ""
 },
 {
@@ -8803,7 +8808,7 @@ null
 "required_shape": [
 null
 ],
-"uniqueid": "kGhnUSLnInhfFvekqwTzYzfpGYiUxb",
+"uniqueid": "dfquUexyHLtlecGqCLacswdMszkHVs",
 "value": [
 0.0,
 0.002245245956175299,
@@ -9824,7 +9829,7 @@ null
 "model": "EBAI_Fit",
 "qualifier": "fluxes",
 "readonly": true,
-"uniqueid": "MLUkGtAooxAtbbwzojCQHkcNTwabXH",
+"uniqueid": "CRfYxKhIDZjkrydoVNzcdDXJODhyuk",
 "value": [
 1.1736116834211066,
 1.1736280009155822,
@@ -10848,7 +10853,7 @@ null
 "model": "EBAI_Fit",
 "qualifier": "flux_scale",
 "readonly": true,
-"uniqueid": "KezzNzWORyyGjmMnZtoCxbLKXlcpFR",
+"uniqueid": "kpRjtgVKZTUIdJuNibLBjjinAGlprB",
 "value": 9.228765897701649e-26
 },
 {
@@ -10859,7 +10864,7 @@ null
 "description": "User-provided comments for this model.  Feel free to place any notes here.",
 "model": "EBAI_Fit",
 "qualifier": "comments",
-"uniqueid": "yloORsGvESYSOuDSELIXZvWaxTgOEU",
+"uniqueid": "phwyqoSpLvyGpUYfYaeToBibaUBFJQ",
 "value": ""
 },
 {
@@ -10877,7 +10882,7 @@ null
 "required_shape": [
 null
 ],
-"uniqueid": "OuhkJhLilEbvonAPlvSqMCNmFCzXEc",
+"uniqueid": "IZBPkUuhuMSrdoTnFsGbfeLrIUWhvn",
 "value": [
 0.0,
 0.002245245956175299,
@@ -11898,7 +11903,7 @@ null
 "model": "LC_Geometry_Fit",
 "qualifier": "fluxes",
 "readonly": true,
-"uniqueid": "bWogmkyatJDVygxoAaGwdxscVTCZug",
+"uniqueid": "yAgSuHGRMhEQLGSZlTAzJdYBAZqZBW",
 "value": [
 1.1885159715770222,
 1.1883886214745023,
@@ -12922,7 +12927,7 @@ null
 "model": "LC_Geometry_Fit",
 "qualifier": "flux_scale",
 "readonly": true,
-"uniqueid": "YbtcKxNiLprOedRurTqefMgPqQfkTD",
+"uniqueid": "qRfwVeHSUwpjbmjniGyOglODHVOncC",
 "value": 9.233728050925035e-26
 },
 {
@@ -12933,7 +12938,7 @@ null
 "description": "User-provided comments for this model.  Feel free to place any notes here.",
 "model": "LC_Geometry_Fit",
 "qualifier": "comments",
-"uniqueid": "oITJCOrIzrKRBkuatbKPtVfeNOuvTd",
+"uniqueid": "iJObFPFIjXiWummOkXDdaGmYycFSvY",
 "value": ""
 },
 {
@@ -12951,7 +12956,7 @@ null
 "required_shape": [
 null
 ],
-"uniqueid": "gNgGOYOAcDWfGwaOGGdNQJEKucozPp",
+"uniqueid": "EwvYyHiRcQaRgfWnRRmEgKSlWpRmKH",
 "value": [
 0.0,
 0.002245245956175299,
@@ -13972,7 +13977,7 @@ null
 "model": "Optimizer_Fit",
 "qualifier": "fluxes",
 "readonly": true,
-"uniqueid": "eRQVdrPNvpmiDyimgJUPwwtmpjKKDr",
+"uniqueid": "TJhNPyyLXTMVnWsdiEbjYIjUjWBJdJ",
 "value": [
 1.04625881747779,
 1.046254428836993,
@@ -14996,7 +15001,7 @@ null
 "model": "Optimizer_Fit",
 "qualifier": "flux_scale",
 "readonly": true,
-"uniqueid": "BUGvdsuIhswlVMbOwAndoWRxlkZzIL",
+"uniqueid": "oScYaecQZJKOJOHMmmJHxHutdnvRWc",
 "value": 3.3136442382724194e-25
 },
 {
@@ -15007,7 +15012,7 @@ null
 "description": "User-provided comments for this model.  Feel free to place any notes here.",
 "model": "Optimizer_Fit",
 "qualifier": "comments",
-"uniqueid": "lZCJXsBaLKHTyYuWdkvGEoAVFRKloP",
+"uniqueid": "JkkyfNrDNfBtfuonjqaLepidzQzUaQ",
 "value": ""
 },
 {
@@ -15018,7 +15023,7 @@ null
 "kind": "ebai",
 "qualifier": "comments",
 "solver": "EBAI_solver",
-"uniqueid": "eCSSSmimeSDRwNPfGMiAypWXiSKSvx",
+"uniqueid": "lCTvxqbgOjCVtKFqmtDvHVbZPOGMle",
 "value": ""
 },
 {
@@ -15032,7 +15037,7 @@ null
 "kind": "ebai",
 "qualifier": "lc_datasets",
 "solver": "EBAI_solver",
-"uniqueid": "dBPkfReqDGfHDuHeqiwJvGsTxoeufZ",
+"uniqueid": "jymFnYuuzGikXnKaFgjuiNxOmkEapP",
 "value": [
 "*"
 ]
@@ -15050,7 +15055,7 @@ null
 "kind": "ebai",
 "qualifier": "lc_combine",
 "solver": "EBAI_solver",
-"uniqueid": "irsRNdGwzKtxGAJOdiMXWcVBreoBjM",
+"uniqueid": "MWuvDjCcuhazBEqnkhjROYavHUpEzA",
 "value": "median",
 "visible_if": "lc_datasets:<plural>"
 },
@@ -15062,7 +15067,7 @@ null
 "kind": "ebai",
 "qualifier": "phase_bin",
 "solver": "EBAI_solver",
-"uniqueid": "FpIogBGjVCPVSCNDjcqOGKEFHPVLcL",
+"uniqueid": "JVXOmPIGdroHxpiILsDTPdltCrCBnZ",
 "value": false
 },
 {
@@ -15077,7 +15082,7 @@ null
 ],
 "qualifier": "phase_nbins",
 "solver": "EBAI_solver",
-"uniqueid": "rclpVywsmgNPeoKrDdbOxUcRbqJxwz",
+"uniqueid": "NPBsJsMAVoDzYAHOmBNvOdhOmKfhow",
 "value": 500,
 "visible_if": "phase_bin:True"
 },
@@ -15092,7 +15097,7 @@ null
 "kind": "ebai",
 "qualifier": "orbit",
 "solver": "EBAI_solver",
-"uniqueid": "XJhUakjYEzPErmhZEsAMhSjfYOVYTJ",
+"uniqueid": "wBuVcMRIpoHxkeVzAxFrteulgNxcMV",
 "value": "binary"
 },
 {
@@ -15103,7 +15108,7 @@ null
 "kind": "lc_geometry",
 "qualifier": "comments",
 "solver": "lcGeom_solver",
-"uniqueid": "jzKGAgLBtmjyZIshhtfjnwBsSyCVch",
+"uniqueid": "bsuyUbDdfehegGEvLKUeXKgdNkZeTx",
 "value": ""
 },
 {
@@ -15117,7 +15122,7 @@ null
 "kind": "lc_geometry",
 "qualifier": "lc_datasets",
 "solver": "lcGeom_solver",
-"uniqueid": "ZurIRXuWmVshtVbjVrVShcZxHcgwnH",
+"uniqueid": "NtjJbXMssAqqpziDvYDSAiJSbUEEsg",
 "value": [
 "*"
 ]
@@ -15135,7 +15140,7 @@ null
 "kind": "lc_geometry",
 "qualifier": "lc_combine",
 "solver": "lcGeom_solver",
-"uniqueid": "WYyjVkpuqtJGqxGVkCYdDjUcLlwIrk",
+"uniqueid": "MSVwaZuSdGrraXsymPeLpmBOxsGxnZ",
 "value": "median",
 "visible_if": "lc_datasets:<plural>"
 },
@@ -15147,7 +15152,7 @@ null
 "kind": "lc_geometry",
 "qualifier": "phase_bin",
 "solver": "lcGeom_solver",
-"uniqueid": "nyFuHJyKPGlZkoHBORTcEQrmcTLVxc",
+"uniqueid": "rqTzudCmaWgQnFpOTcXVycKQaPiLSv",
 "value": true
 },
 {
@@ -15162,7 +15167,7 @@ null
 ],
 "qualifier": "phase_nbins",
 "solver": "lcGeom_solver",
-"uniqueid": "UxkXmeahnZyKonVELDemyVaBhRNzYR",
+"uniqueid": "OOqBtMFinqrowvPTwelybhTQqfTAgD",
 "value": 500,
 "visible_if": "phase_bin:True"
 },
@@ -15177,7 +15182,7 @@ null
 "kind": "lc_geometry",
 "qualifier": "orbit",
 "solver": "lcGeom_solver",
-"uniqueid": "OmojwCaSZtiPfGsMSdDcIwQZjWmmxj",
+"uniqueid": "ObcRdkZxnJMjWXoRfusNxfmDAOQhYm",
 "value": "binary"
 },
 {
@@ -15188,7 +15193,7 @@ null
 "kind": "lc_geometry",
 "qualifier": "t0_near_times",
 "solver": "lcGeom_solver",
-"uniqueid": "EuuZczoPsJmSecncvckrYwyhHCtcgY",
+"uniqueid": "yAvLkXcCmgceBJnHvdjrcbuKcIATaK",
 "value": true
 },
 {
@@ -15199,7 +15204,7 @@ null
 "kind": "lc_geometry",
 "qualifier": "expose_model",
 "solver": "lcGeom_solver",
-"uniqueid": "fDSXWKhWXizgvFnfaZEycDTqibTTWV",
+"uniqueid": "FwSZWcYDYeRBAeWQnCYUDbLZYCtBnQ",
 "value": true
 },
 {
@@ -15210,7 +15215,7 @@ null
 "kind": "nelder_mead",
 "qualifier": "comments",
 "solver": "nelder_mead01",
-"uniqueid": "ZjYjIVeXaTkrqTchjsVawwLzusESOA",
+"uniqueid": "YxVeGYaXfSfPMkCfLxYktfcoBXNGEd",
 "value": ""
 },
 {
@@ -15225,7 +15230,7 @@ null
 "kind": "nelder_mead",
 "qualifier": "compute",
 "solver": "nelder_mead01",
-"uniqueid": "XCSiMXyAkwywzJJmbhMxgoOUDeWUqk",
+"uniqueid": "QoazhQLDJXtvpLSHswdtoDTZFNyLoY",
 "value": "fastcompute"
 },
 {
@@ -15236,15 +15241,12 @@ null
 "kind": "nelder_mead",
 "qualifier": "expose_lnprobabilities",
 "solver": "nelder_mead01",
-"uniqueid": "zHZceudJTQuIgYNHuVYCPgrFDpPouA",
+"uniqueid": "NvMEbkEKrYWTornHrJCUYSEsOvtuHe",
 "value": false
 },
 {
 "Class": "SelectTwigParameter",
 "choices": [
-"t0@system",
-"ra@system",
-"dec@system",
 "distance@system",
 "vgamma@system",
 "ebv@system",
@@ -15266,6 +15268,8 @@ null
 "gravb_bol@primary@star@component",
 "irrad_frac_refl_bol@primary@star@component",
 "irrad_frac_lost_bol@primary@star@component",
+"ld_coeffs_bol[0]@primary@star@component",
+"ld_coeffs_bol[1]@primary@star@component",
 "mass@primary@star@component",
 "requiv@secondary@star@component",
 "requiv_max@secondary@star@component",
@@ -15283,6 +15287,8 @@ null
 "gravb_bol@secondary@star@component",
 "irrad_frac_refl_bol@secondary@star@component",
 "irrad_frac_lost_bol@secondary@star@component",
+"ld_coeffs_bol[0]@secondary@star@component",
+"ld_coeffs_bol[1]@secondary@star@component",
 "mass@secondary@star@component",
 "period@binary@orbit@component",
 "period_anom@binary@orbit@component",
@@ -15311,6 +15317,10 @@ null
 "l3@lc01@lc@dataset",
 "l3_frac@lc01@lc@dataset",
 "exptime@lc01@lc@dataset",
+"ld_coeffs[0]@primary@lc01@lc@dataset",
+"ld_coeffs[1]@primary@lc01@lc@dataset",
+"ld_coeffs[0]@secondary@lc01@lc@dataset",
+"ld_coeffs[1]@secondary@lc01@lc@dataset",
 "pblum@primary@lc01@lc@dataset",
 "pblum@secondary@lc01@lc@dataset",
 "teffratio@binary@orbit@component",
@@ -15322,7 +15332,7 @@ null
 "kind": "nelder_mead",
 "qualifier": "fit_parameters",
 "solver": "nelder_mead01",
-"uniqueid": "ePNCSbGPdfkVkbPSqDujzVOAyhHxjp",
+"uniqueid": "wShTIBbBoafYGEmctunNLcxVASjyip",
 "value": [
 "teffratio@binary",
 "requivsumfrac@binary",
@@ -15340,7 +15350,7 @@ null
 "kind": "nelder_mead",
 "qualifier": "initial_values",
 "solver": "nelder_mead01",
-"uniqueid": "jttxUEnBeFOzYJmcgLrEavzebevbtW",
+"uniqueid": "WQCTspmfNSKEwOGvXTyAMPqBZjxdOX",
 "value": {}
 },
 {
@@ -15352,7 +15362,7 @@ null
 "kind": "nelder_mead",
 "qualifier": "priors",
 "solver": "nelder_mead01",
-"uniqueid": "PDMwpAkarYzYQMUXxoKbynsBREoJFp",
+"uniqueid": "NJqnfFtwaakSoaOvZWPriEJEkTOgmb",
 "value": []
 },
 {
@@ -15368,7 +15378,7 @@ null
 "kind": "nelder_mead",
 "qualifier": "priors_combine",
 "solver": "nelder_mead01",
-"uniqueid": "ZZfbdsRGCKMTsrTPBNXaJpQKZowqoi",
+"uniqueid": "myvBCDvoIIjxnaQxPwErodFqaqxVvE",
 "value": "and",
 "visible_if": "priors:<notempty>"
 },
@@ -15384,7 +15394,7 @@ null
 ],
 "qualifier": "maxiter",
 "solver": "nelder_mead01",
-"uniqueid": "SVHgytwUyIJPDNcGJgjrRfoGErDSMJ",
+"uniqueid": "FdHdtbarZSMizTXNIwmTpozeGaujuE",
 "value": 1000000
 },
 {
@@ -15399,7 +15409,7 @@ null
 ],
 "qualifier": "maxfev",
 "solver": "nelder_mead01",
-"uniqueid": "NKbvnBbZwZFQkEvoBdDrungjWQeTPS",
+"uniqueid": "qbIWIIbkhuZlcuPvEMDgpUCixptrAD",
 "value": 1000000
 },
 {
@@ -15410,7 +15420,7 @@ null
 "kind": "nelder_mead",
 "qualifier": "adaptive",
 "solver": "nelder_mead01",
-"uniqueid": "YMwthUBEOppcdRPLQYjLWwIkfgqpZA",
+"uniqueid": "oKQyIhNIbXYfslyvLzMchvPZoHGdEL",
 "value": false
 },
 {
@@ -15426,7 +15436,7 @@ null
 ],
 "qualifier": "xatol",
 "solver": "nelder_mead01",
-"uniqueid": "stXNyhuAaFQNWtgNFTHGhEtRrLlAgI",
+"uniqueid": "hBimtKoFoctZofQlRtVWFTDFftFlJF",
 "value": 0.0001
 },
 {
@@ -15442,7 +15452,7 @@ null
 ],
 "qualifier": "fatol",
 "solver": "nelder_mead01",
-"uniqueid": "AfnuMNAZslQLkmqPckHgmxLbfplrEx",
+"uniqueid": "uzjdeqnCswtyShncXJVnPGhPdCumpK",
 "value": 0.0001
 },
 {
@@ -15455,7 +15465,7 @@ null
 "readonly": true,
 "solution": "EBAI_solution",
 "solver": "EBAI_solver",
-"uniqueid": "EHqasjzSkQWAVsJMzGwBokuFXPVUpH",
+"uniqueid": "wtDJHwWtPWiRVLQbUNZmoaKAlDHIrh",
 "value": "binary"
 },
 {
@@ -15469,7 +15479,7 @@ null
 "readonly": true,
 "solution": "EBAI_solution",
 "solver": "EBAI_solver",
-"uniqueid": "VzHcMidXSZYIuzinrdUUJzKIpRrEAW",
+"uniqueid": "YVawJedxPvsZbDXnWUclOKfLNmbRTF",
 "value": [
 -0.499003984063745,
 -0.49800796812749004,
@@ -16489,7 +16499,7 @@ null
 "readonly": true,
 "solution": "EBAI_solution",
 "solver": "EBAI_solver",
-"uniqueid": "vytssRMrnsLnuvSwgMOadgpjWbQwMc",
+"uniqueid": "pMXWsMdTutYExLUggIWGafwpqZoblW",
 "value": [
 0.4962923839632772,
 0.5004845456527074,
@@ -17509,7 +17519,7 @@ null
 "readonly": true,
 "solution": "EBAI_solution",
 "solver": "EBAI_solver",
-"uniqueid": "IMKpFrfKgpvJWjFZHSCGfwpcUxeHdd",
+"uniqueid": "qjNpHTiChUtJIqeOxXHbfqBrQTHrEP",
 "value": [
 0.020643964835312195,
 0.020643964835312195,
@@ -18529,7 +18539,7 @@ null
 "readonly": true,
 "solution": "EBAI_solution",
 "solver": "EBAI_solver",
-"uniqueid": "UYbrlbSPqjWJEDLWRUqhssFWufuLtY",
+"uniqueid": "SIoecGtvIpDklpjGPbGFBDlbTsItNg",
 "value": [
 -0.5,
 -0.495,
@@ -18745,7 +18755,7 @@ null
 "readonly": true,
 "solution": "EBAI_solution",
 "solver": "EBAI_solver",
-"uniqueid": "AeMcPOChMDmNASeqVZKWlWnmvWDdgI",
+"uniqueid": "gDgPVpBaGHZwgSBZePVUAQoxyDsYxj",
 "value": [
 0.5281152501954699,
 0.5357693286728583,
@@ -18961,14 +18971,14 @@ null
 "readonly": true,
 "solution": "EBAI_solution",
 "solver": "EBAI_solver",
-"uniqueid": "IzzTznTuiRcCiqNuWOKXiOUCsTIAps",
+"uniqueid": "pNvoHXxCluVLfUpnQLKOKbpmfqbRDR",
 "value": [
-"MsdsHWNBXrYsTgJpTbXoZlSMkirZAU",
-"paZuhYIVblyCbSFBjLoIRjeYqLFIYn",
-"qiuxvtrfSgiVgfOpudsgbiOuDloGWj",
-"ZbtdTphWIDXxtEOUiUlmVugEYQTCEz",
-"ysIIqiMPDcIeXiNeRoOPqXNUOjwMEY",
-"ZSxOMRjJIOUSurGVKqjkxmrpaEIQJB"
+"jfdRZJrrBQrgPLaFDONoXrvGdHjpGR",
+"AKKVZODhIBMTZZJmKqENjlgMyeJXsw",
+"UoUsaPlRjsBtlgAiPClJDdFcDjCkza",
+"MBDtYnBiHzqxdcDUfIRXofKebdmQxH",
+"HaVjvniPzMCXzTZxluNWKokRMjqHUb",
+"rktqHGZtWDvvkskOXbcUGgECxQYxRa"
 ]
 },
 {
@@ -18981,7 +18991,7 @@ null
 "readonly": true,
 "solution": "EBAI_solution",
 "solver": "EBAI_solver",
-"uniqueid": "HQCPSHpuRkErlZrkTPiiJRQueKBupc",
+"uniqueid": "gBVNJkYfeIfdzibpBuGEoqPLaWrJJX",
 "value": [
 "t0_supconj@binary@orbit@component",
 "teffratio@binary@orbit@component",
@@ -19001,7 +19011,7 @@ null
 "readonly": true,
 "solution": "EBAI_solution",
 "solver": "EBAI_solver",
-"uniqueid": "XSjRUwExlMGJhjsAvRqrROLCMBAqQQ",
+"uniqueid": "ELCnkqRRXHAWBFmmjaCCAwJsGjADIi",
 "value": [
 0.0,
 0.9692288289444646,
@@ -19022,7 +19032,7 @@ NaN
 "readonly": true,
 "solution": "EBAI_solution",
 "solver": "EBAI_solver",
-"uniqueid": "SRbxxoAahmenQvOFMcNhDhqxomoOGf",
+"uniqueid": "qrCuyeJleMNPJyoNFxTqUwalSnOkGR",
 "value": [
 "d",
 "",
@@ -19049,7 +19059,7 @@ NaN
 "qualifier": "adopt_parameters",
 "solution": "EBAI_solution",
 "solver": "EBAI_solver",
-"uniqueid": "hcPjVarOuRlOFsbHSCidpZTWmDyZKR",
+"uniqueid": "MidVgFOBwXGwxfleaEpZUaEOoKldmL",
 "value": [
 "t0_supconj@binary@orbit@component",
 "teffratio@binary@orbit@component",
@@ -19067,7 +19077,7 @@ NaN
 "qualifier": "adopt_distributions",
 "solution": "EBAI_solution",
 "solver": "EBAI_solver",
-"uniqueid": "CONcViDCmVCyWHYehdBmjziMlHzcbk",
+"uniqueid": "jogWOumPxXNtKINSHjnZECYkbgfLQI",
 "value": false
 },
 {
@@ -19079,7 +19089,7 @@ NaN
 "qualifier": "adopt_values",
 "solution": "EBAI_solution",
 "solver": "EBAI_solver",
-"uniqueid": "VEXxOgzQkEWFwgCDsoTrySsXtkzXoh",
+"uniqueid": "meJtZRioLcRIEIwQkqyhAzBvOpeARV",
 "value": true
 },
 {
@@ -19091,7 +19101,7 @@ NaN
 "qualifier": "comments",
 "solution": "EBAI_solution",
 "solver": "EBAI_solver",
-"uniqueid": "OetLZkFastRQYykOeiAhqaoijGQkTv",
+"uniqueid": "oXHMRIEbkAjvwgzUkjalQnrVrrYmgh",
 "value": ""
 },
 {
@@ -19104,7 +19114,7 @@ NaN
 "readonly": true,
 "solution": "lcGeom_solution",
 "solver": "lcGeom_solver",
-"uniqueid": "rdeGAZTwouLyBYxxgXtQKqkkBauFhS",
+"uniqueid": "bpuqzfhJPJSuJYKVlozCbKcsSIGJQi",
 "value": "binary"
 },
 {
@@ -19118,7 +19128,7 @@ NaN
 "readonly": true,
 "solution": "lcGeom_solution",
 "solver": "lcGeom_solver",
-"uniqueid": "dAzOFaHkaMsrnjKbtTjnunVQBpHbTG",
+"uniqueid": "YCLKnJtZliamFopLqRBgaQHRYJHMcR",
 "value": [
 -0.4980049800796813,
 -0.49600697211155376,
@@ -19633,7 +19643,7 @@ NaN
 "readonly": true,
 "solution": "lcGeom_solution",
 "solver": "lcGeom_solver",
-"uniqueid": "QwKfIguaUcuTUmBMBrduJPkyfuztKl",
+"uniqueid": "QzUHBwHNYiBgMUpFlvqBdGoBVKkkUP",
 "value": [
 0.5071867431933841,
 0.5114951017791551,
@@ -20148,7 +20158,7 @@ NaN
 "readonly": true,
 "solution": "lcGeom_solution",
 "solver": "lcGeom_solver",
-"uniqueid": "GVcumhAIjxsMEvtwGbakGoDyYlKMdB",
+"uniqueid": "zSeDXwAwWCDhRjzFvCHivaGjxtehPG",
 "value": [
 0.003359491000103069,
 0.004065855473401936,
@@ -20663,7 +20673,7 @@ NaN
 "readonly": true,
 "solution": "lcGeom_solution",
 "solver": "lcGeom_solver",
-"uniqueid": "zIpnTJHiHTiUWtrSOYmITJZmDuMTKc",
+"uniqueid": "qXlDaBgcrYSMeGgEvEkSMToFwmqucQ",
 "value": [
 -0.5,
 -0.495,
@@ -20878,7 +20888,7 @@ NaN
 "readonly": true,
 "solution": "lcGeom_solution",
 "solver": "lcGeom_solver",
-"uniqueid": "wswzzqEpQoPzoxOattHssIcftqdpfe",
+"uniqueid": "FbArGjJriQUZHjmJsJLkPDSBMOVREN",
 "value": {
 "C": [
 0.9958458495748748,
@@ -22313,7 +22323,7 @@ NaN
 "readonly": true,
 "solution": "lcGeom_solution",
 "solver": "lcGeom_solver",
-"uniqueid": "kxzGtdtfskZcIDyWXdXRVHdhoEaggU",
+"uniqueid": "GHibLGagGAxjCHxnQKxaaXJHYlIxSd",
 "value": "CG12E2"
 },
 {
@@ -22331,7 +22341,7 @@ null
 "readonly": true,
 "solution": "lcGeom_solution",
 "solver": "lcGeom_solver",
-"uniqueid": "bhXPFYVoKKSsQFIAyMyrLbfdFFqbmR",
+"uniqueid": "BKkfmyMTuFEsdaEMlmMknKVJJQCFTv",
 "value": 0.1505677449638443
 },
 {
@@ -22349,7 +22359,7 @@ null
 "readonly": true,
 "solution": "lcGeom_solution",
 "solver": "lcGeom_solver",
-"uniqueid": "KTVzvAAjQLoTVSGzYCxBjSnbFjZlLb",
+"uniqueid": "PoqATjerYUVHnqlauRwXWisqJnfIqH",
 "value": 0.14583889521372162
 },
 {
@@ -22367,7 +22377,7 @@ null
 "readonly": true,
 "solution": "lcGeom_solution",
 "solver": "lcGeom_solver",
-"uniqueid": "IZmclQowfxSdjTRyJnyROPHpMrXYJc",
+"uniqueid": "NHfByFRppraEcNCzqeuVAdqjuWVxiO",
 "value": 0.0009298563761972926
 },
 {
@@ -22385,7 +22395,7 @@ null
 "readonly": true,
 "solution": "lcGeom_solution",
 "solver": "lcGeom_solver",
-"uniqueid": "OvrnmigJoAFeyzxxbjdVrqJSSWwhAZ",
+"uniqueid": "OmxGyHNCOdXOaXRinhJLThGrAwTCHu",
 "value": -0.499999999999981
 },
 {
@@ -22403,7 +22413,7 @@ null
 "readonly": true,
 "solution": "lcGeom_solution",
 "solver": "lcGeom_solver",
-"uniqueid": "LFXdJVQzXKbujmsFwydiSOAeDlBEDQ",
+"uniqueid": "wSKcAxfYgnscpRHUJuHnSHTpnKWmUH",
 "value": 0.4933409065883705
 },
 {
@@ -22421,7 +22431,7 @@ null
 "readonly": true,
 "solution": "lcGeom_solution",
 "solver": "lcGeom_solver",
-"uniqueid": "jUMEjFzownaJpLxDWQsjEwCImGCrae",
+"uniqueid": "wNIsmKPwZyNTixRObQlBDzrQEQbgIK",
 "value": 0.4958627900039516
 },
 {
@@ -22435,7 +22445,7 @@ null
 "readonly": true,
 "solution": "lcGeom_solution",
 "solver": "lcGeom_solver",
-"uniqueid": "IeSNGCcdFoTftqHKkhBUsMMfkHDVbE",
+"uniqueid": "mGbHqPCDSSQngZLUGyjSnQMltvPihs",
 "value": [
 -0.07435401610572487,
 0.07621372885811944,
@@ -22454,12 +22464,12 @@ null
 "readonly": true,
 "solution": "lcGeom_solution",
 "solver": "lcGeom_solver",
-"uniqueid": "IXrZtZnajsmIWrByIfxLQIXQjGucZF",
+"uniqueid": "ZezEJKCQDMYFnZkeULODnmBReAVids",
 "value": [
-"MsdsHWNBXrYsTgJpTbXoZlSMkirZAU",
-"FGALTUXCbiNJhgEfeAQKbgVFCfSINi",
-"pkzKsexbAQEnHkTpoYwwgIayVcsjNR",
-"UGoKdarGsPnTDSoLPnnoUpySYlHopU"
+"jfdRZJrrBQrgPLaFDONoXrvGdHjpGR",
+"dzESgkTuRePJdxKKHQFgdxmovyBeqt",
+"tGoDDizfVXnAgxncKebRYngFKHuChF",
+"LPuJucQMcVuToTPhWonLMFFqYzMMHx"
 ]
 },
 {
@@ -22472,7 +22482,7 @@ null
 "readonly": true,
 "solution": "lcGeom_solution",
 "solver": "lcGeom_solver",
-"uniqueid": "KpXAWPAzIaLBWDuUWjOJxoDcrGyvHG",
+"uniqueid": "LtPwYIgCOEFcgNfGkafISlGTtPTJOV",
 "value": [
 "t0_supconj@binary@orbit@component",
 "ecc@binary@orbit@component",
@@ -22490,7 +22500,7 @@ null
 "readonly": true,
 "solution": "lcGeom_solution",
 "solver": "lcGeom_solver",
-"uniqueid": "vANSfXrEAJPxFtgyXNKCfZcqMZavtp",
+"uniqueid": "BKwkEGLiyjQgcupJdhZtGBOSVDDEqX",
 "value": [
 0.0020961072935547116,
 0.016020631237471,
@@ -22518,7 +22528,7 @@ null
 "readonly": true,
 "solution": "lcGeom_solution",
 "solver": "lcGeom_solver",
-"uniqueid": "giVwHbWbWgdrnyntBYaGetWaAsQuAv",
+"uniqueid": "CJQwFYpvCnQtDTqvGqTFacZzyGvZOc",
 "value": [
 "d",
 "",
@@ -22541,7 +22551,7 @@ null
 "qualifier": "adopt_parameters",
 "solution": "lcGeom_solution",
 "solver": "lcGeom_solver",
-"uniqueid": "NYBfcYFHKhbJMZGLcSLvzFeZorrkUM",
+"uniqueid": "deyAdqyNPNUtayCwlOXkSobOFweleW",
 "value": [
 "t0_supconj@binary@orbit@component",
 "ecc@binary@orbit@component",
@@ -22557,7 +22567,7 @@ null
 "qualifier": "adopt_distributions",
 "solution": "lcGeom_solution",
 "solver": "lcGeom_solver",
-"uniqueid": "kHFuAJGEWHqgwayjrVfOkOnFFenZUm",
+"uniqueid": "nqmBkVWPALxGWxMrHSMIhDkiayfSBw",
 "value": false
 },
 {
@@ -22569,7 +22579,7 @@ null
 "qualifier": "adopt_values",
 "solution": "lcGeom_solution",
 "solver": "lcGeom_solver",
-"uniqueid": "KcknJgPEjELLBJbiLfeYUjrtzJRVKO",
+"uniqueid": "LrfysnLfwRaaeNAcowcczaaQhSufkh",
 "value": true
 },
 {
@@ -22581,7 +22591,7 @@ null
 "qualifier": "comments",
 "solution": "lcGeom_solution",
 "solver": "lcGeom_solver",
-"uniqueid": "HIlGqnHzbshhuNirXstIDPazZCCrBI",
+"uniqueid": "MWsxWyWPsLogDZMPozRczLqYWxEdnH",
 "value": ""
 },
 {
@@ -22596,14 +22606,14 @@ null
 "readonly": true,
 "solution": "optimizer_solution",
 "solver": "nelder_mead01",
-"uniqueid": "wCjdnqOgHiRUqtarPisotzUHGKyIgN",
+"uniqueid": "EfdgPtcrwnlOvCfCiXSdDdSOhpBlrx",
 "value": [
-"paZuhYIVblyCbSFBjLoIRjeYqLFIYn",
-"qiuxvtrfSgiVgfOpudsgbiOuDloGWj",
-"ZSxOMRjJIOUSurGVKqjkxmrpaEIQJB",
-"wTasuizhNMdERrAqhvePhyQIvPooUr",
-"FGALTUXCbiNJhgEfeAQKbgVFCfSINi",
-"pkzKsexbAQEnHkTpoYwwgIayVcsjNR"
+"AKKVZODhIBMTZZJmKqENjlgMyeJXsw",
+"UoUsaPlRjsBtlgAiPClJDdFcDjCkza",
+"rktqHGZtWDvvkskOXbcUGgECxQYxRa",
+"RvEDokBbCZbetuCdhXvIhkjOjuvcHQ",
+"dzESgkTuRePJdxKKHQFgdxmovyBeqt",
+"tGoDDizfVXnAgxncKebRYngFKHuChF"
 ]
 },
 {
@@ -22617,7 +22627,7 @@ null
 "readonly": true,
 "solution": "optimizer_solution",
 "solver": "nelder_mead01",
-"uniqueid": "KNBdyKYxhIxYstBtBVSALtbQWtnaaR",
+"uniqueid": "PREjUdpZKtSTfHhLtzkNDyXKOKNOvh",
 "value": [
 "teffratio@binary@orbit@component",
 "requivsumfrac@binary@orbit@component",
@@ -22645,7 +22655,7 @@ null
 "qualifier": "adopt_parameters",
 "solution": "optimizer_solution",
 "solver": "nelder_mead01",
-"uniqueid": "SjMUOjpXxwiQOxfnWNXRaPQCuIsVHa",
+"uniqueid": "GHJRIeSnmLqheaooyEbRopoojcqaJH",
 "value": [
 "teffratio@binary@orbit@component",
 "requivsumfrac@binary@orbit@component",
@@ -22665,7 +22675,7 @@ null
 "qualifier": "adopt_distributions",
 "solution": "optimizer_solution",
 "solver": "nelder_mead01",
-"uniqueid": "AYwMxMMgpcjKGzPCvNqIXjjghPvHCk",
+"uniqueid": "GBqtgiAoFAiarBvHphOmGdmzEChtmT",
 "value": false
 },
 {
@@ -22678,7 +22688,7 @@ null
 "qualifier": "adopt_values",
 "solution": "optimizer_solution",
 "solver": "nelder_mead01",
-"uniqueid": "TvCEDcwpkXATvgLerIMpoGZXaeywlr",
+"uniqueid": "BeUJsXKChxafclowcQNiGzvrKnDBjD",
 "value": true
 },
 {
@@ -22692,7 +22702,7 @@ null
 "readonly": true,
 "solution": "optimizer_solution",
 "solver": "nelder_mead01",
-"uniqueid": "cLmfarRlTlTkKDpsjQPzbgwLAysqum",
+"uniqueid": "irzORSxCFLBCEOECmUKOfyuXmnsNXD",
 "value": "Optimization terminated successfully."
 },
 {
@@ -22710,7 +22720,7 @@ null
 "readonly": true,
 "solution": "optimizer_solution",
 "solver": "nelder_mead01",
-"uniqueid": "XfuFgaMGqpmgdtpyYxwnMkWOvpGhZF",
+"uniqueid": "VoosEemOTFZUPYTqPUNOScUIhcsfvI",
 "value": 1575
 },
 {
@@ -22728,7 +22738,7 @@ null
 "readonly": true,
 "solution": "optimizer_solution",
 "solver": "nelder_mead01",
-"uniqueid": "fMXPmmdERDOKiZpnXgEmEbFAPmAPrC",
+"uniqueid": "HKimNOXJIiSxFFTULSdLdocnZivFdc",
 "value": 962
 },
 {
@@ -22742,7 +22752,7 @@ null
 "readonly": true,
 "solution": "optimizer_solution",
 "solver": "nelder_mead01",
-"uniqueid": "pSKBNpZhViZYHbvrVSHWeGRuLazIFx",
+"uniqueid": "ifwqYodGqwWqSyWOOUmkhduqDCoDaU",
 "value": true
 },
 {
@@ -22756,7 +22766,7 @@ null
 "readonly": true,
 "solution": "optimizer_solution",
 "solver": "nelder_mead01",
-"uniqueid": "usHzsIinixucZUiIlmfxqjcSQsJxXT",
+"uniqueid": "iWrQcXRYzMtsSXtwcLmJttEkQnwROe",
 "value": [
 0.9692288289444646,
 0.4508506023471432,
@@ -22777,7 +22787,7 @@ null
 "readonly": true,
 "solution": "optimizer_solution",
 "solver": "nelder_mead01",
-"uniqueid": "YcKeuRRkyQXeKAydXtuyaQQnnVUdYg",
+"uniqueid": "BlgQRIMKKCtKiTXDaDHPLFrIxePwot",
 "value": [
 0.9875835438733638,
 0.4070406182499944,
@@ -22799,7 +22809,7 @@ null
 "readonly": true,
 "solution": "optimizer_solution",
 "solver": "nelder_mead01",
-"uniqueid": "CRpZHidnAnKnADtwRRUfwAmPMyNLxq",
+"uniqueid": "ndeVOOpwIrfZcvFTfrJwprNVuAwwlT",
 "value": [
 "",
 "",
@@ -22819,7 +22829,7 @@ null
 "qualifier": "comments",
 "solution": "optimizer_solution",
 "solver": "nelder_mead01",
-"uniqueid": "IoQYgsxooHAOItQwiMCEBHDPygbzgP",
+"uniqueid": "uSGuhKDlvBJAvWOFUyjsqVCcNlGiQM",
 "value": ""
 },
 {
@@ -22836,7 +22846,7 @@ null
 "copy_for": false,
 "description": "Source to use for highlight/uncover time for any figure in which time_source is set to default.",
 "qualifier": "default_time_source",
-"uniqueid": "XcDsvXLHZoKxedzkLpKxLyQyeizAnR",
+"uniqueid": "adRmxqMiJUJVNzRWayBcNNSSOocDOa",
 "value": "None"
 },
 {
@@ -22850,7 +22860,7 @@ null,
 null
 ],
 "qualifier": "default_time",
-"uniqueid": "wOFkFSeJfmuFJzeYJfIDLvjeNvJfcl",
+"uniqueid": "VNrYetuWwkBLFPZsjhbIfCQcIdUvDd",
 "value": 0.0,
 "visible_if": "default_time_source:manual"
 },
@@ -22862,7 +22872,7 @@ null
 "description": "Representation to use in place of the component label when rendering latex representations of parameters.  If blank, will use the labels directly.",
 "kind": "star",
 "qualifier": "latex_repr",
-"uniqueid": "DiXjpZdpbMaXWueLkDiiVRaARHswUu",
+"uniqueid": "rbNHXLCbDMIofQkSowlMvlBULdAZem",
 "value": ""
 },
 {
@@ -22884,7 +22894,7 @@ null
 "description": "Color to use for figures in which color_source is set to component",
 "kind": "star",
 "qualifier": "color",
-"uniqueid": "XuxsYDYHVyQlbSzjYNSiHMKtvATOte",
+"uniqueid": "LDwluwyUsMZknESFZiSUEgLJIQRNSi",
 "value": "blue"
 },
 {
@@ -22912,7 +22922,7 @@ null
 "description": "Marker (datasets only, not models) to use for figures in which marker_source is set to component",
 "kind": "star",
 "qualifier": "marker",
-"uniqueid": "XdvtSsmCgNvWCOqQMfNRHyTeSXUhyM",
+"uniqueid": "JqTjhDGsFOQuRblndUHQVctDfVOxGz",
 "value": "."
 },
 {
@@ -22930,7 +22940,7 @@ null
 "description": "Linestyle to use for figures in which linestyle_source is set to component",
 "kind": "star",
 "qualifier": "linestyle",
-"uniqueid": "RpbOUQtfaFVLUIOQODePKGfheIMTPt",
+"uniqueid": "TrWIjqYwniqyzZipBHjaVAdvJOIuiN",
 "value": "solid"
 },
 {
@@ -22941,7 +22951,7 @@ null
 "description": "Representation to use in place of the component label when rendering latex representations of parameters.  If blank, will use the labels directly.",
 "kind": "star",
 "qualifier": "latex_repr",
-"uniqueid": "WGoAHXcTDmRFBgIVzKuzCahRHstQLw",
+"uniqueid": "ERyMXJqdxTEyfpIhyBtBAzPWcabZno",
 "value": ""
 },
 {
@@ -22963,7 +22973,7 @@ null
 "description": "Color to use for figures in which color_source is set to component",
 "kind": "star",
 "qualifier": "color",
-"uniqueid": "WCFBIOvnIazyApQnAkgCzdfMzcMEZi",
+"uniqueid": "urCvwjYuZzfBKKcLZgWxvmPVOCSnxh",
 "value": "orange"
 },
 {
@@ -22991,7 +23001,7 @@ null
 "description": "Marker (datasets only, not models) to use for figures in which marker_source is set to component",
 "kind": "star",
 "qualifier": "marker",
-"uniqueid": "ObVcGnMlDTzhBSLWLSyhLxXcYIlqJN",
+"uniqueid": "xRozrnOTgfpiBsBdTzGuZrGTuUSCEV",
 "value": "o"
 },
 {
@@ -23009,7 +23019,7 @@ null
 "description": "Linestyle to use for figures in which linestyle_source is set to component",
 "kind": "star",
 "qualifier": "linestyle",
-"uniqueid": "qfHzkBlKbWhiXLLwlvKbwQmvFnibay",
+"uniqueid": "nNQVgCAirYyDFjSKgWkHAYNylvWFjJ",
 "value": "dashed"
 },
 {
@@ -23020,7 +23030,7 @@ null
 "description": "Representation to use in place of the component label when rendering latex representations of parameters.  If blank, will use the labels directly.",
 "kind": "orbit",
 "qualifier": "latex_repr",
-"uniqueid": "QzQWlsxJGnsTKEmnWZHElzunZnkPlK",
+"uniqueid": "pqKZtAwwRIUgMkhJKHhaKQwlKTEIPc",
 "value": ""
 },
 {
@@ -23031,7 +23041,7 @@ null
 "description": "Representation to use in place of the dataset label when rendering latex representations of parameters.  If blank, will use the labels directly.",
 "kind": "lc",
 "qualifier": "latex_repr",
-"uniqueid": "gAPNquGVpoopTOhXrjbLIdzifOwVPi",
+"uniqueid": "KiQQKxmyVEEVYIjGPtzjseGFlezSvH",
 "value": ""
 },
 {
@@ -23053,7 +23063,7 @@ null
 "description": "Color to use for figures in which color_source is set to dataset",
 "kind": "lc",
 "qualifier": "color",
-"uniqueid": "aGGIMOyjIUGwNSjTtIFGkKDxqNyzLO",
+"uniqueid": "rLafjhoLinRgbqCGVMYcXnleEWbKuj",
 "value": "black"
 },
 {
@@ -23081,7 +23091,7 @@ null
 "description": "Marker (datasets only, not models) to use for figures in which marker_source is set to dataset",
 "kind": "lc",
 "qualifier": "marker",
-"uniqueid": "OCGYZzzcaEFKMfGqtqOhZjFRbYCnqW",
+"uniqueid": "MkgpZSMpCUBTAMRQurtEzyGzzZQfiG",
 "value": "."
 },
 {
@@ -23099,7 +23109,7 @@ null
 "description": "Linestyle to use for figures in which linestyle_source is set to dataset",
 "kind": "lc",
 "qualifier": "linestyle",
-"uniqueid": "jDAIwrOIkoAxMXJjFrNWHXgPHLOIJO",
+"uniqueid": "XcPqDHjcdwYBNaxYvHTYaDmoXnhqdS",
 "value": "solid"
 },
 {
@@ -23114,7 +23124,7 @@ null
 "figure": "lcfig01",
 "kind": "lc",
 "qualifier": "contexts",
-"uniqueid": "iJhWwGQpgGmWltnNWdDKsClzpSYLlG",
+"uniqueid": "pOEGPOrBUVMtudBioLaJHGMlIduqaY",
 "value": [
 "*"
 ]
@@ -23130,7 +23140,7 @@ null
 "figure": "lcfig01",
 "kind": "lc",
 "qualifier": "datasets",
-"uniqueid": "hcNQAGRqXnPPWqBqernILljyOqIYbZ",
+"uniqueid": "QsnrnhICTfZIUzHCQJNHZAJzjuVfQb",
 "value": [
 "*"
 ]
@@ -23149,7 +23159,7 @@ null
 "figure": "lcfig01",
 "kind": "lc",
 "qualifier": "models",
-"uniqueid": "wAQoRJaUMwbAAwWRclQfdNdWSTeyRu",
+"uniqueid": "VnZjJCisBwGsDXrJqrauzksQvEZjxz",
 "value": [
 "*"
 ]
@@ -23166,7 +23176,7 @@ null
 "figure": "lcfig01",
 "kind": "lc",
 "qualifier": "x",
-"uniqueid": "VwNoTcwmXMCpPvMNbmWnIdisCzvPSH",
+"uniqueid": "jHfFOZowPUjsGOjqraUOsdWzzzEVxY",
 "value": "times"
 },
 {
@@ -23182,7 +23192,7 @@ null
 "figure": "lcfig01",
 "kind": "lc",
 "qualifier": "period",
-"uniqueid": "YldVydIXWdJeYDJqgQTXloyHwODkEd",
+"uniqueid": "rIYHoKXkcqAEdxGDdsJAqQoMecwGCd",
 "value": "period",
 "visible_if": "[context][figure][kind]dperdt:!0.0,x:phases"
 },
@@ -23199,7 +23209,7 @@ null
 "figure": "lcfig01",
 "kind": "lc",
 "qualifier": "dpdt",
-"uniqueid": "IFbeLuIMGLzhlJteKnxOXweLJYnLkL",
+"uniqueid": "NdeJFWPlAnwqtulQUXQuLcgwaRlVHD",
 "value": "dpdt",
 "visible_if": "[context][figure][kind]dpdt:!0.0,x:phases"
 },
@@ -23217,7 +23227,7 @@ null
 "figure": "lcfig01",
 "kind": "lc",
 "qualifier": "t0",
-"uniqueid": "pvmifaEitBNHYGSTedxMAQNmvJuMqX",
+"uniqueid": "AeOtbjQdaBUoTAFPcCMqIBIGxqsPdo",
 "value": "t0_supconj",
 "visible_if": "x:phases"
 },
@@ -23233,7 +23243,7 @@ null
 "figure": "lcfig01",
 "kind": "lc",
 "qualifier": "y",
-"uniqueid": "qGfCkqvomFHowzEDsKicHaewhVYSEn",
+"uniqueid": "LOLznRTnuHIJebKUYsmOtJRhdLiShd",
 "value": "fluxes"
 },
 {
@@ -23249,7 +23259,7 @@ null
 "figure": "lcfig01",
 "kind": "lc",
 "qualifier": "xlabel_source",
-"uniqueid": "WJZMUzBggOQuOUeltMkshATTcczmCF",
+"uniqueid": "dDYyaGrDxxMstVaqEOVcnHObeWmbBH",
 "value": "auto"
 },
 {
@@ -23261,7 +23271,7 @@ null
 "figure": "lcfig01",
 "kind": "lc",
 "qualifier": "xlabel",
-"uniqueid": "SeuLWAiJpovZYzTDStEZIpeYEerooA",
+"uniqueid": "EUyoDFIEvRwtmxBjULtjOHICwXmzUv",
 "value": "xlabel",
 "visible_if": "xlabel_source:manual"
 },
@@ -23278,7 +23288,7 @@ null
 "figure": "lcfig01",
 "kind": "lc",
 "qualifier": "xunit_source",
-"uniqueid": "TsjxxCTvfHoGbGtNOmUwIQtRyEqYjg",
+"uniqueid": "ZrkxwiTcndhRkfIGxRgJufWgRRPQBV",
 "value": "auto"
 },
 {
@@ -23294,7 +23304,7 @@ null
 "figure": "lcfig01",
 "kind": "lc",
 "qualifier": "xlim_source",
-"uniqueid": "bCPFEAqrWBFfMVDhxcaOfMGhxnpGJd",
+"uniqueid": "PpdYfHPCAlgjQkrHHoDEkGaHwbGhJX",
 "value": "auto"
 },
 {
@@ -23305,7 +23315,7 @@ null
 "figure": "lcfig01",
 "kind": "lc",
 "qualifier": "xunit",
-"uniqueid": "sgbBGYyCQpUzxDrrAdHYKDHXmncNGS",
+"uniqueid": "ABzIoQbtMoGDsJZMgUuHIcVeSLIqXM",
 "value": "d",
 "visible_if": "xunit_source:manual,x:times"
 },
@@ -23318,7 +23328,7 @@ null
 "figure": "lcfig01",
 "kind": "lc",
 "qualifier": "xlim",
-"uniqueid": "GFhrRBTjVawAIAHZVFqlUdiXJAYhxf",
+"uniqueid": "MEMQwQIuKCUnGNXFnlalsNhTOvsMan",
 "value": [],
 "visible_if": "xlim_source:manual,x:times"
 },
@@ -23330,7 +23340,7 @@ null
 "figure": "lcfig01",
 "kind": "lc",
 "qualifier": "xunit",
-"uniqueid": "TsffnxpShebBJILpnVzAHsEbMrrZxX",
+"uniqueid": "pDOGSXESovjgrEIYKZQmWIgSEBzbov",
 "value": "",
 "visible_if": "xunit_source:manual,x:!times"
 },
@@ -23343,7 +23353,7 @@ null
 "figure": "lcfig01",
 "kind": "lc",
 "qualifier": "xlim",
-"uniqueid": "uxsuAHZnZLrZVsSnZmvljqoNpTFSLu",
+"uniqueid": "XPQCbXcLtDIdpkJpJjrskIHwlUPwnE",
 "value": [],
 "visible_if": "xlim_source:manual,x:!times"
 },
@@ -23360,7 +23370,7 @@ null
 "figure": "lcfig01",
 "kind": "lc",
 "qualifier": "ylabel_source",
-"uniqueid": "kppjtahAmfSZWTPakoQnfRtEAVUfgQ",
+"uniqueid": "LULTBryFtemTQbhuaiklcxZBRXKXIg",
 "value": "auto"
 },
 {
@@ -23372,7 +23382,7 @@ null
 "figure": "lcfig01",
 "kind": "lc",
 "qualifier": "ylabel",
-"uniqueid": "DKmnEbWxpVeRsTnLipaegtIXqDzByp",
+"uniqueid": "vEigCupbzNwPUqmDoAcNtJrlwYwKXK",
 "value": "ylabel",
 "visible_if": "ylabel_source:manual"
 },
@@ -23389,7 +23399,7 @@ null
 "figure": "lcfig01",
 "kind": "lc",
 "qualifier": "yunit_source",
-"uniqueid": "BzPrkUrkgoeatGUbqbIJbNwFdNnvog",
+"uniqueid": "TQFbsOlDvBJEKOalhfKDIupxmlMNsw",
 "value": "auto"
 },
 {
@@ -23405,7 +23415,7 @@ null
 "figure": "lcfig01",
 "kind": "lc",
 "qualifier": "ylim_source",
-"uniqueid": "CppWNgBoPLnsmXrwhWYdzRRauPEFKO",
+"uniqueid": "jomCLptPAooBYxuHvqFDyADMtQszCW",
 "value": "auto"
 },
 {
@@ -23416,7 +23426,7 @@ null
 "figure": "lcfig01",
 "kind": "lc",
 "qualifier": "yunit",
-"uniqueid": "WlsHaUllWGAGNoiNvEuAVYxRybvIwr",
+"uniqueid": "GfbmcVofQgDuwflwTNmyWAnlbISBAp",
 "value": "W / m2",
 "visible_if": "yunit_source:manual"
 },
@@ -23429,7 +23439,7 @@ null
 "figure": "lcfig01",
 "kind": "lc",
 "qualifier": "ylim",
-"uniqueid": "LHZfOHOMTrtNLBrwxoZUAqRLyoBxtE",
+"uniqueid": "XHMotbGTvPVUlPeGWiscabJIJXOxMi",
 "value": [],
 "visible_if": "ylim_source:manual"
 },
@@ -23447,7 +23457,7 @@ null
 "figure": "lcfig01",
 "kind": "lc",
 "qualifier": "color_source",
-"uniqueid": "cFgCoFwgCsZkRJVWjwAyhkJNeCXwgw",
+"uniqueid": "VwdyKYRMCbchHgpMAeTUNMWovkxqfT",
 "value": "model"
 },
 {
@@ -23469,7 +23479,7 @@ null
 "figure": "lcfig01",
 "kind": "lc",
 "qualifier": "color",
-"uniqueid": "BGkBRMYSFgnJEMPtCLAJLNzLzLNqbQ",
+"uniqueid": "FElLsGSOoQJfOtWAPukrzuVGpNqfMP",
 "value": "black",
 "visible_if": "color_source:manual"
 },
@@ -23486,7 +23496,7 @@ null
 "figure": "lcfig01",
 "kind": "lc",
 "qualifier": "marker_source",
-"uniqueid": "ymdgLiKzaxvkBDeKVpJlOINEyxwwCt",
+"uniqueid": "cVWkkKgluhIXRXldjPPTktPBqkllwp",
 "value": "manual"
 },
 {
@@ -23514,7 +23524,7 @@ null
 "figure": "lcfig01",
 "kind": "lc",
 "qualifier": "marker",
-"uniqueid": "aaqHMYCeddoncQpMSBMbCfKwAAsLQU",
+"uniqueid": "DOKLrzDNBInETVcfwyZlImkLZjcDvD",
 "value": ".",
 "visible_if": "marker_source:manual"
 },
@@ -23532,7 +23542,7 @@ null
 "figure": "lcfig01",
 "kind": "lc",
 "qualifier": "linestyle_source",
-"uniqueid": "whyVWUVclPsNDAQavavkFQkTQPaIEq",
+"uniqueid": "XkRGnWPmSwdhIXgxixyZoyKtBwJhME",
 "value": "manual"
 },
 {
@@ -23550,7 +23560,7 @@ null
 "figure": "lcfig01",
 "kind": "lc",
 "qualifier": "linestyle",
-"uniqueid": "iWMAdxLvZHNBBXtpqMNUHWXyWMyjOK",
+"uniqueid": "FXEqRNPJbWtSsPWRmmwblRxMTcUaNY",
 "value": "solid",
 "visible_if": "linestyle_source:manual"
 },
@@ -23563,7 +23573,7 @@ null
 "figure": "lcfig01",
 "kind": "lc",
 "qualifier": "legend",
-"uniqueid": "tEISLtEFHjlVlPGUfiMoNcWBvKzocW",
+"uniqueid": "nUIDgQVUlvWssExWkBqVBINpNEDDOF",
 "value": true
 },
 {
@@ -23575,7 +23585,7 @@ null
 "figure": "lcfig01",
 "kind": "lc",
 "qualifier": "uncover",
-"uniqueid": "HSOuiekjOHjVOscCRAtOqgRpmfHJNU",
+"uniqueid": "csorADEidSZxGXxqimAzUThrzdfQls",
 "value": false
 },
 {
@@ -23587,7 +23597,7 @@ null
 "figure": "lcfig01",
 "kind": "lc",
 "qualifier": "highlight",
-"uniqueid": "YsLloWAvsdZOZtOACFRlMMqCQOKqfY",
+"uniqueid": "VeDSGiLYshcuVIodPmqfHwhHiXGLdg",
 "value": true
 },
 {
@@ -23607,7 +23617,7 @@ null
 "figure": "lcfig01",
 "kind": "lc",
 "qualifier": "time_source",
-"uniqueid": "hCXfKyklTMZKbcmMvaiwtUkpoWIwQN",
+"uniqueid": "qDOZnZCRcXfROIdxzfsqjnoXpebUbt",
 "value": "default"
 },
 {
@@ -23623,7 +23633,7 @@ null,
 null
 ],
 "qualifier": "time",
-"uniqueid": "lEDhIPoKMMkgBAvaxWqzxtWwxGjOUm",
+"uniqueid": "zodGytSQhiPbKCcaZCePgPNmZPErdQ",
 "value": 0.0,
 "visible_if": "time_source:manual"
 },
@@ -23645,7 +23655,7 @@ null
 "description": "Color to use for figures in which color_source is set to model",
 "model": "Initial_Fit",
 "qualifier": "color",
-"uniqueid": "DePxGiFchsYklaFdWdKgDgroeSvPWS",
+"uniqueid": "XCUhomCqoSxdvCFWdfwahRwmdYedRz",
 "value": "blue"
 },
 {
@@ -23662,7 +23672,7 @@ null
 "description": "Linestyle to use for figures in which linestyle_source is set to model",
 "model": "Initial_Fit",
 "qualifier": "linestyle",
-"uniqueid": "FBWsEUJPXcSRGhmIDWiNvEJxNiovgS",
+"uniqueid": "ZMROsyxEEmoBDalPkHBRXZvDHtIAAd",
 "value": "solid"
 },
 {
@@ -23676,7 +23686,7 @@ null
 "figure": "ebaifig01",
 "kind": "ebai",
 "qualifier": "solution",
-"uniqueid": "stluToIoLegUwjKVgdIEdiKCIlEPrW",
+"uniqueid": "dlxIknnZSJaxWLvLdExPYQysPugALE",
 "value": "EBAI_solution"
 },
 {
@@ -23697,7 +23707,7 @@ null
 "description": "Color to use for figures in which color_source is set to model",
 "model": "EBAI_Fit",
 "qualifier": "color",
-"uniqueid": "zOMHcORlCayZgldwVPmKQNQcfJUrGQ",
+"uniqueid": "ZoxfgmMeJbeLtTRnpjsABByuFSvEjU",
 "value": "orange"
 },
 {
@@ -23714,7 +23724,7 @@ null
 "description": "Linestyle to use for figures in which linestyle_source is set to model",
 "model": "EBAI_Fit",
 "qualifier": "linestyle",
-"uniqueid": "sYTvZeuCBdmXvdhVTYXaOdkgtildps",
+"uniqueid": "ggzAlTkdEcGYmDNTibPiumNRZUpSnz",
 "value": "dashed"
 },
 {
@@ -23728,7 +23738,7 @@ null
 "figure": "lc_geometryfig01",
 "kind": "lc_geometry",
 "qualifier": "solution",
-"uniqueid": "gMEouwPAbfxZGorxuNHSUHDKgmVWrV",
+"uniqueid": "bTppiKyfddAKufbLSocaBiPHFMLDtk",
 "value": "lcGeom_solution"
 },
 {
@@ -23749,7 +23759,7 @@ null
 "description": "Color to use for figures in which color_source is set to model",
 "model": "LC_Geometry_Fit",
 "qualifier": "color",
-"uniqueid": "zgheDfnRrQkJzTkJgjiQJClLmvEubt",
+"uniqueid": "psuCXrNnDrZzTcnUqcfXaQUXmrpLEC",
 "value": "green"
 },
 {
@@ -23766,7 +23776,7 @@ null
 "description": "Linestyle to use for figures in which linestyle_source is set to model",
 "model": "LC_Geometry_Fit",
 "qualifier": "linestyle",
-"uniqueid": "sPIPYXlrxgBtJwLjwKgXVlHLhgXbVD",
+"uniqueid": "RojUcweuUXLHyLVzygRoxFLlvNVCzP",
 "value": "dotted"
 },
 {
@@ -23787,7 +23797,7 @@ null
 "description": "Color to use for figures in which color_source is set to model",
 "model": "Optimizer_Fit",
 "qualifier": "color",
-"uniqueid": "SZODOjCplqUTviDxdCNDaQEIyFVseX",
+"uniqueid": "eiVyFVzvNsftNnXkdNqagQgYXFEoVn",
 "value": "red"
 },
 {
@@ -23804,7 +23814,7 @@ null
 "description": "Linestyle to use for figures in which linestyle_source is set to model",
 "model": "Optimizer_Fit",
 "qualifier": "linestyle",
-"uniqueid": "AmCcDhIBtFanoUurAUvTZWwCQyDsGA",
+"uniqueid": "uTWwNiLjedKABDoBOMYglhgFGYsjeW",
 "value": "dashdot"
 },
 {
@@ -23815,8 +23825,8 @@ null
 "description": "Version of PHOEBE",
 "qualifier": "phoebe_version",
 "readonly": true,
-"uniqueid": "phogFFquvDCywbyTzvdGvbETwACIlN",
-"value": "2.3.22"
+"uniqueid": "gQmnraSWGaKXAvcpGnXpwWSLmuHiZO",
+"value": "2.3.30"
 },
 {
 "Class": "DictParameter",
@@ -23825,7 +23835,7 @@ null
 "copy_for": false,
 "description": "Filters to use when using dictionary access",
 "qualifier": "dict_filter",
-"uniqueid": "ndOjXSNMaYURCmnPEYzzZYpnpwVDVt",
+"uniqueid": "FVgSmAcXDhnnOzgbJMtJhvEGxbGJPl",
 "value": {}
 },
 {
@@ -23835,7 +23845,7 @@ null
 "copy_for": false,
 "description": "Whether to set all values for dictionary access that returns more than 1 result",
 "qualifier": "dict_set_all",
-"uniqueid": "lgynybINXaYrnZegVodnJbOEDGMKrJ",
+"uniqueid": "YuKhUgWHsWYvXIIXyBHOkxIsTYVMko",
 "value": false
 },
 {
@@ -23848,7 +23858,7 @@ null
 "copy_for": false,
 "description": "Compute options to use when calling run_checks/run_checks_compute or within interactive checks.",
 "qualifier": "run_checks_compute",
-"uniqueid": "mFstfjFlMBEMDrMyVnyKsKIeEvOyzE",
+"uniqueid": "qXRoilDivAPLZXKIABRWIMVoxsWAjH",
 "value": [
 "*"
 ]
@@ -23864,7 +23874,7 @@ null
 "copy_for": false,
 "description": "Solver options to use when calling run_checks/run_checks_solver or within interactive checks.",
 "qualifier": "run_checks_solver",
-"uniqueid": "blCBnbakoaipBeiyqFXmKNMdEcIHxB",
+"uniqueid": "GIxErJVLJfotfQVuVdKscefLrJkXjc",
 "value": [
 "*"
 ]
@@ -23880,7 +23890,7 @@ null
 "copy_for": false,
 "description": "Solutions to use when calling run_checks/run_checks_solution or within interactive checks.",
 "qualifier": "run_checks_solution",
-"uniqueid": "JBetFUxgelUxgtDqimVBaMQFfxiGDh",
+"uniqueid": "HXalUrtRPRHKONhoPdPJilENPXqiFp",
 "value": []
 },
 {
@@ -23894,7 +23904,7 @@ null
 "copy_for": false,
 "description": "Figures to use when calling run_checks/run_checks_figure or within interactive checks.",
 "qualifier": "run_checks_figure",
-"uniqueid": "hNjrOiiDhNriRlQJaGFUWYRnvYDbEa",
+"uniqueid": "aWxdHWInooCjNIrxZoPPYUZqZnhCPA",
 "value": []
 },
 {
@@ -23903,7 +23913,7 @@ null
 "copy_for": false,
 "description": "Whether to automatically add figure parameters when a dataset is added with a new dataset type, or a solution is added.",
 "qualifier": "auto_add_figure",
-"uniqueid": "IukMyAiSegqbbvIisreoXsBSatPytj",
+"uniqueid": "vbhldixQpIDwhomXVbAXQdQceHfuNP",
 "value": true
 },
 {
@@ -23912,7 +23922,7 @@ null
 "copy_for": false,
 "description": "Whether to automatically remove figure parameters when the referenced dataset/solution are removed.",
 "qualifier": "auto_remove_figure",
-"uniqueid": "enYLOjpDcdVUmlDJJTTbpWEupnchbr",
+"uniqueid": "kqFVLSCFuUAlmsYYgUBoCyFYLkcUoq",
 "value": true
 },
 {
@@ -23922,7 +23932,7 @@ null
 "copy_for": false,
 "description": "Whether to default to using the web-client over a locally installed desktop-client when opening the UI from the desktop client.",
 "qualifier": "web_client",
-"uniqueid": "DSgvMVPxzeDSYwWIFiiFvDZwObyzxk",
+"uniqueid": "PfMSMieyKNfuGmEhmorPuhlyPZbfoi",
 "value": false
 },
 {
@@ -23932,7 +23942,7 @@ null
 "copy_for": false,
 "description": "Default location of web-client.  Will only be used if web_client is True.",
 "qualifier": "web_client_url",
-"uniqueid": "nBWLlVZMvjhoMYrRFypiEkblSJvWlw",
+"uniqueid": "WIVUMmKcXoCMjGkBrzHthdqHAQqUdV",
 "value": "ui.phoebe-project.org"
 }
 ]
