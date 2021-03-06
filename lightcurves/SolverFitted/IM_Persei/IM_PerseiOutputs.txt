@@ -1,0 +1,33 @@
+EBAI:
+ParameterSet: 5 parameters
+   t0_supconj@binary@orbit@com...: 0.0 d
+   teffratio@binary@orbit@comp...: 0.9692288289444646
+   requivsumfrac@binary@orbit@...: 0.4508506023471432
+     esinw@binary@orbit@component: 0.10883805980049788
+     ecosw@binary@orbit@component: -0.022986336380421357
+
+LC Geometry:
+ParameterSet: 3 parameters
+   t0_supconj@binary@orbit@com...: 0.0020961072935547116 d
+       ecc@binary@orbit@component: 0.016020631237471
+      per0@binary@orbit@component: 264.76969546133705 deg
+
+Optimiser:
+ParameterSet: 7 parameters
+   teffratio@binary@orbit@comp...: 0.9931964275333274
+   requivsumfrac@binary@orbit@...: 0.40554160848763343
+   t0_supconj@binary@orbit@com...: 0.0011502425511251556 d
+      incl@binary@orbit@component: 89.98222488959276 deg
+         q@binary@orbit@component: 0.35319708739787625
+       ecc@binary@orbit@component: 0.025192513143533275
+      per0@binary@orbit@component: 268.4202160895687 deg
+
+Sampler:
+sma@binary = 5.1 +2.2 -2.4  solRad
+ incl@binary = 90.19 +0.97 -1.29  deg
+ t0_supconj@binary = 0.0004 +0.0012 -0.0015  d
+ requiv@primary = 1.02 +0.48 -0.47  solRad
+ pblum@lc01 = 12.15 +0.57 -0.99  W
+ sigmas_lnf@lc01 = -300000000.0 +300000000.0 -1400000000.0  
+
+
