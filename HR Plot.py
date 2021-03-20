@@ -16,13 +16,15 @@ def magToPix(mag,d):
     y = (M/conversion)+yOffset
     return y
 
+path = 'Other Figures/'
+
 stars = [{'Name':'4987', 'Colour':0.446, 'Mag':11.3431, 'Distance':1790.36},
          {'Name':'14535', 'Colour':0.781, 'Mag':12.5173, 'Distance':714.01},
          {'Name':'15284', 'Colour':1.065, 'Mag':13.5912, 'Distance':5549.87},
          {'Name':'17749', 'Colour':0.913, 'Mag':12.7905, 'Distance':1583.53}]
 plotColours = ['r','b','g','k']
 
-img = plt.imread("HRDiagramOriginal.png")
+img = plt.imread(path+"HRDiagramOriginal.png")
 fig, ax = plt.subplots()
 ax.imshow(img)
 
@@ -33,5 +35,5 @@ for i, star in enumerate(stars):
 plt.axis('off')
 plt.legend(fontsize='x-small')
 
-plt.savefig('HRDiagram.png', bbox_inches='tight', pad_inches=0, dpi=300)
-plt.savefig('HRDiagram.pdf', bbox_inches='tight', pad_inches=0, dpi=300)
+plt.savefig(path+'HRDiagram.png', bbox_inches='tight', pad_inches=0, dpi=300)
+plt.savefig(path+'HRDiagram.pdf', bbox_inches='tight', pad_inches=0, dpi=300)

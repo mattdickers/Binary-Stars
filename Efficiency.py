@@ -2,140 +2,176 @@ import phoebe as pb
 from phoebe import u # units
 import numpy as np
 import matplotlib.pyplot as plt
+from scipy import optimize
+from scipy.interpolate import make_interp_spline
 import time
 
 def timeConvert(seconds):
     m, s = divmod(seconds, 60)
     return "%02d:%02d" % (m, s)
 
-def Run(n, failCount):
-    try:
-        print('\nStarting', n, 'data points')
-        start = time.time()
-        # Define bundle for the system
-        model = pb.Bundle()
-        model.add_star('primary', mass=1.5, requiv=1.2, teff=7000)  # Create primary star
-        model.add_star('secondary', mass=1.0, requiv=1.0, teff=6000)  # Create secondary star
-        model.add_orbit('binary', period=1.0, sma=7)  # Create binary system orbit
-        model.set_value('q', (model['value@mass@secondary@component'] / model[
-            'value@mass@primary@component']))  # Define the mass ratio
-        model.set_hierarchy(pb.hierarchy.binaryorbit(model['binary'], model['primary'],
-                                                     model['secondary']))  # Create hierachy of the system
-        # TODO look into better method of generating system using flip_constraint to define masses
-        # TODO will either need to be defined after set_hierarchy, or use default bundle
+def sma(P, m1, m2):
+    G = 6.67430e-11  # Gravitational Constant
+    SolarMass = 1.989e+30  # Solar Mass in kg
+    day = 60 * 60 * 24  # Day in seconds
 
-        # Add lightcurve dataset
-        # n=1005
-        # n=100
-        times = pb.linspace(0, 10, n)
-        model.add_dataset('lc', times=times, passband='Johnson:R', dataset='lc01')
+    # Convert to SI units:
+    P = P * day  # Days to seconds
+    m1 = m1 * SolarMass  # Solar Masses to kg
+    m2 = m2 * SolarMass  # Solar Masses to kg
 
-        # Forward Compute
-        model.run_compute()
+    # Calculate SMA in meters
+    a = np.cbrt(((P ** 2) * G * (m1 + m2)) / (4 * (np.pi ** 2)))
 
-        # Add errors:
-        C = 2 / 100  # Uncertainty as %
-        fluxes = model.get_value('fluxes', context='b')
-        sigmas = np.random.normal(0, C, size=times.shape)
-        newFluxes = fluxes * (1 + sigmas)
+    aAU = a / 1.496e+11  # Convert SMA to Solar Radii
+    aR = a / 6.957e+8  # Convert SMA to AU
+    return [a, aAU, aR]
 
-        # Run b compute
-        model = pb.default_binary()
-        model.add_dataset('lc', times=times, fluxes=newFluxes, sigmas=np.full_like(newFluxes, fill_value=C))
-        model.set_value('pblum_mode', 'dataset-scaled')
-        model.plot(x='phase', legend=True, save='LigthcurveData.png', s=0.01, label='Data')
-        print('Plotted Data')
+path = 'lightcurves/SolverFitted/IM_Persei/Efficiency/'
+file = open(path+'Times.txt', 'w')
+file.write('')
 
-        # Add EBAI Solver
-        # b.add_solver('estimator.lc_geometry', solver='lcGeom_solver') #LC Geomtry Solver
-        # b.add_solver('estimator.lc_periodogram', solver='lcPeriod_solver') #LC Periodogram Solver
-        model.add_solver('estimator.ebai', solver='ebai_solver')  # Neural Network Solver
-
-        # Run Solver
-        model.run_solver(solver='ebai_solver', solution='ebai_solution')
-        # solution = b.plot(solution='lc_solution', save='Solution.png')
-        # print('Plotted Solution')
-        # print(b.adopt_solution(trial_run=True))
-
-        model.flip_constraint('requivsumfrac', solve_for='requiv@primary')
-        model.flip_constraint('teffratio', solve_for='teff@primary')
-        model.flip_constraint('esinw', solve_for='ecc')
-        model.flip_constraint('ecosw', solve_for='per0')
-
-        adopt_params = []
-        for i, param in enumerate(model['value@fitted_values@ebai_solution']):
-            if np.isnan(param):
-                pass
-            else:
-                adopt_params.append(model['value@adopt_parameters@ebai_solution'][i])
-        model['adopt_parameters@ebai_solution'] = adopt_params
-
-        model.adopt_solution('ebai_solution')
-        model.run_compute()
-        model.plot(x='phase', ls='-', legend=True, save='EBAI_Solution.png', s=0.01, label='EBAI')
-        print('Plotted EBAI Solution')
-
-        # Add LC Geometry Solver
-        model.add_solver('estimator.lc_geometry', solver='lcGeom_solver')  # LC Geomtry Solver
-
-        model.run_solver('lcGeom_solver', solution='lcGeom_solution')
-
-        model.flip_constraint('per0', solve_for='ecosw')
-        model.flip_constraint('ecc', solve_for='esinw')
-
-        model.adopt_solution('lcGeom_solution')
-        model.run_compute()
-        model.plot(x='phase', ls='-', legend=True, save='Geometry_Solution.png', s=0.01, label='Geometry')
-        print('Plotted LC Geometry Solution')
-
-        # #Add LC Periodogram Solver
-        # b.add_solver('estimator.lc_periodogram', solver='lcPeriod_solver') #LC Periodogram Solver
-        #
-        # b.run_solver('lcPeriod_solver', solution='lcPeriod_solution')
-        #
-        # b.adopt_solution('lcPeriod_solution')
-        # b.run_compute()
-        # b.plot(x='phase', ls='-', legend=True, save='Periodogram_Solution.png', s=0.01, label='Periodogram')
-        # print('Plotted LC Periodogram Solution')
-
-        end = time.time()
-        print('\nCompute Time:', timeConvert(end - start))
-
-        compTimes.append(end - start)
-        print('Complete\n')
-
-    except (ValueError, AttributeError):
-        failCount+=1
-        print('FAIL\n')
-        if failCount<100:
-            Run(n, failCount)
-
-global compTimes
-compTimes = []
+period = 2.25422694
+m1 = 1.7831
+m2 = 1.7741
+r1 = 2.409
+r2 = 2.366
 
 dataPoints = [100,500,1000,1500,2000,2500,3000,3500,4000,4500,5000,5500,6000,6500,7000,7500,8000,8500,9000,9500,10000]
+#dataPoints = [101,1000,2001,3001,4001,5001,6001,7001,8001,9001,10001]
+#compTimes = [606.1696403026581, 1473.6362385749817, 968.9245252609253, 1559.3514025211334, 3901.952570915222, 2583.7632653713226, 1802.1300160884857, 2886.0005428791046, 2071.4019186496735, 2124.1891026496887, 2412.690982103348]
+compTimes = []
+
+# for i in dataPoints:
+#     print('\nStarting', i, 'data points')
+#     start = time.time()
+#     b = pb.Bundle()
+#
+#     b.add_star('primary', mass=m1, requiv=r1)
+#     b.add_star('secondary', mass=m2, requiv=r2)
+#     b.add_orbit('binary', period=period, sma=sma(period, m1, m2)[2])
+#     b.set_value('q', m2 / m1)
+#
+#     b.set_hierarchy(pb.hierarchy.binaryorbit(b['binary'], b['primary'], b['secondary']))
+#
+#     phases = pb.linspace(0, 1, i)
+#     b.add_dataset('lc', compute_phases=phases, passband='Johnson:R')
+#
+#     b.run_compute(irrad_method='none')
+#
+#     times = b.get_value('times', context='model', dataset='lc01')
+#     np.random.seed(0)
+#     fluxes = b.get_value('fluxes', context='model', dataset='lc01') + np.random.normal(size=times.shape) * 0.02
+#     sigmas = np.ones_like(times) * 0.04
+#
+#     # Run Model Compute
+#     b = pb.default_binary()
+#     b.add_dataset('lc', times=times, fluxes=fluxes, sigmas=sigmas, passband='Johnson:R')
+#     b.set_value('period@binary', value=period)
+#     b.set_value('pblum_mode', 'dataset-scaled')
+#
+#     b.run_compute(model='Initial_Fit')
+#     print('Initial Done\n')
+#
+#     # EBAI Solver
+#     print('Starting EBAI Solver')
+#     b.add_solver('estimator.ebai', solver='EBAI_solver')
+#     b['phase_bin@EBAI_solver'] = False
+#
+#     b.run_solver(solver='EBAI_solver', solution='EBAI_solution')
+#
+#     b.flip_constraint('requivsumfrac', solve_for='requiv@secondary')
+#
+#     b.flip_constraint('teffratio', solve_for='teff@secondary')
+#     b.flip_constraint('esinw', solve_for='ecc')
+#     b.flip_constraint('ecosw', solve_for='per0')
+#
+#     adopt_params = [b['value@adopt_parameters@EBAI_solution'][i] for i, param in
+#                     enumerate(b['value@fitted_values@EBAI_solution']) if not np.isnan(param)]
+#     b['adopt_parameters@EBAI_solution'] = adopt_params
+#
+#     #print(b.adopt_solution('EBAI_solution', trial_run=True))
+#     b.adopt_solution('EBAI_solution')
+#     b.run_compute(model='EBAI_Fit')
+#     print('EBAI Done\n')
+#
+#     # LC Geometry Solver
+#     print('Starting LC Goemetry Solver')
+#     b.add_solver('estimator.lc_geometry', solver='lcGeom_solver')
+#
+#     b.run_solver(solver='lcGeom_solver', solution='lcGeom_solution')
+#
+#     b.flip_constraint('per0', solve_for='ecosw')
+#     b.flip_constraint('ecc', solve_for='esinw')
+#
+#     #print(b.adopt_solution('lcGeom_solution', trial_run=True))
+#     b.adopt_solution('lcGeom_solution')
+#     b.run_compute(model='LC_Geometry_Fit')
+#     print('LC Geometry Done\n')
+#
+#     # Optimizer
+#     print('Starting Optimizer Solver')
+#     b.set_value_all('ld_mode', 'lookup')
+#     b.add_compute('ellc', compute='fastcompute')  # Add fastcompute option from ellc
+#     b.add_solver('optimizer.nelder_mead',
+#                  fit_parameters=['teffratio@binary', 'requivsumfrac@binary', 't0_supconj', 'incl@binary', 'q', 'ecc',
+#                                  'per0'],
+#                  compute='fastcompute')
+#
+#     b.run_solver(kind='nelder_mead', solution='optimizer_solution')
+#
+#     #print(b.adopt_solution('optimizer_solution', trial_run=True))
+#     b.adopt_solution('optimizer_solution')
+#     b.run_compute(model='Optimizer_Fit', compute='fastcompute')
+#     print('Optimizer Done\n')
+#
+#     b.save(path + str(i) + '.phoebe')
+#     print('Bundle Saved')
+#
+#     end = time.time()
+#     compTime = end-start
+#     compTimes.append(compTime)
+#     file.writelines(str(i)+': '+str(compTime)+'\n')
+# file.close()
+
+
+
+#compTimes = [561.1358201503754, 883.8353290557861, 3536.118881225586, 1796.7914276123047, 2063.4513506889343, 2155.846523284912, 6398.320641994476, 2982.2705006599426, 3571.6684770584106, 5331.8255960941315, 7171.550770521164]
 compTimes = [28.164461135864258, 116.04766273498535, 231.9618046283722, 367.631472826004, 452.8675866127014, 563.2299945354462,
              679.0984132289886, 792.0920975208282, 898.6561760902405, 1009.424154996872, 1124.2753274440765, 1234.547101020813,
              1346.411604642868, 1465.7015404701233, 1592.3056373596191, 1692.4058952331543, 1828.84628200531, 1981.7090103626251,
              2024.419947385788, 2135.462520122528, 2262.5722608566284]
-
-# for i in dataPoints:
-#     failCount = 0
-#     Run(i, failCount)
-
-
 times_seconds = np.array(compTimes)
 
-times = np.array([timeConvert(time) for time in times_seconds])
+times_seconds2 = np.array([561.1358201503754, 883.8353290557861, 1796.7914276123047, 2063.4513506889343, 2155.846523284912, 2982.2705006599426, 3571.6684770584106, 5331.8255960941315, 7171.550770521164])
+dataPoints2 = [101,1000,3001,4001,5001,7001,8001,9001,10001]
+
+def func(xs, a, b):
+    return a*b**xs
+
+# popt, pcov = optimize.curve_fit(func,dataPoints2,times_seconds2)
+# fittedPoints = func(dataPoints2, popt[0], popt[1])
+# print('y=$'+str(popt[0]*popt[1])+'^x')
+# x = np.linspace(0,10200,300)
+# spline = make_interp_spline(dataPoints2, fittedPoints)
+# y = spline(x)
+
 
 fit = np.polyfit(times_seconds, dataPoints, 1)
 fittedPoints = fit[0] * times_seconds + fit[1]
+print('y='+str(fit[0])+'x+'+str(fit[1]))
 
 plt.cla()
-plt.plot(dataPoints, times_seconds, 'k.')
-plt.plot(fittedPoints, times_seconds, 'r-')
-plt.yticks(np.array([0,  600, 1200, 1800, 2400]), (timeConvert(0), timeConvert(600), timeConvert(1200), timeConvert(1800), timeConvert(2400)))
+plt.plot(dataPoints, times_seconds, 'k.', label='Data')
+plt.plot(fittedPoints, times_seconds, 'r-', label='Fitted Function')
+#plt.plot(x, y, 'r-', label='Fitted Function')
+plt.yticks(np.array([0, 600, 1200, 1800, 2400, 3000, 3600, 4200, 4800, 5400, 6000, 6600, 7200]), (timeConvert(0),
+                    timeConvert(600), timeConvert(1200), timeConvert(1800), timeConvert(2400), timeConvert(3000), timeConvert(3600),
+                    timeConvert(4200), timeConvert(4800), timeConvert(5400), timeConvert(6000), timeConvert(6600), timeConvert(7200)))
+#plt.yticks(np.array([0,  600, 1200, 1800, 2400]), (timeConvert(0), timeConvert(600), timeConvert(1200), timeConvert(1800), timeConvert(2400)))
 plt.xlabel('Number of Datapoints')
 plt.ylabel('Execution Time (minutes)')
-plt.savefig('RunTimes.png')
+plt.legend()
+plt.savefig(path+'RunTimes.pdf')
+#plt.savefig(path+'OptimiserRunTimes.pdf')
 print('Saved')
